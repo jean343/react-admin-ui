@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const Footer = styled.footer`
@@ -17,11 +17,11 @@ const Footer = styled.footer`
 `;
 
 export default class extends Component {
-	render(){
-		const {} = this.props;
-		return <Footer>
-			<span><a href="https://coreui.io">CoreUI</a> © 2018 creativeLabs.</span>
-			<span>Powered by <a href="https://coreui.io/react">CoreUI for React</a></span>
-		</Footer>
-	}
+  render() {
+    const {} = this.props;
+    return <Footer>
+      <span><a href="https://coreui.io">CoreUI</a> © 2018 creativeLabs.</span>
+      <span>Powered by <a href="https://coreui.io/react">CoreUI for React</a></span>
+    </Footer>
+  }
 }
