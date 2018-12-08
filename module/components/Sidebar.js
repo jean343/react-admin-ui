@@ -63,7 +63,7 @@ class Menu extends Component {
       indexOpened
     } = this.state;
     const NavItem = sidebarMini ? NavItemMinimized : NavItemMaximized;
-    return children.map(({
+    return children.filter(m => !!m).map(({
       title,
       href,
       icon,
@@ -72,7 +72,7 @@ class Menu extends Component {
       if (href || children) {
         let open = indexOpened === i;
 
-        if (Array.isArray(children) && children.some(c => this.isActive(selected, c.href))) {
+        if (Array.isArray(children) && children.filter(m => !!m).some(c => this.isActive(selected, c.href))) {
           open = true;
         }
 

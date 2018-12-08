@@ -66,7 +66,7 @@ export default class extends Component {
     const {selectedTab} = this.state;
     return <>
       <NavTabs>
-        {sideBarTabs.map(({title, icon}, i) => {
+        {sideBarTabs.filter(m => !!m).map(({title, icon}, i) => {
           return <NavItem key={i} active={selectedTab === i}>
             <a title={title} onClick={() => this.setState({selectedTab: i})}><i className={icon}/></a>
           </NavItem>

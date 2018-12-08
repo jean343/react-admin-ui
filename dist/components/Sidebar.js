@@ -188,7 +188,9 @@ function (_Component) {
           selected = _this$props.selected;
       var indexOpened = this.state.indexOpened;
       var NavItem = sidebarMini ? _NavItemMinimized.NavItemMinimized : _NavItemMaximized.NavItemMaximized;
-      return children.map(function (_ref, i) {
+      return children.filter(function (m) {
+        return !!m;
+      }).map(function (_ref, i) {
         var title = _ref.title,
             href = _ref.href,
             icon = _ref.icon,
@@ -197,7 +199,9 @@ function (_Component) {
         if (href || children) {
           var open = indexOpened === i;
 
-          if (Array.isArray(children) && children.some(function (c) {
+          if (Array.isArray(children) && children.filter(function (m) {
+            return !!m;
+          }).some(function (c) {
             return _this2.isActive(selected, c.href);
           })) {
             open = true;

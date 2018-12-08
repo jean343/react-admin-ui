@@ -34,7 +34,7 @@ export default class extends Component {
       onClick: onNavbarToggle
     }, React.createElement("i", {
       className: "fas fa-bars"
-    })), React.createElement(NavbarNav, null, topMenu.map(({
+    })), React.createElement(NavbarNav, null, topMenu.filter(m => !!m).map(({
       title,
       href,
       icon

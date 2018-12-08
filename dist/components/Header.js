@@ -163,7 +163,9 @@ function (_Component) {
         onClick: onNavbarToggle
       }, _react.default.createElement("i", {
         className: "fas fa-bars"
-      })), _react.default.createElement(NavbarNav, null, topMenu.map(function (_ref, i) {
+      })), _react.default.createElement(NavbarNav, null, topMenu.filter(function (m) {
+        return !!m;
+      }).map(function (_ref, i) {
         var title = _ref.title,
             href = _ref.href,
             icon = _ref.icon;

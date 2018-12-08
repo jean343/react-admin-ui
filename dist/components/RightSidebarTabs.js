@@ -148,7 +148,9 @@ function (_Component) {
 
       var sideBarTabs = this.props.sideBarTabs;
       var selectedTab = this.state.selectedTab;
-      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(NavTabs, null, sideBarTabs.map(function (_ref, i) {
+      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(NavTabs, null, sideBarTabs.filter(function (m) {
+        return !!m;
+      }).map(function (_ref, i) {
         var title = _ref.title,
             icon = _ref.icon;
         return _react.default.createElement(NavItem, {

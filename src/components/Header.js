@@ -99,7 +99,7 @@ export default class extends Component {
         <i className="fas fa-bars"/>
       </NavbarToggler>
       <NavbarNav>
-        {topMenu.map(({title, href, icon}, i) => {
+        {topMenu.filter(m => !!m).map(({title, href, icon}, i) => {
           return <NavItem key={i} active={selected === href}>
             <a href={href}>
               <i className={icon}></i>

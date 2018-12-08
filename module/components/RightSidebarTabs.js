@@ -30,7 +30,7 @@ export default class extends Component {
     const {
       selectedTab
     } = this.state;
-    return React.createElement(React.Fragment, null, React.createElement(NavTabs, null, sideBarTabs.map(({
+    return React.createElement(React.Fragment, null, React.createElement(NavTabs, null, sideBarTabs.filter(m => !!m).map(({
       title,
       icon
     }, i) => {
