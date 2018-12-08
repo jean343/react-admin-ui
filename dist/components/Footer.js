@@ -33,36 +33,33 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["display: flex;\nflex-wrap: wrap;\nalign-items: center;\npadding: 0 ", ";\ncolor: ", ";\nbackground: ", ";\nborder-top: 1px solid ", ";\nflex: 0 0 ", ";\nspan:first-child {\n  flex: 1;\n}"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Footer = _styledComponents.default.footer(_templateObject(), function (props) {
-  return [props["spacer"], (props.theme || {})["spacer"]].filter(function (v) {
+var Footer = _styledComponents.default.footer.withConfig({
+  displayName: "Footer",
+  componentId: "rum83t-0"
+})(["display:flex;flex-wrap:wrap;align-items:center;padding:0 ", ";color:", ";background:", ";border-top:1px solid ", ";flex:0 0 ", ";span:first-child{flex:1;}"], function (props) {
+  return [props["spacer"], (props.theme || {})["spacer"], "1rem"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["footer-color"], (props.theme || {})["footer-color"]].filter(function (v) {
+  return [props["footer-color"], (props.theme || {})["footer-color"], [props["body-color"], (props.theme || {})["body-color"], [props["gray-900"], (props.theme || {})["gray-900"], "#313742"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["footer-bg"], (props.theme || {})["footer-bg"]].filter(function (v) {
+  return [props["footer-bg"], (props.theme || {})["footer-bg"], [props["gray-100"], (props.theme || {})["gray-100"], "#f8f8fa"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["gray-300"], (props.theme || {})["gray-300"]].filter(function (v) {
+  return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["footer-height"], (props.theme || {})["footer-height"]].filter(function (v) {
+  return [props["footer-height"], (props.theme || {})["footer-height"], "50px"].filter(function (v) {
     return v !== void 0;
   })[0];
 });

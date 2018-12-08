@@ -5,70 +5,40 @@ import styled, { css } from 'styled-components';
 import { NavItemMaximized } from './NavItemMaximized';
 import { NavItemMinimized } from './NavItemMinimized';
 import ClickOutside from "react-click-outside";
-const Sidebar = styled.div`position: fixed;
-display: flex;
-flex-direction: column;
-padding: ${props => [props["sidebar-padding"], (props.theme || {})["sidebar-padding"]].filter(v => v !== void 0)[0]};
-color: ${props => [props["sidebar-color"], (props.theme || {})["sidebar-color"]].filter(v => v !== void 0)[0]};
-background: ${props => [props["sidebar-bg"], (props.theme || {})["sidebar-bg"]].filter(v => v !== void 0)[0]};
-height: calc(100vh - ${props => [props["navbar-height"], (props.theme || {})["navbar-height"]].filter(v => v !== void 0)[0]});
-transition: transform 0.25s;
-${props => props.sidebarCollapse && css`transform: translateX(${props => "-" + [props["sidebar-width"], (props.theme || {})["sidebar-width"]].filter(v => v !== void 0)[0]});`}`;
-const SidebarContainer = styled.div`height: 100%;
-flex: 1 1;
-overflow-y: ${props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `visible` : `auto`};`;
-const Nav = styled.ul`display: flex;
-width: ${props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"]].filter(v => v !== void 0)[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"]].filter(v => v !== void 0)[0]};
-flex-direction: column;
-padding: 0;
-list-style: none;
-margin: 0;
-transition: max-height 0.3s ease-in-out, width 0.25s;
-overflow-y: ${props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `visible` : `hidden`};`;
-const SubNav = styled(Nav)`min-height: 0;
-max-height: 0;`;
-const NavTitle = styled.li`padding: 0.75rem 1rem;
-font-size: 80%;
-font-weight: 700;
-color: ${props => [props["sidebar-nav-title-color"], (props.theme || {})["sidebar-nav-title-color"]].filter(v => v !== void 0)[0]};
-text-transform: uppercase;
-overflow: hidden;`;
-const SidebarMinimizer = styled.button`position: relative;
-flex: 0 0 50px;
-cursor: pointer;
-background-color: ${props => require("tinycolor2")({
+const Sidebar = styled.div.withConfig({
+  displayName: "Sidebar",
+  componentId: "wu4c6y-0"
+})(["position:fixed;display:flex;flex-direction:column;padding:", ";color:", ";background:", ";height:calc(100vh - ", ");transition:transform 0.25s;", ""], props => [props["sidebar-padding"], (props.theme || {})["sidebar-padding"], `0`].filter(v => v !== void 0)[0], props => [props["sidebar-color"], (props.theme || {})["sidebar-color"], [props["white"], (props.theme || {})["white"], `#fff`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-800"], (props.theme || {})["gray-800"], `#3c4450`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => props.sidebarCollapse && css(["transform:translateX(", ");"], props => "-" + [props["sidebar-width"], (props.theme || {})["sidebar-width"]].filter(v => v !== void 0)[0]));
+const SidebarContainer = styled.div.withConfig({
+  displayName: "Sidebar__SidebarContainer",
+  componentId: "wu4c6y-1"
+})(["height:100%;flex:1 1;overflow-y:", ";"], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `visible` : `auto`);
+const Nav = styled.ul.withConfig({
+  displayName: "Sidebar__Nav",
+  componentId: "wu4c6y-2"
+})(["display:flex;width:", ";flex-direction:column;padding:0;list-style:none;margin:0;transition:max-height 0.3s ease-in-out,width 0.25s;overflow-y:", ";"], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], `50px`].filter(v => v !== void 0)[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], `200px`].filter(v => v !== void 0)[0], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `visible` : `hidden`);
+const SubNav = styled(Nav).withConfig({
+  displayName: "Sidebar__SubNav",
+  componentId: "wu4c6y-3"
+})(["min-height:0;max-height:0;"]);
+const NavTitle = styled.li.withConfig({
+  displayName: "Sidebar__NavTitle",
+  componentId: "wu4c6y-4"
+})(["padding:0.75rem 1rem;font-size:80%;font-weight:700;color:", ";text-transform:uppercase;overflow:hidden;"], props => [props["sidebar-nav-title-color"], (props.theme || {})["sidebar-nav-title-color"], [props["gray-200"], (props.theme || {})["gray-200"], `#e9ebef`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0]);
+const SidebarMinimizer = styled.button.withConfig({
+  displayName: "Sidebar__SidebarMinimizer",
+  componentId: "wu4c6y-5"
+})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;i{position:absolute;top:0;right:0;width:50px;height:50px;font-size:1.5rem;line-height:50px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], props => require("tinycolor2")({
   r: `0`,
   g: `0`,
   b: `0`,
   a: `0.2`
-}).toHex8String()};
-border: 0;
-color: ${props => [props["sidebar-bg"], (props.theme || {})["sidebar-bg"]].filter(v => v !== void 0)[0]};
-overflow: hidden;
-transition: all 0.1s ease-in-out;
-i {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
-  line-height: 50px;
-  transition: transform 0.3s ease-in-out;
-  transform: ${props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `rotate(-180deg)` : undefined};
-}
-&:focus {
-  outline: 0;
-}
-&:hover {
-  background-color: ${props => require("tinycolor2")({
+}).toHex8String(), props => [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-800"], (props.theme || {})["gray-800"], `#3c4450`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `rotate(-180deg)` : undefined, props => require("tinycolor2")({
   r: `0`,
   g: `0`,
   b: `0`,
   a: `0.3`
-}).toHex8String()};
-  color: ${props => [props["gray-500"], (props.theme || {})["gray-500"]].filter(v => v !== void 0)[0]};
-}`;
+}).toHex8String(), props => [props["gray-500"], (props.theme || {})["gray-500"], `#a0a9b8`].filter(v => v !== void 0)[0]);
 
 class Menu extends Component {
   constructor(...args) {

@@ -39,114 +39,55 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["position: relative;\nflex: 0 0 50px;\ncursor: pointer;\nbackground-color: ", ";\nborder: 0;\ncolor: ", ";\noverflow: hidden;\ntransition: all 0.1s ease-in-out;\ni {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 50px;\n  height: 50px;\n  font-size: 1.5rem;\n  line-height: 50px;\n  transition: transform 0.3s ease-in-out;\n  transform: ", ";\n}\n&:focus {\n  outline: 0;\n}\n&:hover {\n  background-color: ", ";\n  color: ", ";\n}"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["padding: 0.75rem 1rem;\nfont-size: 80%;\nfont-weight: 700;\ncolor: ", ";\ntext-transform: uppercase;\noverflow: hidden;"]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["min-height: 0;\nmax-height: 0;"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["display: flex;\nwidth: ", ";\nflex-direction: column;\npadding: 0;\nlist-style: none;\nmargin: 0;\ntransition: max-height 0.3s ease-in-out, width 0.25s;\noverflow-y: ", ";"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["height: 100%;\nflex: 1 1;\noverflow-y: ", ";"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["transform: translateX(", ");"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["position: fixed;\ndisplay: flex;\nflex-direction: column;\npadding: ", ";\ncolor: ", ";\nbackground: ", ";\nheight: calc(100vh - ", ");\ntransition: transform 0.25s;\n", ""]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Sidebar = _styledComponents.default.div(_templateObject(), function (props) {
-  return [props["sidebar-padding"], (props.theme || {})["sidebar-padding"]].filter(function (v) {
+var Sidebar = _styledComponents.default.div.withConfig({
+  displayName: "Sidebar",
+  componentId: "wu4c6y-0"
+})(["position:fixed;display:flex;flex-direction:column;padding:", ";color:", ";background:", ";height:calc(100vh - ", ");transition:transform 0.25s;", ""], function (props) {
+  return [props["sidebar-padding"], (props.theme || {})["sidebar-padding"], "0"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["sidebar-color"], (props.theme || {})["sidebar-color"]].filter(function (v) {
+  return [props["sidebar-color"], (props.theme || {})["sidebar-color"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["sidebar-bg"], (props.theme || {})["sidebar-bg"]].filter(function (v) {
+  return [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-800"], (props.theme || {})["gray-800"], "#3c4450"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["navbar-height"], (props.theme || {})["navbar-height"]].filter(function (v) {
+  return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return props.sidebarCollapse && (0, _styledComponents.css)(_templateObject2(), function (props) {
+  return props.sidebarCollapse && (0, _styledComponents.css)(["transform:translateX(", ");"], function (props) {
     return "-" + [props["sidebar-width"], (props.theme || {})["sidebar-width"]].filter(function (v) {
       return v !== void 0;
     })[0];
   });
 });
 
-var SidebarContainer = _styledComponents.default.div(_templateObject3(), function (props) {
+var SidebarContainer = _styledComponents.default.div.withConfig({
+  displayName: "Sidebar__SidebarContainer",
+  componentId: "wu4c6y-1"
+})(["height:100%;flex:1 1;overflow-y:", ";"], function (props) {
   return !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
     return v !== void 0;
   })[0] ? "visible" : "auto";
 });
 
-var Nav = _styledComponents.default.ul(_templateObject4(), function (props) {
+var Nav = _styledComponents.default.ul.withConfig({
+  displayName: "Sidebar__Nav",
+  componentId: "wu4c6y-2"
+})(["display:flex;width:", ";flex-direction:column;padding:0;list-style:none;margin:0;transition:max-height 0.3s ease-in-out,width 0.25s;overflow-y:", ";"], function (props) {
   return !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
     return v !== void 0;
-  })[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"]].filter(function (v) {
+  })[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
     return v !== void 0;
-  })[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"]].filter(function (v) {
+  })[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
@@ -155,15 +96,26 @@ var Nav = _styledComponents.default.ul(_templateObject4(), function (props) {
   })[0] ? "visible" : "hidden";
 });
 
-var SubNav = (0, _styledComponents.default)(Nav)(_templateObject5());
+var SubNav = (0, _styledComponents.default)(Nav).withConfig({
+  displayName: "Sidebar__SubNav",
+  componentId: "wu4c6y-3"
+})(["min-height:0;max-height:0;"]);
 
-var NavTitle = _styledComponents.default.li(_templateObject6(), function (props) {
-  return [props["sidebar-nav-title-color"], (props.theme || {})["sidebar-nav-title-color"]].filter(function (v) {
+var NavTitle = _styledComponents.default.li.withConfig({
+  displayName: "Sidebar__NavTitle",
+  componentId: "wu4c6y-4"
+})(["padding:0.75rem 1rem;font-size:80%;font-weight:700;color:", ";text-transform:uppercase;overflow:hidden;"], function (props) {
+  return [props["sidebar-nav-title-color"], (props.theme || {})["sidebar-nav-title-color"], [props["gray-200"], (props.theme || {})["gray-200"], "#e9ebef"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 });
 
-var SidebarMinimizer = _styledComponents.default.button(_templateObject7(), function (props) {
+var SidebarMinimizer = _styledComponents.default.button.withConfig({
+  displayName: "Sidebar__SidebarMinimizer",
+  componentId: "wu4c6y-5"
+})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;i{position:absolute;top:0;right:0;width:50px;height:50px;font-size:1.5rem;line-height:50px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], function (props) {
   return require("tinycolor2")({
     r: "0",
     g: "0",
@@ -171,7 +123,9 @@ var SidebarMinimizer = _styledComponents.default.button(_templateObject7(), func
     a: "0.2"
   }).toHex8String();
 }, function (props) {
-  return [props["sidebar-bg"], (props.theme || {})["sidebar-bg"]].filter(function (v) {
+  return [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-800"], (props.theme || {})["gray-800"], "#3c4450"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
@@ -186,7 +140,7 @@ var SidebarMinimizer = _styledComponents.default.button(_templateObject7(), func
     a: "0.3"
   }).toHex8String();
 }, function (props) {
-  return [props["gray-500"], (props.theme || {})["gray-500"]].filter(function (v) {
+  return [props["gray-500"], (props.theme || {})["gray-500"], "#a0a9b8"].filter(function (v) {
     return v !== void 0;
   })[0];
 });

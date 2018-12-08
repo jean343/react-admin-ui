@@ -45,32 +45,27 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["display: flex;\nflex-direction: column;\nmin-height: 100vh;\na {\n  color: ", ";\n  text-decoration: ", ";\n}\na :hover {\n  color: ", ";\n  text-decoration: ", ";\n}"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var App = _styledComponents.default.div(_templateObject(), function (props) {
-  return [props["link-color"], (props.theme || {})["link-color"]].filter(function (v) {
+var App = _styledComponents.default.div.withConfig({
+  displayName: "Layout__App",
+  componentId: "sc-107aecb-0"
+})(["display:flex;flex-direction:column;min-height:100vh;a{color:", ";text-decoration:", ";}a:hover{color:", ";text-decoration:", ";}"], function (props) {
+  return [props["link-color"], (props.theme || {})["link-color"], [props["blue"], (props.theme || {})["blue"], "#20a8d8"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["link-decoration"], (props.theme || {})["link-decoration"]].filter(function (v) {
+  return [props["link-decoration"], (props.theme || {})["link-decoration"], "none"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return require('tinycolor2')([props["link-color"], (props.theme || {})["link-color"]].filter(function (v) {
+  return require('tinycolor2')([props["link-color"], (props.theme || {})["link-color"], [props["blue"], (props.theme || {})["blue"], "#20a8d8"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0]).darken(parseFloat("15%")).toHex8String();
 }, function (props) {
-  return [props["link-hover-decoration"], (props.theme || {})["link-hover-decoration"]].filter(function (v) {
+  return [props["link-hover-decoration"], (props.theme || {})["link-hover-decoration"], "underline"].filter(function (v) {
     return v !== void 0;
   })[0];
 });

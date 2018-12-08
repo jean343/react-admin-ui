@@ -33,71 +33,49 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["height: 100%;\nflex: 1 1;"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["transform: translateX(", ");"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["width: ", ";\nright: 0;\nposition: fixed;\ndisplay: flex;\nflex-direction: column;\npadding: ", ";\ncolor: ", ";\nbackground: ", ";\nheight: calc(100vh - ", ");\nborder-left: 1px solid ", ";\ntransition: transform 0.25s;\n", ""]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Sidebar = _styledComponents.default.div(_templateObject(), function (props) {
-  return [props["aside-menu-width"], (props.theme || {})["aside-menu-width"]].filter(function (v) {
+var Sidebar = _styledComponents.default.div.withConfig({
+  displayName: "RightSidebar__Sidebar",
+  componentId: "sc-2fsqfn-0"
+})(["width:", ";right:0;position:fixed;display:flex;flex-direction:column;padding:", ";color:", ";background:", ";height:calc(100vh - ", ");border-left:1px solid ", ";transition:transform 0.25s;", ""], function (props) {
+  return [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["sidebar-padding"], (props.theme || {})["sidebar-padding"]].filter(function (v) {
+  return [props["sidebar-padding"], (props.theme || {})["sidebar-padding"], "0"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["gray-800"], (props.theme || {})["gray-800"]].filter(function (v) {
+  return [props["gray-800"], (props.theme || {})["gray-800"], "#3c4450"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"]].filter(function (v) {
+  return [props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["navbar-height"], (props.theme || {})["navbar-height"]].filter(function (v) {
+  return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["border-color"], (props.theme || {})["border-color"]].filter(function (v) {
+  return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return props.rightSidebarCollapse && (0, _styledComponents.css)(_templateObject2(), function (props) {
-    return [props["aside-menu-width"], (props.theme || {})["aside-menu-width"]].filter(function (v) {
+  return props.rightSidebarCollapse && (0, _styledComponents.css)(["transform:translateX(", ");"], function (props) {
+    return [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
       return v !== void 0;
     })[0];
   });
 });
 
-var SidebarContainer = _styledComponents.default.div(_templateObject3());
+var SidebarContainer = _styledComponents.default.div.withConfig({
+  displayName: "RightSidebar__SidebarContainer",
+  componentId: "sc-2fsqfn-1"
+})(["height:100%;flex:1 1;"]);
 
 var _default =
 /*#__PURE__*/

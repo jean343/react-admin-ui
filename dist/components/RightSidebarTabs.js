@@ -31,94 +31,87 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["position: relative;\noverflow-x: hidden;\noverflow-y: auto;\nborder: 0;\nheight: calc(100vh - ", " - ", ");\npadding: 1rem;\n&::-webkit-scrollbar {\n  width: 10px;\n  margin-left: -10px;\n  appearance: none;\n}\n&::-webkit-scrollbar-track {\n  background-color: ", ";\n  border-right: 1px solid ", ";\n  border-left: 1px solid ", ";\n}\n&::-webkit-scrollbar-thumb {\n  height: 50px;\n  background-color: ", ";\n  background-clip: content-box;\n  border-color: transparent;\n  border-style: solid;\n  border-width: 1px 2px;\n}"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["margin-bottom: -1px;\nlist-style: none;\n&& a {\n  cursor: pointer;\n  padding: 12px 1rem;\n  height: ", ";\n  color: ", " !important;\n  display: block;\n  background-color: #fff;\n  border-right: 1px solid ", ";\n  border-bottom: ", ";\n  transition: background-color 0.1s ease-in-out;\n}\n&& a :hover {\n  background-color: ", ";\n}"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["border-bottom: 1px solid ", ";\ndisplay: flex;\nflex-wrap: wrap;\npadding-left: 0;\nmargin-bottom: 0;\nlist-style: none;\nmargin-top: 0;"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var NavTabs = _styledComponents.default.ul(_templateObject(), function (props) {
-  return [props["border-color"], (props.theme || {})["border-color"]].filter(function (v) {
+var NavTabs = _styledComponents.default.ul.withConfig({
+  displayName: "RightSidebarTabs__NavTabs",
+  componentId: "lqc9c0-0"
+})(["border-bottom:1px solid ", ";display:flex;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;"], function (props) {
+  return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 });
 
-var NavItem = _styledComponents.default.li(_templateObject2(), function (props) {
-  return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"]].filter(function (v) {
+var NavItem = _styledComponents.default.li.withConfig({
+  displayName: "RightSidebarTabs__NavItem",
+  componentId: "lqc9c0-1"
+})(["margin-bottom:-1px;list-style:none;&& a{cursor:pointer;padding:12px 1rem;height:", ";color:", " !important;display:block;background-color:#fff;border-right:1px solid ", ";border-bottom:", ";transition:background-color 0.1s ease-in-out;}&& a:hover{background-color:", ";}"], function (props) {
+  return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
   return !![props["active"], (props.theme || {})["active"]].filter(function (v) {
     return v !== void 0;
-  })[0] ? [props["primary"], (props.theme || {})["primary"]].filter(function (v) {
+  })[0] ? [props["primary"], (props.theme || {})["primary"], [props["blue"], (props.theme || {})["blue"], "#20a8d8"].filter(function (v) {
     return v !== void 0;
-  })[0] : [props["body-color"], (props.theme || {})["body-color"]].filter(function (v) {
+  })[0]].filter(function (v) {
+    return v !== void 0;
+  })[0] : [props["body-color"], (props.theme || {})["body-color"], [props["gray-900"], (props.theme || {})["gray-900"], "#313742"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["gray-300"], (props.theme || {})["gray-300"]].filter(function (v) {
+  return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
   return !![props["active"], (props.theme || {})["active"]].filter(function (v) {
     return v !== void 0;
-  })[0] ? "1px solid #fff" : "1px solid ".concat([props["border-color"], (props.theme || {})["border-color"]].filter(function (v) {
+  })[0] ? "1px solid #fff" : "1px solid ".concat([props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0]);
 }, function (props) {
-  return [props["gray-100"], (props.theme || {})["gray-100"]].filter(function (v) {
+  return [props["gray-100"], (props.theme || {})["gray-100"], "#f8f8fa"].filter(function (v) {
     return v !== void 0;
   })[0];
 });
 
-var TabContent = _styledComponents.default.div(_templateObject3(), function (props) {
-  return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"]].filter(function (v) {
+var TabContent = _styledComponents.default.div.withConfig({
+  displayName: "RightSidebarTabs__TabContent",
+  componentId: "lqc9c0-2"
+})(["position:relative;overflow-x:hidden;overflow-y:auto;border:0;height:calc(100vh - ", " - ", ");padding:1rem;&::-webkit-scrollbar{width:10px;margin-left:-10px;appearance:none;}&::-webkit-scrollbar-track{background-color:", ";border-right:1px solid ", ";border-left:1px solid ", ";}&::-webkit-scrollbar-thumb{height:50px;background-color:", ";background-clip:content-box;border-color:transparent;border-style:solid;border-width:1px 2px;}"], function (props) {
+  return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["navbar-height"], (props.theme || {})["navbar-height"]].filter(function (v) {
+  return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"]].filter(function (v) {
+  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0]).lighten(parseFloat("5%")).toHex8String();
 }, function (props) {
-  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"]].filter(function (v) {
+  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0]).darken(parseFloat("5%")).toHex8String();
 }, function (props) {
-  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"]].filter(function (v) {
+  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0]).darken(parseFloat("5%")).toHex8String();
 }, function (props) {
-  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"]].filter(function (v) {
+  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0]).darken(parseFloat("10%")).toHex8String();
 });

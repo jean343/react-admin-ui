@@ -31,24 +31,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["height: ", ";\nborder-bottom: 1px solid ", ";\nbackground-color: white;"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Toolbar = _styledComponents.default.div(_templateObject(), function (props) {
-  return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"]].filter(function (v) {
+var Toolbar = _styledComponents.default.div.withConfig({
+  displayName: "Toolbar",
+  componentId: "sc-12ykycd-0"
+})(["height:", ";border-bottom:1px solid ", ";background-color:white;"], function (props) {
+  return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["gray-300"], (props.theme || {})["gray-300"]].filter(function (v) {
+  return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
     return v !== void 0;
   })[0];
 });

@@ -9,12 +9,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
-var _fs = _interopRequireDefault(require("fs"));
-
-var _lessVarsToJs = _interopRequireDefault(require("less-vars-to-js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -35,13 +29,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var constants = (0, _lessVarsToJs.default)(_fs.default.readFileSync(__dirname + "/../styles/variables.import.less", "utf8"), {
-  stripPrefix: true,
-  resolveVariables: true
-});
-
 var Theme =
 /*#__PURE__*/
 function (_Component) {
@@ -56,9 +43,12 @@ function (_Component) {
   _createClass(Theme, [{
     key: "render",
     value: function render() {
-      var children = this.props.children;
+      var _this$props = this.props,
+          children = _this$props.children,
+          _this$props$theme = _this$props.theme,
+          theme = _this$props$theme === void 0 ? {} : _this$props$theme;
       return _react.default.createElement(_styledComponents.ThemeProvider, {
-        theme: constants
+        theme: theme
       }, children);
     }
   }]);
@@ -67,7 +57,3 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Theme;
-
-_defineProperty(Theme, "defaultProps", {
-  theme: 'skin-blue'
-});

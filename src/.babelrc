@@ -4,6 +4,13 @@
   ],
   "plugins": [
     "@babel/plugin-proposal-class-properties",
-    "styless"
+    [
+      "styless",
+      {
+        "cwd": "babelrc",
+        "import": "styles/variables.import.less"
+      }
+    ],
+    "styled-components"
   ]
 }

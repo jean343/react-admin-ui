@@ -8,17 +8,10 @@ import Sidebar from './Sidebar';
 import RightSidebar from './RightSidebar';
 import Toolbar from './Toolbar';
 import Matchmedia from './Matchmedia';
-const App = styled.div`display: flex;
-flex-direction: column;
-min-height: 100vh;
-a {
-  color: ${props => [props["link-color"], (props.theme || {})["link-color"]].filter(v => v !== void 0)[0]};
-  text-decoration: ${props => [props["link-decoration"], (props.theme || {})["link-decoration"]].filter(v => v !== void 0)[0]};
-}
-a :hover {
-  color: ${props => require('tinycolor2')([props["link-color"], (props.theme || {})["link-color"]].filter(v => v !== void 0)[0]).darken(parseFloat(`15%`)).toHex8String()};
-  text-decoration: ${props => [props["link-hover-decoration"], (props.theme || {})["link-hover-decoration"]].filter(v => v !== void 0)[0]};
-}`;
+const App = styled.div.withConfig({
+  displayName: "Layout__App",
+  componentId: "sc-107aecb-0"
+})(["display:flex;flex-direction:column;min-height:100vh;a{color:", ";text-decoration:", ";}a:hover{color:", ";text-decoration:", ";}"], props => [props["link-color"], (props.theme || {})["link-color"], [props["blue"], (props.theme || {})["blue"], `#20a8d8`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["link-decoration"], (props.theme || {})["link-decoration"], `none`].filter(v => v !== void 0)[0], props => require('tinycolor2')([props["link-color"], (props.theme || {})["link-color"], [props["blue"], (props.theme || {})["blue"], `#20a8d8`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0]).darken(parseFloat(`15%`)).toHex8String(), props => [props["link-hover-decoration"], (props.theme || {})["link-hover-decoration"], `underline`].filter(v => v !== void 0)[0]);
 export default class Layout extends Component {
   constructor(...args) {
     super(...args);
