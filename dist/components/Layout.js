@@ -1,0 +1,196 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _Header = _interopRequireDefault(require("./Header"));
+
+var _Body = require("./Body");
+
+var _Sidebar = _interopRequireDefault(require("./Sidebar"));
+
+var _RightSidebar = _interopRequireDefault(require("./RightSidebar"));
+
+var _Toolbar = _interopRequireDefault(require("./Toolbar"));
+
+var _Matchmedia = _interopRequireDefault(require("./Matchmedia"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["display: flex;\nflex-direction: column;\nmin-height: 100vh;\na {\n  color: ", ";\n  text-decoration: ", ";\n}\na :hover {\n  color: ", ";\n  text-decoration: ", ";\n}"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var App = _styledComponents.default.div(_templateObject(), function (props) {
+  return [props["link-color"], (props.theme || {})["link-color"]].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["link-decoration"], (props.theme || {})["link-decoration"]].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return require('tinycolor2')([props["link-color"], (props.theme || {})["link-color"]].filter(function (v) {
+    return v !== void 0;
+  })[0]).darken(parseFloat("15%")).toHex8String();
+}, function (props) {
+  return [props["link-hover-decoration"], (props.theme || {})["link-hover-decoration"]].filter(function (v) {
+    return v !== void 0;
+  })[0];
+});
+
+var Layout =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Layout, _Component);
+
+  function Layout() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Layout);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Layout)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      small: false,
+      sidebarOpened: false,
+      sidebarCollapse: _this.props.initialCollapse,
+      sidebarMini: _this.props.initialMini,
+      rightSidebarCollapse: _this.props.initialRightSidebarCollapse
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onNavbarToggle", function () {
+      var _this$state = _this.state,
+          small = _this$state.small,
+          sidebarOpened = _this$state.sidebarOpened,
+          sidebarCollapse = _this$state.sidebarCollapse;
+
+      if (small) {
+        _this.setState({
+          sidebarOpened: !sidebarOpened
+        });
+      } else {
+        _this.setState({
+          sidebarCollapse: !sidebarCollapse
+        });
+      }
+    });
+
+    return _this;
+  }
+
+  _createClass(Layout, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _this$props = this.props,
+          sideMenu = _this$props.sideMenu,
+          topMenu = _this$props.topMenu,
+          selected = _this$props.selected,
+          sideBarTabs = _this$props.sideBarTabs,
+          children = _this$props.children,
+          logo = _this$props.logo;
+      var _this$state2 = this.state,
+          small = _this$state2.small,
+          sidebarOpened = _this$state2.sidebarOpened,
+          sidebarCollapse = _this$state2.sidebarCollapse,
+          rightSidebarCollapse = _this$state2.rightSidebarCollapse,
+          sidebarMini = _this$state2.sidebarMini;
+      return _react.default.createElement(App, null, _react.default.createElement(_Matchmedia.default, {
+        query: "screen and (max-width: 991.98px)",
+        onMatch: function onMatch(matches) {
+          return _this2.setState({
+            small: matches,
+            sidebarOpened: false
+          });
+        }
+      }), _react.default.createElement(_Header.default, {
+        logo: logo,
+        small: small,
+        topMenu: topMenu,
+        selected: selected,
+        onNavbarToggle: this.onNavbarToggle,
+        onRightNavbarToggle: function onRightNavbarToggle() {
+          return _this2.setState({
+            rightSidebarCollapse: !rightSidebarCollapse
+          });
+        }
+      }), _react.default.createElement(_Body.Body, null, _react.default.createElement(_Sidebar.default, {
+        sideMenu: sideMenu,
+        selected: selected,
+        sidebarCollapse: !sidebarOpened && (small || sidebarCollapse),
+        sidebarMini: sidebarMini,
+        onSidebarMiniChange: function onSidebarMiniChange(sidebarMini) {
+          return _this2.setState({
+            sidebarMini: sidebarMini
+          });
+        },
+        onClickOutside: function onClickOutside() {
+          return _this2.setState({
+            sidebarOpened: false
+          });
+        }
+      }), _react.default.createElement(_Body.Main, {
+        sidebarCollapse: small || sidebarCollapse,
+        sidebarMini: sidebarMini,
+        rightSidebarCollapse: small || rightSidebarCollapse
+      }, _react.default.createElement(_Toolbar.default, null), _react.default.createElement("div", null, children)), _react.default.createElement(_RightSidebar.default, {
+        rightSidebarCollapse: small || rightSidebarCollapse,
+        sideBarTabs: sideBarTabs
+      })));
+    }
+  }]);
+
+  return Layout;
+}(_react.Component);
+
+exports.default = Layout;
+
+_defineProperty(Layout, "defaultProps", {
+  initialCollapse: false,
+  initialMini: false,
+  initialRightSidebarCollapse: false
+});

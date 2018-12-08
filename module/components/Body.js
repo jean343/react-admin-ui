@@ -1,0 +1,15 @@
+import React from 'react';
+import styled from 'styled-components';
+export const Body = styled.div`display: flex;
+flex-direction: row;
+flex-grow: 1;
+overflow-x: hidden;
+margin-top: ${props => [props["navbar-height"], (props.theme || {})["navbar-height"]].filter(v => v !== void 0)[0]};
+background-color: ${props => [props["body-bg"], (props.theme || {})["body-bg"]].filter(v => v !== void 0)[0]};`;
+export const Main = styled.main`flex: 1 1;
+min-width: 0;
+transition: margin-left 0.25s, margin-right 0.25s;
+margin-left: ${props => [props["sidebar-width"], (props.theme || {})["sidebar-width"]].filter(v => v !== void 0)[0]};
+margin-left: ${props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"]].filter(v => v !== void 0)[0] : undefined};
+margin-left: ${props => !![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(v => v !== void 0)[0] ? `0` : undefined};
+margin-right: ${props => !![props["rightSidebarCollapse"], (props.theme || {})["rightSidebarCollapse"]].filter(v => v !== void 0)[0] ? `0` : [props["aside-menu-width"], (props.theme || {})["aside-menu-width"]].filter(v => v !== void 0)[0]};`;
