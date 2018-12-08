@@ -14,9 +14,7 @@ const Sidebar = styled.div`
 	height: calc(100vh - @navbar-height);
 	
 	transition: transform .25s;
-	${props => props.sidebarCollapse && css`
-		transform: translateX(-@sidebar-width);
-	`};
+	transform: if(@sidebarCollapse, translateX(-1 * @sidebar-width));
 `;
 const SidebarContainer = styled.div`
 	height: 100%;

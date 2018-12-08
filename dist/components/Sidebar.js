@@ -42,7 +42,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var Sidebar = _styledComponents.default.div.withConfig({
   displayName: "Sidebar",
   componentId: "wu4c6y-0"
-})(["position:fixed;display:flex;flex-direction:column;padding:", ";color:", ";background:", ";height:calc(100vh - ", ");transition:transform 0.25s;", ""], function (props) {
+})(["position:fixed;display:flex;flex-direction:column;padding:", ";color:", ";background:", ";height:calc(100vh - ", ");transition:transform 0.25s;transform:", ";"], function (props) {
   return [props["sidebar-padding"], (props.theme || {})["sidebar-padding"], "0"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -63,11 +63,13 @@ var Sidebar = _styledComponents.default.div.withConfig({
     return v !== void 0;
   })[0];
 }, function (props) {
-  return props.sidebarCollapse && (0, _styledComponents.css)(["transform:translateX(", ");"], function (props) {
-    return "-" + [props["sidebar-width"], (props.theme || {})["sidebar-width"]].filter(function (v) {
-      return v !== void 0;
-    })[0];
-  });
+  return !![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "translateX(".concat(parseFloat(-1) * parseFloat([props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + (('' + -1).replace(/[\d.-]*/, "") || ('' + [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0]).replace(/[\d.-]*/, "")), ")") : undefined;
 });
 
 var SidebarContainer = _styledComponents.default.div.withConfig({
