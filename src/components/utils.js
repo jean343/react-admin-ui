@@ -1,8 +1,9 @@
+import parser from "url-parse";
+
 const CACHE = {};
 const normalize = link => {
   if (!CACHE[link]) {
-    const l = document.createElement("a");
-    l.href = link;
+    const l = parser(link);
     CACHE[link] = l.pathname;
   }
   return CACHE[link];

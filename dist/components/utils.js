@@ -4,12 +4,16 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.isSelected = void 0;
+
+var _urlParse = _interopRequireDefault(require("url-parse"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var CACHE = {};
 
 var normalize = function normalize(link) {
   if (!CACHE[link]) {
-    var l = document.createElement("a");
-    l.href = link;
+    var l = (0, _urlParse.default)(link);
     CACHE[link] = l.pathname;
   }
 
