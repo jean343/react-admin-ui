@@ -59,7 +59,7 @@ var Header = _styledComponents.default.header.withConfig({
 var NavbarToggler = _styledComponents.default.button.withConfig({
   displayName: "Header__NavbarToggler",
   componentId: "sc-1ahrfh-1"
-})(["cursor:pointer;padding:0;width:50px;height:", ";background-color:transparent;border:", " solid transparent;border-radius:4px;color:", ";font-size:1.2em;:hover{color:", ";}"], function (props) {
+})(["cursor:pointer;padding:0;width:50px;height:", ";background-color:transparent;border:", " solid transparent;border-radius:4px;color:", ";font-size:0;:hover{color:", ";}"], function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];

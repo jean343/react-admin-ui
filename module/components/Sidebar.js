@@ -91,7 +91,7 @@ class Menu extends Component {
         }, React.createElement("i", {
           className: icon
         }), React.createElement("span", null, title), !sidebarMini && children && React.createElement(CaretLeft, {
-          className: "caret",
+          className: "caret-left-icon",
           width: 6
         })), children && React.createElement(SubNav, {
           className: "sub-nav"

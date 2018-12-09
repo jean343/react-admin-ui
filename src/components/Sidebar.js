@@ -103,7 +103,7 @@ class Menu extends Component {
           <a href={href} onClick={() => this.setState({indexOpened: open ? undefined : i})}>
             <i className={icon}></i>
             <span>{title}</span>
-            {!sidebarMini && children && <CaretLeft className="caret" width={6}/>}
+            {!sidebarMini && children && <CaretLeft className="caret-left-icon" width={6}/>}
           </a>
           {children && <SubNav className="sub-nav">
             <Menu selected={selected}>{children}</Menu>

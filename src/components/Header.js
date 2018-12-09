@@ -30,7 +30,7 @@ const NavbarToggler = styled.button`
 	border: @border-width solid transparent; // remove default button style
 	border-radius: 4px;
 	color: @gray-300;
-	font-size: 1.2em;
+	font-size: 0;
 	:hover {
 		color: @gray-900;
 	}

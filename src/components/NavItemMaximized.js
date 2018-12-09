@@ -14,7 +14,7 @@ export const NavItemMaximized = styled.li`
 		color: @sidebar-nav-link-active-color;
 		background: lighten(@sidebar-bg, 5%);
 	`}
-	i:not(.caret) {
+	i:not(.caret-left-icon) {
 		transition: color .1s ease-in-out;
 		margin-right: 0.5rem;
 		color: if(@active, @primary, @gray-500);
@@ -41,7 +41,7 @@ export const NavItemMaximized = styled.li`
 	&:first-child {
 		border-top: none;
 	}
-	.caret {
+	.caret-left-icon {
 		transition: transform .3s ease-in-out;
 		transform: if(@open, rotate(-90deg));
 	}

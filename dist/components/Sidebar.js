@@ -226,7 +226,7 @@ function (_Component) {
           }, _react.default.createElement("i", {
             className: icon
           }), _react.default.createElement("span", null, title), !sidebarMini && children && _react.default.createElement(_CaretLeft.default, {
-            className: "caret",
+            className: "caret-left-icon",
             width: 6
           })), children && _react.default.createElement(SubNav, {
             className: "sub-nav"
