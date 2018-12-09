@@ -14,7 +14,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var NavItemMaximized = _styledComponents.default.li.withConfig({
   displayName: "NavItemMaximized",
   componentId: "n0lzzl-0"
-})(["position:relative;margin:0;transition:background 0.3s ease-in-out,border 0.1s ease-in-out;cursor:pointer;border:1px solid transparent;overflow:hidden;flex-shrink:0;", " i:not(.caret-left-icon){transition:color 0.1s ease-in-out;margin-right:0.5rem;color:", ";}a{display:flex;align-items:center;padding:0 1rem;height:38px;text-decoration:none !important;color:", " !important;transition:background 0.1s ease-in-out;}a span{flex:1;overflow:hidden;}a:hover{background:", ";}a:hover i{color:", ";}&:first-child{border-top:none;}.caret-left-icon{transition:transform 0.3s ease-in-out;transform:", ";}", " border-left:3px solid transparent;border-left-color:", ";border-left:", ";border-right:none;"], function (props) {
+})(["position:relative;margin:0;transition:background 0.3s ease-in-out,border 0.1s ease-in-out;cursor:pointer;border:1px solid transparent;overflow:hidden;flex-shrink:0;", " i:not(.caret-left-icon){transition:color 0.1s ease-in-out;margin-right:0.5rem;color:", ";}a{display:flex;align-items:center;padding:0 ", ";height:38px;text-decoration:none !important;color:", " !important;transition:background 0.1s ease-in-out;}a span{flex:1;overflow:hidden;}a:hover{background:", ";}a:hover i{color:", ";}&:first-child{border-top:none;}.caret-left-icon{transition:transform 0.3s ease-in-out;transform:", ";}", " border-left:3px solid transparent;border-left-color:", ";border-left:", ";border-right:none;"], function (props) {
   return props.active && (0, _styledComponents.css)(["color:", ";background:", ";"], function (props) {
     return [props["sidebar-nav-link-active-color"], (props.theme || {})["sidebar-nav-link-active-color"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
       return v !== void 0;
@@ -38,6 +38,10 @@ var NavItemMaximized = _styledComponents.default.li.withConfig({
   })[0] : [props["gray-500"], (props.theme || {})["gray-500"], "#a0a9b8"].filter(function (v) {
     return v !== void 0;
   })[0];
+}, function (props) {
+  return !![props["hasChild"], (props.theme || {})["hasChild"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "1rem" : "calc(1rem - 3px)";
 }, function (props) {
   return [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
     return v !== void 0;

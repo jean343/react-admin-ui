@@ -23,7 +23,7 @@ const Nav = styled.ul.withConfig({
 const SubNav = styled(Nav).withConfig({
   displayName: "Sidebar__SubNav",
   componentId: "wu4c6y-3"
-})(["min-height:0;max-height:0;"]);
+})(["min-height:0;max-height:0;a{padding:0 calc(1rem - 3px);}"]);
 const NavTitle = styled.li.withConfig({
   displayName: "Sidebar__NavTitle",
   componentId: "wu4c6y-4"

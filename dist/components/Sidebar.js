@@ -107,7 +107,7 @@ var Nav = _styledComponents.default.ul.withConfig({
 var SubNav = (0, _styledComponents.default)(Nav).withConfig({
   displayName: "Sidebar__SubNav",
   componentId: "wu4c6y-3"
-})(["min-height:0;max-height:0;"]);
+})(["min-height:0;max-height:0;a{padding:0 calc(1rem - 3px);}"]);
 
 var NavTitle = _styledComponents.default.li.withConfig({
   displayName: "Sidebar__NavTitle",

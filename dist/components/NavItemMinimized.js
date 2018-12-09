@@ -14,7 +14,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var NavItemMinimized = _styledComponents.default.li.withConfig({
   displayName: "NavItemMinimized",
   componentId: "ngdma4-0"
-})(["position:relative;margin:0;transition:background 0.3s ease-in-out;cursor:pointer;overflow:hidden;width:", ";> .sub-nav{position:absolute;left:", ";display:inline;background:", ";transition:none;}> .sub-nav li{border:none;}> .sub-nav a{height:40px;}:hover{overflow:visible;width:", ";}:hover > .sub-nav{max-height:", ";}:hover > a{background:", ";}:hover > a i{color:", ";}", " i{transition:color 0.1s ease-in-out;margin-right:2rem;font-size:1.3em;color:", ";}a{display:flex;align-items:center;padding:0 1rem;height:48px;text-decoration:none !important;color:", " !important;}"], function (props) {
+})(["position:relative;margin:0;transition:background 0.3s ease-in-out;cursor:pointer;overflow:hidden;width:", ";> .sub-nav{position:absolute;left:", ";display:inline;background:", ";transition:none;}> .sub-nav li{border:none;}> .sub-nav a{height:40px;}:hover{overflow:visible;width:", ";}:hover > .sub-nav{max-height:", ";}:hover > a{background:", ";}:hover > a i{color:", ";}", " i{transition:color 0.1s ease-in-out;margin-right:1rem;font-size:1.3em;color:", ";width:", ";flex-shrink:0;text-align:center;}a{display:flex;align-items:center;height:48px;text-decoration:none !important;color:", " !important;}"], function (props) {
   return [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -74,6 +74,10 @@ var NavItemMinimized = _styledComponents.default.li.withConfig({
   })[0]].filter(function (v) {
     return v !== void 0;
   })[0] : [props["gray-500"], (props.theme || {})["gray-500"], "#a0a9b8"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {

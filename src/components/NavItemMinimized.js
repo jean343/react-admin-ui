@@ -41,14 +41,17 @@ export const NavItemMinimized = styled.li`
 	`}
 	i {
 		transition: color .1s ease-in-out;
-		margin-right: 2rem;
+		margin-right: 1rem;
 		font-size: 1.3em;
 		color: if(@active, @primary, @gray-500);
+		
+		width: @sidebar-minimized-width;
+		flex-shrink: 0;
+		text-align: center;
 	}
 	a {
 		display: flex;
 		align-items: center;
-		padding: 0 1rem;
 		height: 48px;
 		text-decoration: none !important;
 		color: @white !important;

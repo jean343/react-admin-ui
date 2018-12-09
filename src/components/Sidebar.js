@@ -38,6 +38,9 @@ const Nav = styled.ul`
 const SubNav = styled(Nav)`
 	min-height: 0;
 	max-height: 0;
+	a {
+		padding: 0 calc(1rem - 3px);
+	}
 `;
 
 const NavTitle = styled.li`

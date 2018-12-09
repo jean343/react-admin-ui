@@ -22,7 +22,7 @@ export const NavItemMaximized = styled.li`
 	a {
 		display: flex;
 		align-items: center;
-		padding: 0 1rem;
+		padding: 0 if(@hasChild, 1rem, calc(1rem - 3px));
 		height: 38px;
 		text-decoration: none !important;
 		color: @white !important;
