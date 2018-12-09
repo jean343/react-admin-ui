@@ -27,7 +27,9 @@ var getPath = function getPath(obj) {
 var isSelected = function isSelected(selected, href, to) {
   var left = normalize(getPath(selected));
   var right = normalize(getPath(href) || getPath(to));
-  return left === right;
+  var result = left === right;
+  console.log("isSelected", selected, to, result);
+  return result;
 };
 
 exports.isSelected = isSelected;

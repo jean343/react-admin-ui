@@ -21,5 +21,7 @@ const getPath = obj => {
 export const isSelected = (selected, href, to) => {
   const left = normalize(getPath(selected));
   const right = normalize(getPath(href) || getPath(to));
-  return left === right;
+  const result = left === right;
+  console.log("isSelected", selected, to, result);
+  return result;
 };
