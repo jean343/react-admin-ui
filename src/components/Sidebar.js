@@ -15,6 +15,7 @@ const Sidebar = styled.div`
 	color: @sidebar-color;
 	background: @sidebar-bg;
 	height: calc(100vh - @navbar-height);
+	z-index: 1;
 	
 	transition: transform .25s;
 	transform: if(@sidebarCollapse, translateX(-1 * @sidebar-width));

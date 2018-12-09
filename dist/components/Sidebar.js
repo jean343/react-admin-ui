@@ -48,7 +48,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var Sidebar = _styledComponents.default.div.withConfig({
   displayName: "Sidebar",
   componentId: "wu4c6y-0"
-})(["position:fixed;display:flex;flex-direction:column;padding:", ";color:", ";background:", ";height:calc(100vh - ", ");transition:transform 0.25s;transform:", ";"], function (props) {
+})(["position:fixed;display:flex;flex-direction:column;padding:", ";color:", ";background:", ";height:calc(100vh - ", ");z-index:1;transition:transform 0.25s;transform:", ";"], function (props) {
   return [props["sidebar-padding"], (props.theme || {})["sidebar-padding"], "0"].filter(function (v) {
     return v !== void 0;
   })[0];
