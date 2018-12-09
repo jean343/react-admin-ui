@@ -65,13 +65,14 @@ const NavItem = styled.li`
 	text-align: center;
 	padding-left: 1rem;
 	padding-right: 1rem;
-	transition: background-color .1s ease-in-out;
+	height: @navbar-height;
 	:hover {
 		background-color: @gray-200;
 	}
 	&& a {
 		display: flex;
 		height: @navbar-height - 1;
+	  transition: color .1s ease-in-out;
 		color: if(@active, @primary, @navbar-color) !important;
 		align-items: center;
 		:hover {
@@ -89,6 +90,10 @@ const NavItem = styled.li`
 			font-size: 1.1em;
 		}
 	}
+	
+	transition: border .1s ease-in-out;
+	border-bottom: 3px solid transparent;
+	border-bottom-color: if(@active, @primary);
 `;
 
 export default class extends Component {

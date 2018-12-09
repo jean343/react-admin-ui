@@ -218,7 +218,8 @@ function (_Component) {
             key: i,
             active: (0, _utils.isSelected)(selected, href, to),
             count: children && children.length,
-            open: children && open
+            open: children && open,
+            hasChild: !!children
           }, _react.default.createElement(Link, {
             href: href,
             to: to,

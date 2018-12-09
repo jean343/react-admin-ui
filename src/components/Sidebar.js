@@ -96,7 +96,8 @@ class Menu extends Component {
           key={i}
           active={isSelected(selected, href, to)}
           count={children && children.length}
-          open={children && open}>
+          open={children && open}
+          hasChild={!!children}>
 
           <Link href={href} to={to} onClick={() => this.setState({indexOpened: open ? undefined : i})}>
             <i className={icon}></i>

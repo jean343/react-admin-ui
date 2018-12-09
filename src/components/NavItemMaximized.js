@@ -4,7 +4,7 @@ import styled, {css} from 'styled-components';
 export const NavItemMaximized = styled.li`
 	position: relative;
 	margin: 0;
-	transition: background .3s ease-in-out, border .3s ease-in-out;
+	transition: background .3s ease-in-out, border .1s ease-in-out;
 	cursor: pointer;
 	border: 1px solid transparent;
 	overflow: hidden;
@@ -52,6 +52,8 @@ export const NavItemMaximized = styled.li`
 			max-height: @count * 40px;
 		}
 	`};
-	border-left: none;
+	border-left: 3px solid transparent;
+	border-left-color: if(@active, @primary);
+	border-left: if(@hasChild, none);
 	border-right: none;
 `;
