@@ -58,8 +58,9 @@ const SidebarMinimizer = styled.button`
 	overflow: hidden;
 	transition: all .1s ease-in-out;
 	text-align: right;
+	padding: 0;
 	svg {
-		width: 50px;
+		width: @sidebar-minimized-width;
 		height: 20px;
 		transition: transform .3s ease-in-out;
 		transform: if(@sidebarMini, rotate(-180deg));

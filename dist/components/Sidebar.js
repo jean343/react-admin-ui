@@ -121,7 +121,7 @@ var NavTitle = _styledComponents.default.li.withConfig({
 var SidebarMinimizer = _styledComponents.default.button.withConfig({
   displayName: "Sidebar__SidebarMinimizer",
   componentId: "wu4c6y-5"
-})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;text-align:right;svg{width:50px;height:20px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], function (props) {
+})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;text-align:right;padding:0;svg{width:", ";height:20px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], function (props) {
   return require("tinycolor2")({
     r: "0",
     g: "0",
@@ -132,6 +132,10 @@ var SidebarMinimizer = _styledComponents.default.button.withConfig({
   return [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-800"], (props.theme || {})["gray-800"], "#3c4450"].filter(function (v) {
     return v !== void 0;
   })[0]].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {

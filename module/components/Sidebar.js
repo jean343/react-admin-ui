@@ -30,12 +30,12 @@ const NavTitle = styled.li.withConfig({
 const SidebarMinimizer = styled.button.withConfig({
   displayName: "Sidebar__SidebarMinimizer",
   componentId: "wu4c6y-5"
-})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;text-align:right;svg{width:50px;height:20px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], props => require("tinycolor2")({
+})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;text-align:right;padding:0;svg{width:", ";height:20px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], props => require("tinycolor2")({
   r: `0`,
   g: `0`,
   b: `0`,
   a: `0.2`
-}).toHex8String(), props => [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-800"], (props.theme || {})["gray-800"], `#3c4450`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `rotate(-180deg)` : undefined, props => require("tinycolor2")({
+}).toHex8String(), props => [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-800"], (props.theme || {})["gray-800"], `#3c4450`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], `50px`].filter(v => v !== void 0)[0], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `rotate(-180deg)` : undefined, props => require("tinycolor2")({
   r: `0`,
   g: `0`,
   b: `0`,
