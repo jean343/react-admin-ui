@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Bars from './icons/Bars';
+import { isSelected } from './utils';
 const Header = styled.header.withConfig({
   displayName: "Header",
   componentId: "sc-1ahrfh-0"
@@ -29,7 +30,8 @@ export default class extends Component {
       onNavbarToggle,
       onRightNavbarToggle,
       selected,
-      logo
+      logo,
+      Link
     } = this.props;
     return React.createElement(Header, null, React.createElement(NavbarBrand, null, logo), React.createElement(NavbarToggler, {
       onClick: onNavbarToggle
@@ -38,13 +40,15 @@ export default class extends Component {
     })), React.createElement(NavbarNav, null, topMenu.filter(m => !!m).map(({
       title,
       href,
+      to,
       icon
     }, i) => {
       return React.createElement(NavItem, {
         key: i,
-        active: selected === href
-      }, React.createElement("a", {
-        href: href
+        active: isSelected(selected, href, to)
+      }, React.createElement(Link, {
+        href: href,
+        to: to
       }, React.createElement("i", {
         className: icon
       }), React.createElement("span", null, title)));

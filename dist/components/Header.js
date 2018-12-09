@@ -11,6 +11,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _Bars = _interopRequireDefault(require("./icons/Bars"));
 
+var _utils = require("./utils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -160,7 +162,8 @@ function (_Component) {
           onNavbarToggle = _this$props.onNavbarToggle,
           onRightNavbarToggle = _this$props.onRightNavbarToggle,
           selected = _this$props.selected,
-          logo = _this$props.logo;
+          logo = _this$props.logo,
+          Link = _this$props.Link;
       return _react.default.createElement(Header, null, _react.default.createElement(NavbarBrand, null, logo), _react.default.createElement(NavbarToggler, {
         onClick: onNavbarToggle
       }, _react.default.createElement(_Bars.default, {
@@ -170,12 +173,14 @@ function (_Component) {
       }).map(function (_ref, i) {
         var title = _ref.title,
             href = _ref.href,
+            to = _ref.to,
             icon = _ref.icon;
         return _react.default.createElement(NavItem, {
           key: i,
-          active: selected === href
-        }, _react.default.createElement("a", {
-          href: href
+          active: (0, _utils.isSelected)(selected, href, to)
+        }, _react.default.createElement(Link, {
+          href: href,
+          to: to
         }, _react.default.createElement("i", {
           className: icon
         }), _react.default.createElement("span", null, title)));

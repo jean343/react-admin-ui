@@ -19,6 +19,8 @@ var _CaretLeft = _interopRequireDefault(require("./icons/CaretLeft"));
 
 var _CaretSquareLeft = _interopRequireDefault(require("./icons/CaretSquareLeft"));
 
+var _utils = require("./utils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -181,11 +183,6 @@ function (_Component) {
   }
 
   _createClass(Menu, [{
-    key: "isActive",
-    value: function isActive(selected, href) {
-      return selected === href;
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -193,7 +190,8 @@ function (_Component) {
       var _this$props = this.props,
           children = _this$props.children,
           sidebarMini = _this$props.sidebarMini,
-          selected = _this$props.selected;
+          selected = _this$props.selected,
+          Link = _this$props.Link;
       var indexOpened = this.state.indexOpened;
       var NavItem = sidebarMini ? _NavItemMinimized.NavItemMinimized : _NavItemMaximized.NavItemMaximized;
       return children.filter(function (m) {
@@ -201,27 +199,29 @@ function (_Component) {
       }).map(function (_ref, i) {
         var title = _ref.title,
             href = _ref.href,
+            to = _ref.to,
             icon = _ref.icon,
             children = _ref.children;
 
-        if (href || children) {
+        if (href || to || children) {
           var open = indexOpened === i;
 
           if (Array.isArray(children) && children.filter(function (m) {
             return !!m;
           }).some(function (c) {
-            return _this2.isActive(selected, c.href);
+            return (0, _utils.isSelected)(selected, c.href, c.to);
           })) {
             open = true;
           }
 
           return _react.default.createElement(NavItem, {
             key: i,
-            active: _this2.isActive(selected, href),
+            active: (0, _utils.isSelected)(selected, href, to),
             count: children && children.length,
             open: children && open
-          }, _react.default.createElement("a", {
+          }, _react.default.createElement(Link, {
             href: href,
+            to: to,
             onClick: function onClick() {
               return _this2.setState({
                 indexOpened: open ? undefined : i
@@ -235,7 +235,8 @@ function (_Component) {
           })), children && _react.default.createElement(SubNav, {
             className: "sub-nav"
           }, _react.default.createElement(Menu, {
-            selected: selected
+            selected: selected,
+            Link: Link
           }, children)));
         } else {
           if (sidebarMini) return null;
@@ -276,7 +277,8 @@ function (_Component2) {
           selected = _this$props2.selected,
           sidebarCollapse = _this$props2.sidebarCollapse,
           sidebarMini = _this$props2.sidebarMini,
-          onSidebarMiniChange = _this$props2.onSidebarMiniChange;
+          onSidebarMiniChange = _this$props2.onSidebarMiniChange,
+          Link = _this$props2.Link;
       return _react.default.createElement(Sidebar, {
         sidebarCollapse: sidebarCollapse
       }, _react.default.createElement(SidebarContainer, {
@@ -285,7 +287,8 @@ function (_Component2) {
         sidebarMini: sidebarMini
       }, _react.default.createElement(Menu, {
         sidebarMini: sidebarMini,
-        selected: selected
+        selected: selected,
+        Link: Link
       }, sideMenu))), _react.default.createElement(SidebarMinimizer, {
         sidebarMini: sidebarMini,
         onClick: function onClick() {

@@ -50,7 +50,8 @@ export default class Layout extends Component {
       selected,
       sideBarTabs,
       children,
-      logo
+      logo,
+      linkComponent = "a"
     } = this.props;
     const {
       small,
@@ -73,7 +74,8 @@ export default class Layout extends Component {
       onNavbarToggle: this.onNavbarToggle,
       onRightNavbarToggle: () => this.setState({
         rightSidebarCollapse: !rightSidebarCollapse
-      })
+      }),
+      Link: linkComponent
     }), React.createElement(Body, null, React.createElement(Sidebar, {
       sideMenu: sideMenu,
       selected: selected,
@@ -84,7 +86,8 @@ export default class Layout extends Component {
       }),
       onClickOutside: () => this.setState({
         sidebarOpened: false
-      })
+      }),
+      Link: linkComponent
     }), React.createElement(Main, {
       sidebarCollapse: small || sidebarCollapse,
       sidebarMini: sidebarMini,

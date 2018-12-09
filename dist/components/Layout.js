@@ -127,7 +127,9 @@ function (_Component) {
           selected = _this$props.selected,
           sideBarTabs = _this$props.sideBarTabs,
           children = _this$props.children,
-          logo = _this$props.logo;
+          logo = _this$props.logo,
+          _this$props$linkCompo = _this$props.linkComponent,
+          linkComponent = _this$props$linkCompo === void 0 ? "a" : _this$props$linkCompo;
       var _this$state2 = this.state,
           small = _this$state2.small,
           sidebarOpened = _this$state2.sidebarOpened,
@@ -152,7 +154,8 @@ function (_Component) {
           return _this2.setState({
             rightSidebarCollapse: !rightSidebarCollapse
           });
-        }
+        },
+        Link: linkComponent
       }), _react.default.createElement(_Body.Body, null, _react.default.createElement(_Sidebar.default, {
         sideMenu: sideMenu,
         selected: selected,
@@ -167,7 +170,8 @@ function (_Component) {
           return _this2.setState({
             sidebarOpened: false
           });
-        }
+        },
+        Link: linkComponent
       }), _react.default.createElement(_Body.Main, {
         sidebarCollapse: small || sidebarCollapse,
         sidebarMini: sidebarMini,

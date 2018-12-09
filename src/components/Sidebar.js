@@ -5,6 +5,7 @@ import {NavItemMinimized} from './NavItemMinimized';
 import ClickOutside from "react-click-outside";
 import CaretLeft from "./icons/CaretLeft";
 import CaretSquareLeft from "./icons/CaretSquareLeft";
+import {isSelected} from './utils';
 
 const Sidebar = styled.div`
 	position: fixed;
@@ -79,35 +80,31 @@ class Menu extends Component {
     indexOpened: undefined
   };
 
-  isActive(selected, href) {
-    return selected === href;
-  }
-
   render() {
-    const {children, sidebarMini, selected} = this.props;
+    const {children, sidebarMini, selected, Link} = this.props;
     const {indexOpened} = this.state;
 
     const NavItem = sidebarMini ? NavItemMinimized : NavItemMaximized;
 
-    return children.filter(m => !!m).map(({title, href, icon, children}, i) => {
-      if (href || children) {
+    return children.filter(m => !!m).map(({title, href, to, icon, children}, i) => {
+      if (href || to || children) {
         let open = indexOpened === i;
-        if (Array.isArray(children) && children.filter(m => !!m).some(c => this.isActive(selected, c.href))) {
+        if (Array.isArray(children) && children.filter(m => !!m).some(c => isSelected(selected, c.href, c.to))) {
           open = true;
         }
         return <NavItem
           key={i}
-          active={this.isActive(selected, href)}
+          active={isSelected(selected, href, to)}
           count={children && children.length}
           open={children && open}>
 
-          <a href={href} onClick={() => this.setState({indexOpened: open ? undefined : i})}>
+          <Link href={href} to={to} onClick={() => this.setState({indexOpened: open ? undefined : i})}>
             <i className={icon}></i>
             <span>{title}</span>
             {!sidebarMini && children && <CaretLeft className="caret-left-icon" width={6}/>}
-          </a>
+          </Link>
           {children && <SubNav className="sub-nav">
-            <Menu selected={selected}>{children}</Menu>
+            <Menu selected={selected} Link={Link}>{children}</Menu>
           </SubNav>}
         </NavItem>
       } else {
@@ -126,11 +123,11 @@ class Inner extends Component {
   }
 
   render() {
-    const {sideMenu, selected, sidebarCollapse, sidebarMini, onSidebarMiniChange} = this.props;
+    const {sideMenu, selected, sidebarCollapse, sidebarMini, onSidebarMiniChange, Link} = this.props;
     return <Sidebar sidebarCollapse={sidebarCollapse}>
       <SidebarContainer sidebarMini={sidebarMini}>
         <Nav sidebarMini={sidebarMini}>
-          <Menu sidebarMini={sidebarMini} selected={selected}>{sideMenu}</Menu>
+          <Menu sidebarMini={sidebarMini} selected={selected} Link={Link}>{sideMenu}</Menu>
         </Nav>
       </SidebarContainer>
       <SidebarMinimizer sidebarMini={sidebarMini} onClick={() => onSidebarMiniChange(!sidebarMini)}>

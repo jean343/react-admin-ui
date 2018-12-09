@@ -7,6 +7,7 @@ import { NavItemMinimized } from './NavItemMinimized';
 import ClickOutside from "react-click-outside";
 import CaretLeft from "./icons/CaretLeft";
 import CaretSquareLeft from "./icons/CaretSquareLeft";
+import { isSelected } from './utils';
 const Sidebar = styled.div.withConfig({
   displayName: "Sidebar",
   componentId: "wu4c6y-0"
@@ -51,15 +52,12 @@ class Menu extends Component {
     });
   }
 
-  isActive(selected, href) {
-    return selected === href;
-  }
-
   render() {
     const {
       children,
       sidebarMini,
-      selected
+      selected,
+      Link
     } = this.props;
     const {
       indexOpened
@@ -68,23 +66,25 @@ class Menu extends Component {
     return children.filter(m => !!m).map(({
       title,
       href,
+      to,
       icon,
       children
     }, i) => {
-      if (href || children) {
+      if (href || to || children) {
         let open = indexOpened === i;
 
-        if (Array.isArray(children) && children.filter(m => !!m).some(c => this.isActive(selected, c.href))) {
+        if (Array.isArray(children) && children.filter(m => !!m).some(c => isSelected(selected, c.href, c.to))) {
           open = true;
         }
 
         return React.createElement(NavItem, {
           key: i,
-          active: this.isActive(selected, href),
+          active: isSelected(selected, href, to),
           count: children && children.length,
           open: children && open
-        }, React.createElement("a", {
+        }, React.createElement(Link, {
           href: href,
+          to: to,
           onClick: () => this.setState({
             indexOpened: open ? undefined : i
           })
@@ -96,7 +96,8 @@ class Menu extends Component {
         })), children && React.createElement(SubNav, {
           className: "sub-nav"
         }, React.createElement(Menu, {
-          selected: selected
+          selected: selected,
+          Link: Link
         }, children)));
       } else {
         if (sidebarMini) return null;
@@ -122,7 +123,8 @@ class Inner extends Component {
       selected,
       sidebarCollapse,
       sidebarMini,
-      onSidebarMiniChange
+      onSidebarMiniChange,
+      Link
     } = this.props;
     return React.createElement(Sidebar, {
       sidebarCollapse: sidebarCollapse
@@ -132,7 +134,8 @@ class Inner extends Component {
       sidebarMini: sidebarMini
     }, React.createElement(Menu, {
       sidebarMini: sidebarMini,
-      selected: selected
+      selected: selected,
+      Link: Link
     }, sideMenu))), React.createElement(SidebarMinimizer, {
       sidebarMini: sidebarMini,
       onClick: () => onSidebarMiniChange(!sidebarMini)

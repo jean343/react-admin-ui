@@ -47,7 +47,7 @@ export default class Layout extends Component {
   };
 
   render() {
-    const {sideMenu, topMenu, selected, sideBarTabs, children, logo} = this.props;
+    const {sideMenu, topMenu, selected, sideBarTabs, children, logo, linkComponent = "a"} = this.props;
     const {small, sidebarOpened, sidebarCollapse, rightSidebarCollapse, sidebarMini} = this.state;
     return <App>
       <Matchmedia query="screen and (max-width: 991.98px)" onMatch={matches => this.setState({small: matches, sidebarOpened: false})}/>
@@ -55,6 +55,7 @@ export default class Layout extends Component {
               topMenu={topMenu} selected={selected}
               onNavbarToggle={this.onNavbarToggle}
               onRightNavbarToggle={() => this.setState({rightSidebarCollapse: !rightSidebarCollapse})}
+              Link={linkComponent}
       />
       <Body>
       <Sidebar
@@ -63,7 +64,8 @@ export default class Layout extends Component {
         sidebarCollapse={!sidebarOpened && (small || sidebarCollapse)}
         sidebarMini={sidebarMini}
         onSidebarMiniChange={sidebarMini => this.setState({sidebarMini})}
-        onClickOutside={() => this.setState({sidebarOpened: false})}/>
+        onClickOutside={() => this.setState({sidebarOpened: false})}
+        Link={linkComponent}/>
 
       <Main sidebarCollapse={small || sidebarCollapse} sidebarMini={sidebarMini} rightSidebarCollapse={small || rightSidebarCollapse}>
         <Toolbar/>

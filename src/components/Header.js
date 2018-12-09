@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import Bars from './icons/Bars';
+import {isSelected} from './utils';
 
 const Header = styled.header`
 	flex-direction: row;
@@ -93,19 +94,19 @@ const NavItem = styled.li`
 
 export default class extends Component {
   render() {
-    const {small, topMenu, onNavbarToggle, onRightNavbarToggle, selected, logo} = this.props;
+    const {small, topMenu, onNavbarToggle, onRightNavbarToggle, selected, logo, Link} = this.props;
     return <Header>
       <NavbarBrand>{logo}</NavbarBrand>
       <NavbarToggler onClick={onNavbarToggle}>
         <Bars width={14}/>
       </NavbarToggler>
       <NavbarNav>
-        {topMenu.filter(m => !!m).map(({title, href, icon}, i) => {
-          return <NavItem key={i} active={selected === href}>
-            <a href={href}>
+        {topMenu.filter(m => !!m).map(({title, href, to, icon}, i) => {
+          return <NavItem key={i} active={isSelected(selected, href, to)}>
+            <Link href={href} to={to}>
               <i className={icon}></i>
               <span>{title}</span>
-            </a>
+            </Link>
           </NavItem>
         })}
       </NavbarNav>
