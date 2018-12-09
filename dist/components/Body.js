@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Main = exports.Body = void 0;
+exports.Content = exports.Main = exports.Body = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -54,3 +54,10 @@ var Main = _styledComponents.default.main.withConfig({
 });
 
 exports.Main = Main;
+
+var Content = _styledComponents.default.div.withConfig({
+  displayName: "Body__Content",
+  componentId: "sc-1kjiic4-2"
+})(["padding:4px;"]);
+
+exports.Content = Content;

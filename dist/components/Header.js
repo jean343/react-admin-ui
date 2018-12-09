@@ -79,7 +79,7 @@ var NavbarToggler = _styledComponents.default.button.withConfig({
   })[0];
 });
 
-var NavbarBrand = _styledComponents.default.a.withConfig({
+var NavbarBrand = _styledComponents.default.div.withConfig({
   displayName: "Header__NavbarBrand",
   componentId: "sc-1ahrfh-2"
 })(["display:inline-flex;align-items:center;justify-content:center;width:", ";height:", ";padding:0;margin-right:0;background-color:", ";@media (max-width:", "){display:none;}"], function (props) {
@@ -170,7 +170,10 @@ function (_Component) {
           selected = _this$props.selected,
           logo = _this$props.logo,
           Link = _this$props.Link;
-      return _react.default.createElement(Header, null, _react.default.createElement(NavbarBrand, null, logo), _react.default.createElement(NavbarToggler, {
+      return _react.default.createElement(Header, null, _react.default.createElement(Link, {
+        href: "/",
+        to: "/"
+      }, _react.default.createElement(NavbarBrand, null, logo)), _react.default.createElement(NavbarToggler, {
         onClick: onNavbarToggle
       }, _react.default.createElement(_Bars.default, {
         width: 14

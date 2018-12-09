@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import Header from './Header';
-import {Body, Main} from './Body';
+import {Body, Main, Content} from './Body';
 import Sidebar from './Sidebar';
 import RightSidebar from './RightSidebar';
 import Toolbar from './Toolbar';
@@ -64,12 +64,12 @@ export default class Layout extends Component {
         sidebarCollapse={!sidebarOpened && (small || sidebarCollapse)}
         sidebarMini={sidebarMini}
         onSidebarMiniChange={sidebarMini => this.setState({sidebarMini})}
-        onClickOutside={() => this.setState({sidebarOpened: false})}
+        onClickOutside={() => sidebarOpened && setTimeout(() => this.setState({sidebarOpened: false}), 0)}
         Link={linkComponent}/>
 
       <Main sidebarCollapse={small || sidebarCollapse} sidebarMini={sidebarMini} rightSidebarCollapse={small || rightSidebarCollapse}>
         <Toolbar/>
-        <div>{children}</div>
+        <Content>{children}</Content>
       </Main>
       <RightSidebar rightSidebarCollapse={small || rightSidebarCollapse} sideBarTabs={sideBarTabs}/>
       </Body>

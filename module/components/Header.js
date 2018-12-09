@@ -10,7 +10,7 @@ const NavbarToggler = styled.button.withConfig({
   displayName: "Header__NavbarToggler",
   componentId: "sc-1ahrfh-1"
 })(["cursor:pointer;padding:0;width:50px;height:", ";background-color:transparent;border:", " solid transparent;border-radius:4px;color:", ";font-size:0;:hover{color:", ";}"], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => [props["border-width"], (props.theme || {})["border-width"], `1px`].filter(v => v !== void 0)[0], props => [props["gray-300"], (props.theme || {})["gray-300"], `#dadee4`].filter(v => v !== void 0)[0], props => [props["gray-900"], (props.theme || {})["gray-900"], `#313742`].filter(v => v !== void 0)[0]);
-const NavbarBrand = styled.a.withConfig({
+const NavbarBrand = styled.div.withConfig({
   displayName: "Header__NavbarBrand",
   componentId: "sc-1ahrfh-2"
 })(["display:inline-flex;align-items:center;justify-content:center;width:", ";height:", ";padding:0;margin-right:0;background-color:", ";@media (max-width:", "){display:none;}"], props => parseFloat([props["sidebar-width"], (props.theme || {})["sidebar-width"], `200px`].filter(v => v !== void 0)[0]) - parseFloat(50) + "px", props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => [props["navbar-brand-bg"], (props.theme || {})["navbar-brand-bg"], `transparent`].filter(v => v !== void 0)[0], props => [props["sm"], (props.theme || {})["sm"], `576px`].filter(v => v !== void 0)[0]);
@@ -33,7 +33,10 @@ export default class extends Component {
       logo,
       Link
     } = this.props;
-    return React.createElement(Header, null, React.createElement(NavbarBrand, null, logo), React.createElement(NavbarToggler, {
+    return React.createElement(Header, null, React.createElement(Link, {
+      href: "/",
+      to: "/"
+    }, React.createElement(NavbarBrand, null, logo)), React.createElement(NavbarToggler, {
       onClick: onNavbarToggle
     }, React.createElement(Bars, {
       width: 14

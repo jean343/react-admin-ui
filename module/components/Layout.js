@@ -3,7 +3,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Header from './Header';
-import { Body, Main } from './Body';
+import { Body, Main, Content } from './Body';
 import Sidebar from './Sidebar';
 import RightSidebar from './RightSidebar';
 import Toolbar from './Toolbar';
@@ -84,15 +84,15 @@ export default class Layout extends Component {
       onSidebarMiniChange: sidebarMini => this.setState({
         sidebarMini
       }),
-      onClickOutside: () => this.setState({
+      onClickOutside: () => sidebarOpened && setTimeout(() => this.setState({
         sidebarOpened: false
-      }),
+      }), 0),
       Link: linkComponent
     }), React.createElement(Main, {
       sidebarCollapse: small || sidebarCollapse,
       sidebarMini: sidebarMini,
       rightSidebarCollapse: small || rightSidebarCollapse
-    }, React.createElement(Toolbar, null), React.createElement("div", null, children)), React.createElement(RightSidebar, {
+    }, React.createElement(Toolbar, null), React.createElement(Content, null, children)), React.createElement(RightSidebar, {
       rightSidebarCollapse: small || rightSidebarCollapse,
       sideBarTabs: sideBarTabs
     })));

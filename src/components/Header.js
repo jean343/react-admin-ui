@@ -36,7 +36,7 @@ const NavbarToggler = styled.button`
 		color: @gray-900;
 	}
 `;
-const NavbarBrand = styled.a`
+const NavbarBrand = styled.div`
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -100,7 +100,9 @@ export default class extends Component {
   render() {
     const {small, topMenu, onNavbarToggle, onRightNavbarToggle, selected, logo, Link} = this.props;
     return <Header>
-      <NavbarBrand>{logo}</NavbarBrand>
+      <Link href="/" to="/">
+        <NavbarBrand>{logo}</NavbarBrand>
+      </Link>
       <NavbarToggler onClick={onNavbarToggle}>
         <Bars width={14}/>
       </NavbarToggler>

@@ -19,3 +19,7 @@ export const Main = styled.main`
   margin-left: if(@sidebarCollapse, 0);
   margin-right: if(@rightSidebarCollapse, 0, @aside-menu-width);
 `;
+
+export const Content = styled.div`
+    padding: 4px;
+`;

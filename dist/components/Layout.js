@@ -167,16 +167,18 @@ function (_Component) {
           });
         },
         onClickOutside: function onClickOutside() {
-          return _this2.setState({
-            sidebarOpened: false
-          });
+          return sidebarOpened && setTimeout(function () {
+            return _this2.setState({
+              sidebarOpened: false
+            });
+          }, 0);
         },
         Link: linkComponent
       }), _react.default.createElement(_Body.Main, {
         sidebarCollapse: small || sidebarCollapse,
         sidebarMini: sidebarMini,
         rightSidebarCollapse: small || rightSidebarCollapse
-      }, _react.default.createElement(_Toolbar.default, null), _react.default.createElement("div", null, children)), _react.default.createElement(_RightSidebar.default, {
+      }, _react.default.createElement(_Toolbar.default, null), _react.default.createElement(_Body.Content, null, children)), _react.default.createElement(_RightSidebar.default, {
         rightSidebarCollapse: small || rightSidebarCollapse,
         sideBarTabs: sideBarTabs
       })));
