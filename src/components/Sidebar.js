@@ -3,6 +3,8 @@ import styled, {css} from 'styled-components';
 import {NavItemMaximized} from './NavItemMaximized';
 import {NavItemMinimized} from './NavItemMinimized';
 import ClickOutside from "react-click-outside";
+import CaretLeft from "./icons/CaretLeft";
+import CaretSquareLeft from "./icons/CaretSquareLeft";
 
 const Sidebar = styled.div`
 	position: fixed;
@@ -55,14 +57,10 @@ const SidebarMinimizer = styled.button`
 	color: @sidebar-bg;
 	overflow: hidden;
 	transition: all .1s ease-in-out;
-	i {
-		position: absolute;
-		top: 0;
-		right: 0;
+	text-align: right;
+	svg {
 		width: 50px;
-		height: 50px;
-		font-size: 1.5rem;
-		line-height: 50px;
+		height: 20px;
 		transition: transform .3s ease-in-out;
 		transform: if(@sidebarMini, rotate(-180deg));
 	}
@@ -105,7 +103,7 @@ class Menu extends Component {
           <a href={href} onClick={() => this.setState({indexOpened: open ? undefined : i})}>
             <i className={icon}></i>
             <span>{title}</span>
-            {!sidebarMini && children && <i className="fa caret fa-caret-left"/>}
+            {!sidebarMini && children && <CaretLeft className="caret" width={6}/>}
           </a>
           {children && <SubNav className="sub-nav">
             <Menu selected={selected}>{children}</Menu>
@@ -134,7 +132,9 @@ class Inner extends Component {
           <Menu sidebarMini={sidebarMini} selected={selected}>{sideMenu}</Menu>
         </Nav>
       </SidebarContainer>
-      <SidebarMinimizer sidebarMini={sidebarMini} onClick={() => onSidebarMiniChange(!sidebarMini)}><i className="fa fa-caret-square-o-left"/></SidebarMinimizer>
+      <SidebarMinimizer sidebarMini={sidebarMini} onClick={() => onSidebarMiniChange(!sidebarMini)}>
+        <CaretSquareLeft/>
+      </SidebarMinimizer>
     </Sidebar>
   }
 }

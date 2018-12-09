@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import Bars from './icons/Bars';
 
 const Header = styled.header`
 	flex-direction: row;
@@ -96,7 +97,7 @@ export default class extends Component {
     return <Header>
       <NavbarBrand>{logo}</NavbarBrand>
       <NavbarToggler onClick={onNavbarToggle}>
-        <i className="fas fa-bars"/>
+        <Bars width={14}/>
       </NavbarToggler>
       <NavbarNav>
         {topMenu.filter(m => !!m).map(({title, href, icon}, i) => {
@@ -110,7 +111,7 @@ export default class extends Component {
       </NavbarNav>
       <div style={{flex: 1}}/>
       {!small && <NavbarToggler onClick={onRightNavbarToggle}>
-        <i className="fas fa-bars"/>
+        <Bars width={14}/>
       </NavbarToggler>}
     </Header>
   }
