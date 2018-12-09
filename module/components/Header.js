@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Bars from './icons/Bars';
 const Header = styled.header.withConfig({
   displayName: "Header",
   componentId: "sc-1ahrfh-0"
@@ -32,8 +33,8 @@ export default class extends Component {
     } = this.props;
     return React.createElement(Header, null, React.createElement(NavbarBrand, null, logo), React.createElement(NavbarToggler, {
       onClick: onNavbarToggle
-    }, React.createElement("i", {
-      className: "fas fa-bars"
+    }, React.createElement(Bars, {
+      width: 14
     })), React.createElement(NavbarNav, null, topMenu.filter(m => !!m).map(({
       title,
       href,
@@ -53,8 +54,8 @@ export default class extends Component {
       }
     }), !small && React.createElement(NavbarToggler, {
       onClick: onRightNavbarToggle
-    }, React.createElement("i", {
-      className: "fas fa-bars"
+    }, React.createElement(Bars, {
+      width: 14
     })));
   }
 

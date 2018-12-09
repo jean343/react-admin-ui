@@ -5,6 +5,8 @@ import styled, { css } from 'styled-components';
 import { NavItemMaximized } from './NavItemMaximized';
 import { NavItemMinimized } from './NavItemMinimized';
 import ClickOutside from "react-click-outside";
+import CaretLeft from "./icons/CaretLeft";
+import CaretSquareLeft from "./icons/CaretSquareLeft";
 const Sidebar = styled.div.withConfig({
   displayName: "Sidebar",
   componentId: "wu4c6y-0"
@@ -28,7 +30,7 @@ const NavTitle = styled.li.withConfig({
 const SidebarMinimizer = styled.button.withConfig({
   displayName: "Sidebar__SidebarMinimizer",
   componentId: "wu4c6y-5"
-})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;i{position:absolute;top:0;right:0;width:50px;height:50px;font-size:1.5rem;line-height:50px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], props => require("tinycolor2")({
+})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;text-align:right;svg{width:50px;height:20px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], props => require("tinycolor2")({
   r: `0`,
   g: `0`,
   b: `0`,
@@ -88,8 +90,9 @@ class Menu extends Component {
           })
         }, React.createElement("i", {
           className: icon
-        }), React.createElement("span", null, title), !sidebarMini && children && React.createElement("i", {
-          className: "fa caret fa-caret-left"
+        }), React.createElement("span", null, title), !sidebarMini && children && React.createElement(CaretLeft, {
+          className: "caret",
+          width: 6
         })), children && React.createElement(SubNav, {
           className: "sub-nav"
         }, React.createElement(Menu, {
@@ -133,9 +136,7 @@ class Inner extends Component {
     }, sideMenu))), React.createElement(SidebarMinimizer, {
       sidebarMini: sidebarMini,
       onClick: () => onSidebarMiniChange(!sidebarMini)
-    }, React.createElement("i", {
-      className: "fa fa-caret-square-o-left"
-    })));
+    }, React.createElement(CaretSquareLeft, null)));
   }
 
 }

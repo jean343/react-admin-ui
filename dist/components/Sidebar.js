@@ -15,6 +15,10 @@ var _NavItemMinimized = require("./NavItemMinimized");
 
 var _reactClickOutside = _interopRequireDefault(require("react-click-outside"));
 
+var _CaretLeft = _interopRequireDefault(require("./icons/CaretLeft"));
+
+var _CaretSquareLeft = _interopRequireDefault(require("./icons/CaretSquareLeft"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -117,7 +121,7 @@ var NavTitle = _styledComponents.default.li.withConfig({
 var SidebarMinimizer = _styledComponents.default.button.withConfig({
   displayName: "Sidebar__SidebarMinimizer",
   componentId: "wu4c6y-5"
-})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;i{position:absolute;top:0;right:0;width:50px;height:50px;font-size:1.5rem;line-height:50px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], function (props) {
+})(["position:relative;flex:0 0 50px;cursor:pointer;background-color:", ";border:0;color:", ";overflow:hidden;transition:all 0.1s ease-in-out;text-align:right;svg{width:50px;height:20px;transition:transform 0.3s ease-in-out;transform:", ";}&:focus{outline:0;}&:hover{background-color:", ";color:", ";}"], function (props) {
   return require("tinycolor2")({
     r: "0",
     g: "0",
@@ -221,8 +225,9 @@ function (_Component) {
             }
           }, _react.default.createElement("i", {
             className: icon
-          }), _react.default.createElement("span", null, title), !sidebarMini && children && _react.default.createElement("i", {
-            className: "fa caret fa-caret-left"
+          }), _react.default.createElement("span", null, title), !sidebarMini && children && _react.default.createElement(_CaretLeft.default, {
+            className: "caret",
+            width: 6
           })), children && _react.default.createElement(SubNav, {
             className: "sub-nav"
           }, _react.default.createElement(Menu, {
@@ -282,9 +287,7 @@ function (_Component2) {
         onClick: function onClick() {
           return onSidebarMiniChange(!sidebarMini);
         }
-      }, _react.default.createElement("i", {
-        className: "fa fa-caret-square-o-left"
-      })));
+      }, _react.default.createElement(_CaretSquareLeft.default, null)));
     }
   }]);
 

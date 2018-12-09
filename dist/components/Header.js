@@ -9,6 +9,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _Bars = _interopRequireDefault(require("./icons/Bars"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -161,8 +163,8 @@ function (_Component) {
           logo = _this$props.logo;
       return _react.default.createElement(Header, null, _react.default.createElement(NavbarBrand, null, logo), _react.default.createElement(NavbarToggler, {
         onClick: onNavbarToggle
-      }, _react.default.createElement("i", {
-        className: "fas fa-bars"
+      }, _react.default.createElement(_Bars.default, {
+        width: 14
       })), _react.default.createElement(NavbarNav, null, topMenu.filter(function (m) {
         return !!m;
       }).map(function (_ref, i) {
@@ -183,8 +185,8 @@ function (_Component) {
         }
       }), !small && _react.default.createElement(NavbarToggler, {
         onClick: onRightNavbarToggle
-      }, _react.default.createElement("i", {
-        className: "fas fa-bars"
+      }, _react.default.createElement(_Bars.default, {
+        width: 14
       })));
     }
   }]);
