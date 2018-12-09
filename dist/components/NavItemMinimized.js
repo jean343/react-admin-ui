@@ -23,7 +23,7 @@ var NavItemMinimized = _styledComponents.default.li.withConfig({
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-800"], (props.theme || {})["gray-800"], "#3c4450"].filter(function (v) {
+  return [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-900"], (props.theme || {})["gray-900"], "#313742"].filter(function (v) {
     return v !== void 0;
   })[0]].filter(function (v) {
     return v !== void 0;
@@ -60,7 +60,7 @@ var NavItemMinimized = _styledComponents.default.li.withConfig({
       return v !== void 0;
     })[0];
   }, function (props) {
-    return require('tinycolor2')([props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-800"], (props.theme || {})["gray-800"], "#3c4450"].filter(function (v) {
+    return require('tinycolor2')([props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-900"], (props.theme || {})["gray-900"], "#313742"].filter(function (v) {
       return v !== void 0;
     })[0]].filter(function (v) {
       return v !== void 0;

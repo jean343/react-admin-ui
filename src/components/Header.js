@@ -66,7 +66,6 @@ const NavItem = styled.li`
 	padding-left: 1rem;
 	padding-right: 1rem;
 	transition: background-color .1s ease-in-out;
-	background-color: if(@active, @gray-100);
 	:hover {
 		background-color: @gray-200;
 	}

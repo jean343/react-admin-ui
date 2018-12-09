@@ -108,13 +108,7 @@ var NavbarNav = _styledComponents.default.ul.withConfig({
 var NavItem = _styledComponents.default.li.withConfig({
   displayName: "Header__NavItem",
   componentId: "sc-1ahrfh-4"
-})(["cursor:pointer;position:relative;margin:0;text-align:center;padding-left:1rem;padding-right:1rem;transition:background-color 0.1s ease-in-out;background-color:", ";:hover{background-color:", ";}&& a{display:flex;height:", ";color:", " !important;align-items:center;}&& a:hover{text-decoration:none;}span{margin-left:0.5rem;}@media (max-width:", "){span{display:none;}i{font-size:1.1em;}}"], function (props) {
-  return !![props["active"], (props.theme || {})["active"]].filter(function (v) {
-    return v !== void 0;
-  })[0] ? [props["gray-100"], (props.theme || {})["gray-100"], "#f8f8fa"].filter(function (v) {
-    return v !== void 0;
-  })[0] : undefined;
-}, function (props) {
+})(["cursor:pointer;position:relative;margin:0;text-align:center;padding-left:1rem;padding-right:1rem;transition:background-color 0.1s ease-in-out;:hover{background-color:", ";}&& a{display:flex;height:", ";color:", " !important;align-items:center;}&& a:hover{text-decoration:none;}span{margin-left:0.5rem;}@media (max-width:", "){span{display:none;}i{font-size:1.1em;}}"], function (props) {
   return [props["gray-200"], (props.theme || {})["gray-200"], "#e9ebef"].filter(function (v) {
     return v !== void 0;
   })[0];

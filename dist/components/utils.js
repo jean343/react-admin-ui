@@ -5,19 +5,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.isSelected = void 0;
 
-var _urlParse = _interopRequireDefault(require("url-parse"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var CACHE = {};
-
 var normalize = function normalize(link) {
-  if (!CACHE[link]) {
-    var l = (0, _urlParse.default)(link);
-    CACHE[link] = l.pathname;
+  if (link && link[0] !== "/") {
+    link = "/" + link;
   }
 
-  return CACHE[link];
+  return link;
 };
 
 var getPath = function getPath(obj) {
@@ -31,9 +24,7 @@ var getPath = function getPath(obj) {
 var isSelected = function isSelected(selected, href, to) {
   var left = normalize(getPath(selected));
   var right = normalize(getPath(href) || getPath(to));
-  var result = left === right;
-  console.log("isSelected", selected, to, result);
-  return result;
+  return left === right;
 };
 
 exports.isSelected = isSelected;

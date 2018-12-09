@@ -12,7 +12,7 @@ export const NavItemMaximized = styled.li`
 	
 	${props => props.active && css`
 		color: @sidebar-nav-link-active-color;
-		background: lighten(@sidebar-bg, 5%);
+		background: lighten(@sidebar-bg, 15%);
 	`}
 	i:not(.caret-left-icon) {
 		transition: color .1s ease-in-out;
