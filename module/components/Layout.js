@@ -85,6 +85,7 @@ export default class Layout extends Component {
       }),
       Link: linkComponent
     }), React.createElement(Body, null, React.createElement(Sidebar, {
+      lg: lg,
       sideMenu: sideMenu,
       sideBarHeader: sideBarHeader,
       selected: selected,

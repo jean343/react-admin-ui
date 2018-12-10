@@ -113,7 +113,18 @@ var Nav = _styledComponents.default.ul.withConfig({
 var SubNav = (0, _styledComponents.default)(Nav).withConfig({
   displayName: "Sidebar__SubNav",
   componentId: "wu4c6y-3"
-})(["min-height:0;max-height:0;a{padding:0 calc(1rem - 3px);}"]);
+})(["width:", ";min-height:0;max-height:0;border-left:1px solid ", ";a{padding:0 calc(1rem - 3px);}"], function (props) {
+  return [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return require("tinycolor2")({
+    r: "255",
+    g: "255",
+    b: "255",
+    a: "0.2"
+  }).toHex8String();
+});
 
 var NavTitle = _styledComponents.default.li.withConfig({
   displayName: "Sidebar__NavTitle",
@@ -302,7 +313,8 @@ function (_Component2) {
           sidebarMini = _this$props2.sidebarMini,
           onSidebarMiniChange = _this$props2.onSidebarMiniChange,
           Link = _this$props2.Link,
-          sideBarHeader = _this$props2.sideBarHeader;
+          sideBarHeader = _this$props2.sideBarHeader,
+          lg = _this$props2.lg;
       return _react.default.createElement(Sidebar, {
         sidebarCollapse: sidebarCollapse,
         onTransitionEnd: _utils.triggerResize
@@ -310,11 +322,11 @@ function (_Component2) {
         sidebarMini: sidebarMini
       }, _react.default.createElement(Nav, {
         sidebarMini: sidebarMini
-      }, sideBarHeader && _react.default.createElement(SideBarHeader, null, sideBarHeader), _react.default.createElement(Menu, {
+      }, sideBarHeader && !sidebarMini && _react.default.createElement(SideBarHeader, null, sideBarHeader), _react.default.createElement(Menu, {
         sidebarMini: sidebarMini,
         selected: selected,
         Link: Link
-      }, sideMenu))), _react.default.createElement(SidebarMinimizer, {
+      }, sideMenu))), !lg && _react.default.createElement(SidebarMinimizer, {
         sidebarMini: sidebarMini,
         onClick: function onClick() {
           return onSidebarMiniChange(!sidebarMini);

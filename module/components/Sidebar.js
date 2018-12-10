@@ -23,7 +23,12 @@ const Nav = styled.ul.withConfig({
 const SubNav = styled(Nav).withConfig({
   displayName: "Sidebar__SubNav",
   componentId: "wu4c6y-3"
-})(["min-height:0;max-height:0;a{padding:0 calc(1rem - 3px);}"]);
+})(["width:", ";min-height:0;max-height:0;border-left:1px solid ", ";a{padding:0 calc(1rem - 3px);}"], props => [props["sidebar-width"], (props.theme || {})["sidebar-width"], `200px`].filter(v => v !== void 0)[0], props => require("tinycolor2")({
+  r: `255`,
+  g: `255`,
+  b: `255`,
+  a: `0.2`
+}).toHex8String());
 const NavTitle = styled.li.withConfig({
   displayName: "Sidebar__NavTitle",
   componentId: "wu4c6y-4"
@@ -135,7 +140,8 @@ class Inner extends Component {
       sidebarMini,
       onSidebarMiniChange,
       Link,
-      sideBarHeader
+      sideBarHeader,
+      lg
     } = this.props;
     return React.createElement(Sidebar, {
       sidebarCollapse: sidebarCollapse,
@@ -144,11 +150,11 @@ class Inner extends Component {
       sidebarMini: sidebarMini
     }, React.createElement(Nav, {
       sidebarMini: sidebarMini
-    }, sideBarHeader && React.createElement(SideBarHeader, null, sideBarHeader), React.createElement(Menu, {
+    }, sideBarHeader && !sidebarMini && React.createElement(SideBarHeader, null, sideBarHeader), React.createElement(Menu, {
       sidebarMini: sidebarMini,
       selected: selected,
       Link: Link
-    }, sideMenu))), React.createElement(SidebarMinimizer, {
+    }, sideMenu))), !lg && React.createElement(SidebarMinimizer, {
       sidebarMini: sidebarMini,
       onClick: () => onSidebarMiniChange(!sidebarMini)
     }, React.createElement(CaretSquareLeft, null)));

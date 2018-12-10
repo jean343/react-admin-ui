@@ -167,6 +167,7 @@ function (_Component) {
         },
         Link: linkComponent
       }), _react.default.createElement(_Body.Body, null, _react.default.createElement(_Sidebar.default, {
+        lg: lg,
         sideMenu: sideMenu,
         sideBarHeader: sideBarHeader,
         selected: selected,

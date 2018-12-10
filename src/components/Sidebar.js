@@ -54,8 +54,10 @@ const Nav = styled.ul`
 	overflow-y: if(@sidebarMini, visible, hidden);
 `;
 const SubNav = styled(Nav)`
+  width: @sidebar-width;
 	min-height: 0;
 	max-height: 0;
+	border-left: 1px solid rgba(255, 255, 255, .2);
 	a {
 		padding: 0 calc(1rem - 3px);
 	}
@@ -151,17 +153,17 @@ class Inner extends Component {
   }
 
   render() {
-    const {sideMenu, selected, sidebarCollapse, sidebarMini, onSidebarMiniChange, Link, sideBarHeader} = this.props;
+    const {sideMenu, selected, sidebarCollapse, sidebarMini, onSidebarMiniChange, Link, sideBarHeader, lg} = this.props;
     return <Sidebar sidebarCollapse={sidebarCollapse} onTransitionEnd={triggerResize}>
       <SidebarContainer sidebarMini={sidebarMini}>
         <Nav sidebarMini={sidebarMini}>
-          {sideBarHeader && <SideBarHeader>{sideBarHeader}</SideBarHeader>}
+          {sideBarHeader && !sidebarMini && <SideBarHeader>{sideBarHeader}</SideBarHeader>}
           <Menu sidebarMini={sidebarMini} selected={selected} Link={Link}>{sideMenu}</Menu>
         </Nav>
       </SidebarContainer>
-      <SidebarMinimizer sidebarMini={sidebarMini} onClick={() => onSidebarMiniChange(!sidebarMini)}>
+      {!lg && <SidebarMinimizer sidebarMini={sidebarMini} onClick={() => onSidebarMiniChange(!sidebarMini)}>
         <CaretSquareLeft/>
-      </SidebarMinimizer>
+      </SidebarMinimizer>}
     </Sidebar>
   }
 }

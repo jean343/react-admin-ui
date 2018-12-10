@@ -61,6 +61,7 @@ export default class Layout extends Component {
       />
       <Body>
       <Sidebar
+        lg={lg}
         sideMenu={sideMenu}
         sideBarHeader={sideBarHeader}
         selected={selected}
