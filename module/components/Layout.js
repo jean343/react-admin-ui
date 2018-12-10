@@ -51,6 +51,7 @@ export default class Layout extends Component {
       sideBarTabs,
       children,
       logo,
+      sideBarHeader,
       linkComponent = "a"
     } = this.props;
     const {
@@ -78,6 +79,7 @@ export default class Layout extends Component {
       Link: linkComponent
     }), React.createElement(Body, null, React.createElement(Sidebar, {
       sideMenu: sideMenu,
+      sideBarHeader: sideBarHeader,
       selected: selected,
       sidebarCollapse: !sidebarOpened && (small || sidebarCollapse),
       sidebarMini: sidebarMini,

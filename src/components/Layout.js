@@ -47,7 +47,7 @@ export default class Layout extends Component {
   };
 
   render() {
-    const {sideMenu, topMenu, selected, sideBarTabs, children, logo, linkComponent = "a"} = this.props;
+    const {sideMenu, topMenu, selected, sideBarTabs, children, logo, sideBarHeader, linkComponent = "a"} = this.props;
     const {small, sidebarOpened, sidebarCollapse, rightSidebarCollapse, sidebarMini} = this.state;
     return <App>
       <Matchmedia query="screen and (max-width: 991.98px)" onMatch={matches => this.setState({small: matches, sidebarOpened: false})}/>
@@ -60,6 +60,7 @@ export default class Layout extends Component {
       <Body>
       <Sidebar
         sideMenu={sideMenu}
+        sideBarHeader={sideBarHeader}
         selected={selected}
         sidebarCollapse={!sidebarOpened && (small || sidebarCollapse)}
         sidebarMini={sidebarMini}

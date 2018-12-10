@@ -12,5 +12,5 @@ export const NavItemMaximized = styled.li.withConfig({
   r: `255`,
   g: `255`,
   b: `255`,
-  a: `0.1`
+  a: `0.2`
 }).toHex8String(), props => parseFloat([props["count"], (props.theme || {})["count"]].filter(v => v !== void 0)[0]) * parseFloat(40) + "px"), props => !![props["active"], (props.theme || {})["active"]].filter(v => v !== void 0)[0] ? [props["primary"], (props.theme || {})["primary"], [props["blue"], (props.theme || {})["blue"], `#20a8d8`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0] : undefined, props => !![props["hasChild"], (props.theme || {})["hasChild"]].filter(v => v !== void 0)[0] ? `none` : undefined);

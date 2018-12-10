@@ -47,7 +47,7 @@ export const NavItemMaximized = styled.li`
 	}
 	${props => props.open && css`
 		background: rgba(0, 0, 0, .2);
-		border: 1px solid rgba(255, 255, 255, .1);
+		border: 1px solid rgba(255, 255, 255, .2);
 		> .sub-nav {
 			max-height: @count * 40px;
 		}

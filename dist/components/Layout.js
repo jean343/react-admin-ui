@@ -128,6 +128,7 @@ function (_Component) {
           sideBarTabs = _this$props.sideBarTabs,
           children = _this$props.children,
           logo = _this$props.logo,
+          sideBarHeader = _this$props.sideBarHeader,
           _this$props$linkCompo = _this$props.linkComponent,
           linkComponent = _this$props$linkCompo === void 0 ? "a" : _this$props$linkCompo;
       var _this$state2 = this.state,
@@ -158,6 +159,7 @@ function (_Component) {
         Link: linkComponent
       }), _react.default.createElement(_Body.Body, null, _react.default.createElement(_Sidebar.default, {
         sideMenu: sideMenu,
+        sideBarHeader: sideBarHeader,
         selected: selected,
         sidebarCollapse: !sidebarOpened && (small || sidebarCollapse),
         sidebarMini: sidebarMini,

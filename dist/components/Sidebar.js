@@ -81,16 +81,11 @@ var Sidebar = _styledComponents.default.div.withConfig({
 var SidebarContainer = _styledComponents.default.div.withConfig({
   displayName: "Sidebar__SidebarContainer",
   componentId: "wu4c6y-1"
-})(["height:100%;flex:1 1;overflow-y:", ";"], function (props) {
+})(["height:100%;flex:1 1;overflow-y:", ";transition:width 0.25s;width:", ";&::-webkit-scrollbar{width:10px;margin-left:-10px;appearance:none;}&::-webkit-scrollbar-thumb{background-color:", ";background-clip:content-box;border-color:transparent;border-style:solid;border-width:1px 2px;border-radius:4px;}"], function (props) {
   return !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
     return v !== void 0;
   })[0] ? "visible" : "auto";
-});
-
-var Nav = _styledComponents.default.ul.withConfig({
-  displayName: "Sidebar__Nav",
-  componentId: "wu4c6y-2"
-})(["display:flex;width:", ";flex-direction:column;padding:0;list-style:none;margin:0;transition:max-height 0.3s ease-in-out,width 0.25s;overflow-y:", ";"], function (props) {
+}, function (props) {
   return !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
     return v !== void 0;
   })[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
@@ -99,6 +94,17 @@ var Nav = _styledComponents.default.ul.withConfig({
     return v !== void 0;
   })[0];
 }, function (props) {
+  return require('tinycolor2')([props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-900"], (props.theme || {})["gray-900"], "#313742"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
+    return v !== void 0;
+  })[0]).lighten(parseFloat("15%")).toHex8String();
+});
+
+var Nav = _styledComponents.default.ul.withConfig({
+  displayName: "Sidebar__Nav",
+  componentId: "wu4c6y-2"
+})(["display:flex;flex-direction:column;padding:0;list-style:none;margin:0;transition:max-height 0.3s ease-in-out;overflow-y:", ";"], function (props) {
   return !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
     return v !== void 0;
   })[0] ? "visible" : "hidden";
@@ -155,6 +161,22 @@ var SidebarMinimizer = _styledComponents.default.button.withConfig({
   return [props["gray-500"], (props.theme || {})["gray-500"], "#a0a9b8"].filter(function (v) {
     return v !== void 0;
   })[0];
+});
+
+var SideBarHeader = _styledComponents.default.div.withConfig({
+  displayName: "Sidebar__SideBarHeader",
+  componentId: "wu4c6y-6"
+})(["height:", ";padding:0.5rem 1rem;border-bottom:1px solid ", ";"], function (props) {
+  return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return require("tinycolor2")({
+    r: "255",
+    g: "255",
+    b: "255",
+    a: "0.2"
+  }).toHex8String();
 });
 
 var Menu =
@@ -279,14 +301,15 @@ function (_Component2) {
           sidebarCollapse = _this$props2.sidebarCollapse,
           sidebarMini = _this$props2.sidebarMini,
           onSidebarMiniChange = _this$props2.onSidebarMiniChange,
-          Link = _this$props2.Link;
+          Link = _this$props2.Link,
+          sideBarHeader = _this$props2.sideBarHeader;
       return _react.default.createElement(Sidebar, {
         sidebarCollapse: sidebarCollapse
       }, _react.default.createElement(SidebarContainer, {
         sidebarMini: sidebarMini
       }, _react.default.createElement(Nav, {
         sidebarMini: sidebarMini
-      }, _react.default.createElement(Menu, {
+      }, sideBarHeader && _react.default.createElement(SideBarHeader, null, sideBarHeader), _react.default.createElement(Menu, {
         sidebarMini: sidebarMini,
         selected: selected,
         Link: Link

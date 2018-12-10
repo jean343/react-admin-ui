@@ -15,11 +15,11 @@ const Sidebar = styled.div.withConfig({
 const SidebarContainer = styled.div.withConfig({
   displayName: "Sidebar__SidebarContainer",
   componentId: "wu4c6y-1"
-})(["height:100%;flex:1 1;overflow-y:", ";"], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `visible` : `auto`);
+})(["height:100%;flex:1 1;overflow-y:", ";transition:width 0.25s;width:", ";&::-webkit-scrollbar{width:10px;margin-left:-10px;appearance:none;}&::-webkit-scrollbar-thumb{background-color:", ";background-clip:content-box;border-color:transparent;border-style:solid;border-width:1px 2px;border-radius:4px;}"], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `visible` : `auto`, props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], `50px`].filter(v => v !== void 0)[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], `200px`].filter(v => v !== void 0)[0], props => require('tinycolor2')([props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-900"], (props.theme || {})["gray-900"], `#313742`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0]).lighten(parseFloat(`15%`)).toHex8String());
 const Nav = styled.ul.withConfig({
   displayName: "Sidebar__Nav",
   componentId: "wu4c6y-2"
-})(["display:flex;width:", ";flex-direction:column;padding:0;list-style:none;margin:0;transition:max-height 0.3s ease-in-out,width 0.25s;overflow-y:", ";"], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], `50px`].filter(v => v !== void 0)[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], `200px`].filter(v => v !== void 0)[0], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `visible` : `hidden`);
+})(["display:flex;flex-direction:column;padding:0;list-style:none;margin:0;transition:max-height 0.3s ease-in-out;overflow-y:", ";"], props => !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(v => v !== void 0)[0] ? `visible` : `hidden`);
 const SubNav = styled(Nav).withConfig({
   displayName: "Sidebar__SubNav",
   componentId: "wu4c6y-3"
@@ -42,6 +42,15 @@ const SidebarMinimizer = styled.button.withConfig({
   b: `0`,
   a: `0.3`
 }).toHex8String(), props => [props["gray-500"], (props.theme || {})["gray-500"], `#a0a9b8`].filter(v => v !== void 0)[0]);
+const SideBarHeader = styled.div.withConfig({
+  displayName: "Sidebar__SideBarHeader",
+  componentId: "wu4c6y-6"
+})(["height:", ";padding:0.5rem 1rem;border-bottom:1px solid ", ";"], props => [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], `40px`].filter(v => v !== void 0)[0], props => require("tinycolor2")({
+  r: `255`,
+  g: `255`,
+  b: `255`,
+  a: `0.2`
+}).toHex8String());
 
 class Menu extends Component {
   constructor(...args) {
@@ -125,7 +134,8 @@ class Inner extends Component {
       sidebarCollapse,
       sidebarMini,
       onSidebarMiniChange,
-      Link
+      Link,
+      sideBarHeader
     } = this.props;
     return React.createElement(Sidebar, {
       sidebarCollapse: sidebarCollapse
@@ -133,7 +143,7 @@ class Inner extends Component {
       sidebarMini: sidebarMini
     }, React.createElement(Nav, {
       sidebarMini: sidebarMini
-    }, React.createElement(Menu, {
+    }, sideBarHeader && React.createElement(SideBarHeader, null, sideBarHeader), React.createElement(Menu, {
       sidebarMini: sidebarMini,
       selected: selected,
       Link: Link

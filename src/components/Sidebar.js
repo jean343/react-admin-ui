@@ -24,16 +24,33 @@ const SidebarContainer = styled.div`
 	height: 100%;
 	flex: 1 1;
 	overflow-y: if(@sidebarMini, visible, auto);
+	
+	transition: width .25s;
+	width: if(@sidebarMini, @sidebar-minimized-width, @sidebar-width);
+	
+  &::-webkit-scrollbar {
+    width: 10px;
+    margin-left: -10px;
+    appearance: none;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: lighten(@sidebar-bg, 15%);
+    background-clip: content-box;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px 2px;
+    border-radius: 4px;
+  }
 `;
 
 const Nav = styled.ul`
 	display: flex;
-	width: if(@sidebarMini, @sidebar-minimized-width, @sidebar-width);
 	flex-direction: column;
 	padding: 0;
 	list-style: none;
 	margin: 0;
-	transition: max-height .3s ease-in-out, width .25s;
+	transition: max-height .3s ease-in-out;
 	overflow-y: if(@sidebarMini, visible, hidden);
 `;
 const SubNav = styled(Nav)`
@@ -77,6 +94,12 @@ const SidebarMinimizer = styled.button`
 		background-color: rgba(0, 0, 0, .3);
 		color: @gray-500;
 	}
+`;
+
+const SideBarHeader = styled.div`
+  height: @sub-navbar-height;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
 `;
 
 class Menu extends Component {
@@ -128,10 +151,11 @@ class Inner extends Component {
   }
 
   render() {
-    const {sideMenu, selected, sidebarCollapse, sidebarMini, onSidebarMiniChange, Link} = this.props;
+    const {sideMenu, selected, sidebarCollapse, sidebarMini, onSidebarMiniChange, Link, sideBarHeader} = this.props;
     return <Sidebar sidebarCollapse={sidebarCollapse}>
       <SidebarContainer sidebarMini={sidebarMini}>
         <Nav sidebarMini={sidebarMini}>
+          {sideBarHeader && <SideBarHeader>{sideBarHeader}</SideBarHeader>}
           <Menu sidebarMini={sidebarMini} selected={selected} Link={Link}>{sideMenu}</Menu>
         </Nav>
       </SidebarContainer>

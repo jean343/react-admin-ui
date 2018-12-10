@@ -42,19 +42,13 @@ const TabContent = styled.div`
     appearance: none;
   }
   
-  &::-webkit-scrollbar-track {
-    background-color: lighten(@aside-menu-bg, 5%);
-    border-right: 1px solid darken(@aside-menu-bg, 5%);
-    border-left: 1px solid darken(@aside-menu-bg, 5%);
-  }
-  
   &::-webkit-scrollbar-thumb {
-    height: 50px;
-    background-color: darken(@aside-menu-bg, 10%);
+    background-color: darken(@aside-menu-bg, 14%);
     background-clip: content-box;
     border-color: transparent;
     border-style: solid;
     border-width: 1px 2px;
+    border-radius: 4px;
   }
 `;
 

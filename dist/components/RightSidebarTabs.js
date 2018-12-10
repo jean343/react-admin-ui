@@ -82,7 +82,7 @@ var NavItem = _styledComponents.default.li.withConfig({
 var TabContent = _styledComponents.default.div.withConfig({
   displayName: "RightSidebarTabs__TabContent",
   componentId: "lqc9c0-2"
-})(["position:relative;overflow-x:hidden;overflow-y:auto;border:0;height:calc(100vh - ", " - ", ");padding:1rem;&::-webkit-scrollbar{width:10px;margin-left:-10px;appearance:none;}&::-webkit-scrollbar-track{background-color:", ";border-right:1px solid ", ";border-left:1px solid ", ";}&::-webkit-scrollbar-thumb{height:50px;background-color:", ";background-clip:content-box;border-color:transparent;border-style:solid;border-width:1px 2px;}"], function (props) {
+})(["position:relative;overflow-x:hidden;overflow-y:auto;border:0;height:calc(100vh - ", " - ", ");padding:1rem;&::-webkit-scrollbar{width:10px;margin-left:-10px;appearance:none;}&::-webkit-scrollbar-thumb{background-color:", ";background-clip:content-box;border-color:transparent;border-style:solid;border-width:1px 2px;border-radius:4px;}"], function (props) {
   return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -95,25 +95,7 @@ var TabContent = _styledComponents.default.div.withConfig({
     return v !== void 0;
   })[0]].filter(function (v) {
     return v !== void 0;
-  })[0]).lighten(parseFloat("5%")).toHex8String();
-}, function (props) {
-  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
-    return v !== void 0;
-  })[0]].filter(function (v) {
-    return v !== void 0;
-  })[0]).darken(parseFloat("5%")).toHex8String();
-}, function (props) {
-  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
-    return v !== void 0;
-  })[0]].filter(function (v) {
-    return v !== void 0;
-  })[0]).darken(parseFloat("5%")).toHex8String();
-}, function (props) {
-  return require('tinycolor2')([props["aside-menu-bg"], (props.theme || {})["aside-menu-bg"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
-    return v !== void 0;
-  })[0]].filter(function (v) {
-    return v !== void 0;
-  })[0]).darken(parseFloat("10%")).toHex8String();
+  })[0]).darken(parseFloat("14%")).toHex8String();
 });
 
 var _default =

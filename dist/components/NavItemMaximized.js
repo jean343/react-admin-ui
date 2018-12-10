@@ -73,7 +73,7 @@ var NavItemMaximized = _styledComponents.default.li.withConfig({
       r: "255",
       g: "255",
       b: "255",
-      a: "0.1"
+      a: "0.2"
     }).toHex8String();
   }, function (props) {
     return parseFloat([props["count"], (props.theme || {})["count"]].filter(function (v) {
