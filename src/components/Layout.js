@@ -27,7 +27,7 @@ export default class Layout extends Component {
   static defaultProps = {
     initialCollapse: false,
     initialMini: false,
-    initialRightSidebarCollapse: false,
+    initialRightSidebarCollapse: true,
   };
   state = {
     lg: false,

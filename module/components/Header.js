@@ -25,7 +25,7 @@ const NavItem = styled.li.withConfig({
 export default class extends Component {
   render() {
     const {
-      small,
+      lg,
       topMenu,
       onNavbarToggle,
       onRightNavbarToggle,
@@ -59,7 +59,7 @@ export default class extends Component {
       style: {
         flex: 1
       }
-    }), !small && React.createElement(NavbarToggler, {
+    }), !lg && React.createElement(NavbarToggler, {
       onClick: onRightNavbarToggle
     }, React.createElement(Bars, {
       width: 14

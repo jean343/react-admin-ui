@@ -98,7 +98,7 @@ const NavItem = styled.li`
 
 export default class extends Component {
   render() {
-    const {small, topMenu, onNavbarToggle, onRightNavbarToggle, selected, logo, Link} = this.props;
+    const {lg, topMenu, onNavbarToggle, onRightNavbarToggle, selected, logo, Link} = this.props;
     return <Header>
       <Link href="/" to="/">
         <NavbarBrand>{logo}</NavbarBrand>
@@ -117,7 +117,7 @@ export default class extends Component {
         })}
       </NavbarNav>
       <div style={{flex: 1}}/>
-      {!small && <NavbarToggler onClick={onRightNavbarToggle}>
+      {!lg && <NavbarToggler onClick={onRightNavbarToggle}>
         <Bars width={14}/>
       </NavbarToggler>}
     </Header>

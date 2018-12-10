@@ -163,7 +163,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          small = _this$props.small,
+          lg = _this$props.lg,
           topMenu = _this$props.topMenu,
           onNavbarToggle = _this$props.onNavbarToggle,
           onRightNavbarToggle = _this$props.onRightNavbarToggle,
@@ -197,7 +197,7 @@ function (_Component) {
         style: {
           flex: 1
         }
-      }), !small && _react.default.createElement(NavbarToggler, {
+      }), !lg && _react.default.createElement(NavbarToggler, {
         onClick: onRightNavbarToggle
       }, _react.default.createElement(_Bars.default, {
         width: 14

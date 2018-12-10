@@ -112,5 +112,5 @@ export default class Layout extends Component {
 _defineProperty(Layout, "defaultProps", {
   initialCollapse: false,
   initialMini: false,
-  initialRightSidebarCollapse: false
+  initialRightSidebarCollapse: true
 });
