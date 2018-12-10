@@ -53,6 +53,8 @@ export default class Layout extends Component {
       children,
       logo,
       sideBarHeader,
+      toolbar,
+      rightToolbar,
       linkComponent = "a"
     } = this.props;
     const {
@@ -102,7 +104,10 @@ export default class Layout extends Component {
       sidebarCollapse: md || sidebarCollapse,
       sidebarMini: lg || sidebarMini,
       rightSidebarCollapse: lg || rightSidebarCollapse
-    }, React.createElement(Toolbar, null), React.createElement(Content, null, children)), React.createElement(RightSidebar, {
+    }, React.createElement(Toolbar, {
+      toolbar: toolbar,
+      rightToolbar: rightToolbar
+    }), React.createElement(Content, null, children)), React.createElement(RightSidebar, {
       rightSidebarCollapse: lg || rightSidebarCollapse,
       sideBarTabs: sideBarTabs
     })));
