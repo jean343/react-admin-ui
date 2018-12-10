@@ -34,7 +34,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Toolbar = _styledComponents.default.div.withConfig({
   displayName: "Toolbar",
   componentId: "sc-12ykycd-0"
-})(["@media print{display:none;}height:", ";border-bottom:1px solid ", ";background-color:white;display:flex;.toolbar-item{cursor:pointer;width:", ";transition:background-color 0.1s ease-in-out;}.toolbar-item:hover{background-color:", ";}"], function (props) {
+})(["@media print{display:none;}height:", ";border-bottom:1px solid ", ";background-color:white;display:flex;.toolbar-item{cursor:pointer;width:", ";display:flex;align-items:center;justify-content:center;transition:background-color 0.1s ease-in-out;}.toolbar-item:hover{background-color:", ";}"], function (props) {
   return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -43,9 +43,11 @@ var Toolbar = _styledComponents.default.div.withConfig({
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
+  return parseFloat([props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
     return v !== void 0;
-  })[0];
+  })[0]) * parseFloat(1.1) + (('' + [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
+    return v !== void 0;
+  })[0]).replace(/[\d.-]*/, "") || ('' + 1.1).replace(/[\d.-]*/, ""));
 }, function (props) {
   return [props["gray-100"], (props.theme || {})["gray-100"], "#f8f8fa"].filter(function (v) {
     return v !== void 0;
@@ -55,7 +57,7 @@ var Toolbar = _styledComponents.default.div.withConfig({
 var Left = _styledComponents.default.div.withConfig({
   displayName: "Toolbar__Left",
   componentId: "sc-12ykycd-1"
-})(["display:flex;.toolbar-item{border-right:1px solid ", ";}"], function (props) {
+})(["display:flex;border-right:1px solid ", ";"], function (props) {
   return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -64,7 +66,7 @@ var Left = _styledComponents.default.div.withConfig({
 var Right = _styledComponents.default.div.withConfig({
   displayName: "Toolbar__Right",
   componentId: "sc-12ykycd-2"
-})(["display:flex;.toolbar-item{border-left:1px solid ", ";}"], function (props) {
+})(["display:flex;border-left:1px solid ", ";"], function (props) {
   return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -87,11 +89,11 @@ function (_Component) {
       var _this$props = this.props,
           toolbar = _this$props.toolbar,
           rightToolbar = _this$props.rightToolbar;
-      return _react.default.createElement(Toolbar, null, _react.default.createElement(Left, null, toolbar), _react.default.createElement("div", {
+      return _react.default.createElement(Toolbar, null, toolbar && _react.default.createElement(Left, null, toolbar), _react.default.createElement("div", {
         style: {
           flex: 1
         }
-      }), _react.default.createElement(Right, null, rightToolbar));
+      }), rightToolbar && _react.default.createElement(Right, null, rightToolbar));
     }
   }]);
 

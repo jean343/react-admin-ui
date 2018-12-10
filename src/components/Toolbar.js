@@ -11,7 +11,11 @@ const Toolbar = styled.div`
   display: flex;
   .toolbar-item {
     cursor: pointer;
-    width: @sub-navbar-height;
+    width: @sub-navbar-height * 1.1;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     transition: background-color .1s ease-in-out;
     :hover {
@@ -21,24 +25,20 @@ const Toolbar = styled.div`
 `;
 const Left = styled.div`
   display: flex;
-  .toolbar-item {
-    border-right: 1px solid @gray-300;
-  }
+  border-right: 1px solid @gray-300;
 `;
 const Right = styled.div`
   display: flex;
-  .toolbar-item {
-    border-left: 1px solid @gray-300;
-  }
+  border-left: 1px solid @gray-300;
 `;
 
 export default class extends Component {
   render() {
     const {toolbar, rightToolbar} = this.props;
     return <Toolbar>
-      <Left>{toolbar}</Left>
+      {toolbar && <Left>{toolbar}</Left>}
       <div style={{flex: 1}}/>
-      <Right>{rightToolbar}</Right>
+      {rightToolbar && <Right>{rightToolbar}</Right>}
     </Toolbar>
   }
 }
