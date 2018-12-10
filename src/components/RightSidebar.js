@@ -4,6 +4,9 @@ import RightSidebarTabs from './RightSidebarTabs';
 import {triggerResize} from "./utils";
 
 const Sidebar = styled.div`
+  @media print {
+    display: none;
+  }
   width: @aside-menu-width;
   right: 0;
   position: fixed;

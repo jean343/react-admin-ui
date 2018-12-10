@@ -2,6 +2,9 @@ import React, {Component, Children} from 'react';
 import styled from 'styled-components';
 
 const Toolbar = styled.div`
+  @media print {
+    display: none;
+  }
   height: @sub-navbar-height;
   border-bottom: 1px solid @gray-300;
   background-color: white;

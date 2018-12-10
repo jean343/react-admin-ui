@@ -8,6 +8,9 @@ import CaretSquareLeft from "./icons/CaretSquareLeft";
 import {isSelected, triggerResize} from './utils';
 
 const Sidebar = styled.div`
+  @media print {
+    display: none;
+  }
 	position: fixed;
 	display: flex;
 	flex-direction: column;

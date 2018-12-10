@@ -12,6 +12,10 @@ const App = styled.div`
   flex-direction: column;
   min-height: 100vh;
   
+  @media screen {
+    color: @body-color;
+  }
+  
   a {
     color: @link-color;
     text-decoration: @link-decoration;

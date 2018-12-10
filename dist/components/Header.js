@@ -38,7 +38,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Header = _styledComponents.default.header.withConfig({
   displayName: "Header",
   componentId: "sc-1ahrfh-0"
-})(["flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:", ";width:100%;text-align:center;border-bottom:1px solid ", ";display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;"], function (props) {
+})(["@media print{display:none;}flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:", ";width:100%;text-align:center;border-bottom:1px solid ", ";display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;"], function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];

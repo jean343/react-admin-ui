@@ -4,6 +4,9 @@ import Bars from './icons/Bars';
 import {isSelected} from './utils';
 
 const Header = styled.header`
+  @media print {
+    display: none;
+  }
 	flex-direction: row;
 	height: @navbar-height;
 	padding: 0;
