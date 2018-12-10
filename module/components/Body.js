@@ -11,4 +11,4 @@ export const Main = styled.main.withConfig({
 export const Content = styled.div.withConfig({
   displayName: "Body__Content",
   componentId: "sc-1kjiic4-2"
-})(["padding:4px;"]);
+})(["padding:4px;position:relative;"]);

@@ -304,7 +304,8 @@ function (_Component2) {
           Link = _this$props2.Link,
           sideBarHeader = _this$props2.sideBarHeader;
       return _react.default.createElement(Sidebar, {
-        sidebarCollapse: sidebarCollapse
+        sidebarCollapse: sidebarCollapse,
+        onTransitionEnd: _utils.triggerResize
       }, _react.default.createElement(SidebarContainer, {
         sidebarMini: sidebarMini
       }, _react.default.createElement(Nav, {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import RightSidebarTabs from './RightSidebarTabs';
+import { triggerResize } from "./utils";
 const Sidebar = styled.div.withConfig({
   displayName: "RightSidebar__Sidebar",
   componentId: "sc-2fsqfn-0"
@@ -16,7 +17,8 @@ export default class extends Component {
       sideBarTabs
     } = this.props;
     return React.createElement(Sidebar, {
-      rightSidebarCollapse: rightSidebarCollapse
+      rightSidebarCollapse: rightSidebarCollapse,
+      onTransitionEnd: triggerResize
     }, React.createElement(SidebarContainer, null, React.createElement(RightSidebarTabs, {
       sideBarTabs: sideBarTabs
     })));

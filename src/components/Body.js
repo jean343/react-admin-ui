@@ -22,4 +22,5 @@ export const Main = styled.main`
 
 export const Content = styled.div`
     padding: 4px;
+    position: relative;
 `;

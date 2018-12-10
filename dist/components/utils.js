@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.isSelected = void 0;
+exports.triggerResize = exports.isSelected = void 0;
 
 var normalize = function normalize(link) {
   if (link && link[0] !== "/") {
@@ -28,3 +28,11 @@ var isSelected = function isSelected(selected, href, to) {
 };
 
 exports.isSelected = isSelected;
+
+var triggerResize = function triggerResize(e) {
+  if (e.propertyName === "transform") {
+    window.dispatchEvent(new Event('resize'));
+  }
+};
+
+exports.triggerResize = triggerResize;

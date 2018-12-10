@@ -58,6 +58,6 @@ exports.Main = Main;
 var Content = _styledComponents.default.div.withConfig({
   displayName: "Body__Content",
   componentId: "sc-1kjiic4-2"
-})(["padding:4px;"]);
+})(["padding:4px;position:relative;"]);
 
 exports.Content = Content;

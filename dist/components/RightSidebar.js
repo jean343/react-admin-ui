@@ -11,6 +11,8 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _RightSidebarTabs = _interopRequireDefault(require("./RightSidebarTabs"));
 
+var _utils = require("./utils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -95,7 +97,8 @@ function (_Component) {
           rightSidebarCollapse = _this$props.rightSidebarCollapse,
           sideBarTabs = _this$props.sideBarTabs;
       return _react.default.createElement(Sidebar, {
-        rightSidebarCollapse: rightSidebarCollapse
+        rightSidebarCollapse: rightSidebarCollapse,
+        onTransitionEnd: _utils.triggerResize
       }, _react.default.createElement(SidebarContainer, null, _react.default.createElement(_RightSidebarTabs.default, {
         sideBarTabs: sideBarTabs
       })));

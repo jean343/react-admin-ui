@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
 import RightSidebarTabs from './RightSidebarTabs';
+import {triggerResize} from "./utils";
 
 const Sidebar = styled.div`
   width: @aside-menu-width;
@@ -27,7 +28,7 @@ const SidebarContainer = styled.div`
 export default class extends Component {
   render() {
     const {rightSidebarCollapse, sideBarTabs} = this.props;
-    return <Sidebar rightSidebarCollapse={rightSidebarCollapse}>
+    return <Sidebar rightSidebarCollapse={rightSidebarCollapse} onTransitionEnd={triggerResize}>
       <SidebarContainer>
         <RightSidebarTabs sideBarTabs={sideBarTabs}/>
       </SidebarContainer>

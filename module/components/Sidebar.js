@@ -7,7 +7,7 @@ import { NavItemMinimized } from './NavItemMinimized';
 import ClickOutside from "react-click-outside";
 import CaretLeft from "./icons/CaretLeft";
 import CaretSquareLeft from "./icons/CaretSquareLeft";
-import { isSelected } from './utils';
+import { isSelected, triggerResize } from './utils';
 const Sidebar = styled.div.withConfig({
   displayName: "Sidebar",
   componentId: "wu4c6y-0"
@@ -138,7 +138,8 @@ class Inner extends Component {
       sideBarHeader
     } = this.props;
     return React.createElement(Sidebar, {
-      sidebarCollapse: sidebarCollapse
+      sidebarCollapse: sidebarCollapse,
+      onTransitionEnd: triggerResize
     }, React.createElement(SidebarContainer, {
       sidebarMini: sidebarMini
     }, React.createElement(Nav, {

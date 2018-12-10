@@ -19,3 +19,8 @@ export const isSelected = (selected, href, to) => {
   const right = normalize(getPath(href) || getPath(to));
   return left === right;
 };
+export const triggerResize = e => {
+  if (e.propertyName === "transform") {
+    window.dispatchEvent(new Event('resize'));
+  }
+};
