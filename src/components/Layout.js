@@ -30,7 +30,8 @@ export default class Layout extends Component {
     initialRightSidebarCollapse: false,
   };
   state = {
-    small: false,
+    lg: false,
+    md: false,
     sidebarOpened: false,
     sidebarCollapse: this.props.initialCollapse,
     sidebarMini: this.props.initialMini,
@@ -38,8 +39,8 @@ export default class Layout extends Component {
   };
 
   onNavbarToggle = () => {
-    const {small, sidebarOpened, sidebarCollapse} = this.state;
-    if (small) {
+    const {lg, sidebarOpened, sidebarCollapse} = this.state;
+    if (lg) {
       this.setState({sidebarOpened: !sidebarOpened})
     } else {
       this.setState({sidebarCollapse: !sidebarCollapse})
@@ -48,10 +49,11 @@ export default class Layout extends Component {
 
   render() {
     const {sideMenu, topMenu, selected, sideBarTabs, children, logo, sideBarHeader, linkComponent = "a"} = this.props;
-    const {small, sidebarOpened, sidebarCollapse, rightSidebarCollapse, sidebarMini} = this.state;
+    const {lg, md, sidebarOpened, sidebarCollapse, rightSidebarCollapse, sidebarMini} = this.state;
     return <App>
-      <Matchmedia query="screen and (max-width: 991.98px)" onMatch={matches => this.setState({small: matches, sidebarOpened: false})}/>
-      <Header logo={logo} small={small}
+      <Matchmedia query="screen and (max-width: 991.98px)" onMatch={matches => this.setState({lg: matches})}/>
+      <Matchmedia query="screen and (max-width: 767.98px)" onMatch={matches => this.setState({md: matches, sidebarOpened: false})}/>
+      <Header logo={logo} lg={lg}
               topMenu={topMenu} selected={selected}
               onNavbarToggle={this.onNavbarToggle}
               onRightNavbarToggle={() => this.setState({rightSidebarCollapse: !rightSidebarCollapse})}
@@ -62,17 +64,17 @@ export default class Layout extends Component {
         sideMenu={sideMenu}
         sideBarHeader={sideBarHeader}
         selected={selected}
-        sidebarCollapse={!sidebarOpened && (small || sidebarCollapse)}
-        sidebarMini={sidebarMini}
+        sidebarCollapse={!sidebarOpened && (md || sidebarCollapse)}
+        sidebarMini={!sidebarOpened && (lg || sidebarMini)}
         onSidebarMiniChange={sidebarMini => this.setState({sidebarMini})}
         onClickOutside={() => sidebarOpened && setTimeout(() => this.setState({sidebarOpened: false}), 0)}
         Link={linkComponent}/>
 
-      <Main sidebarCollapse={small || sidebarCollapse} sidebarMini={sidebarMini} rightSidebarCollapse={small || rightSidebarCollapse}>
+      <Main sidebarCollapse={md || sidebarCollapse} sidebarMini={lg || sidebarMini} rightSidebarCollapse={lg || rightSidebarCollapse}>
         <Toolbar/>
         <Content>{children}</Content>
       </Main>
-      <RightSidebar rightSidebarCollapse={small || rightSidebarCollapse} sideBarTabs={sideBarTabs}/>
+      <RightSidebar rightSidebarCollapse={lg || rightSidebarCollapse} sideBarTabs={sideBarTabs}/>
       </Body>
       {/*<Footer/>*/}
     </App>

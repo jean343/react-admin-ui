@@ -17,7 +17,8 @@ export default class Layout extends Component {
     super(...args);
 
     _defineProperty(this, "state", {
-      small: false,
+      lg: false,
+      md: false,
       sidebarOpened: false,
       sidebarCollapse: this.props.initialCollapse,
       sidebarMini: this.props.initialMini,
@@ -26,12 +27,12 @@ export default class Layout extends Component {
 
     _defineProperty(this, "onNavbarToggle", () => {
       const {
-        small,
+        lg,
         sidebarOpened,
         sidebarCollapse
       } = this.state;
 
-      if (small) {
+      if (lg) {
         this.setState({
           sidebarOpened: !sidebarOpened
         });
@@ -55,7 +56,8 @@ export default class Layout extends Component {
       linkComponent = "a"
     } = this.props;
     const {
-      small,
+      lg,
+      md,
       sidebarOpened,
       sidebarCollapse,
       rightSidebarCollapse,
@@ -64,12 +66,17 @@ export default class Layout extends Component {
     return React.createElement(App, null, React.createElement(Matchmedia, {
       query: "screen and (max-width: 991.98px)",
       onMatch: matches => this.setState({
-        small: matches,
+        lg: matches
+      })
+    }), React.createElement(Matchmedia, {
+      query: "screen and (max-width: 767.98px)",
+      onMatch: matches => this.setState({
+        md: matches,
         sidebarOpened: false
       })
     }), React.createElement(Header, {
       logo: logo,
-      small: small,
+      lg: lg,
       topMenu: topMenu,
       selected: selected,
       onNavbarToggle: this.onNavbarToggle,
@@ -81,8 +88,8 @@ export default class Layout extends Component {
       sideMenu: sideMenu,
       sideBarHeader: sideBarHeader,
       selected: selected,
-      sidebarCollapse: !sidebarOpened && (small || sidebarCollapse),
-      sidebarMini: sidebarMini,
+      sidebarCollapse: !sidebarOpened && (md || sidebarCollapse),
+      sidebarMini: !sidebarOpened && (lg || sidebarMini),
       onSidebarMiniChange: sidebarMini => this.setState({
         sidebarMini
       }),
@@ -91,11 +98,11 @@ export default class Layout extends Component {
       }), 0),
       Link: linkComponent
     }), React.createElement(Main, {
-      sidebarCollapse: small || sidebarCollapse,
-      sidebarMini: sidebarMini,
-      rightSidebarCollapse: small || rightSidebarCollapse
+      sidebarCollapse: md || sidebarCollapse,
+      sidebarMini: lg || sidebarMini,
+      rightSidebarCollapse: lg || rightSidebarCollapse
     }, React.createElement(Toolbar, null), React.createElement(Content, null, children)), React.createElement(RightSidebar, {
-      rightSidebarCollapse: small || rightSidebarCollapse,
+      rightSidebarCollapse: lg || rightSidebarCollapse,
       sideBarTabs: sideBarTabs
     })));
   }

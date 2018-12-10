@@ -89,7 +89,8 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Layout)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      small: false,
+      lg: false,
+      md: false,
       sidebarOpened: false,
       sidebarCollapse: _this.props.initialCollapse,
       sidebarMini: _this.props.initialMini,
@@ -98,11 +99,11 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onNavbarToggle", function () {
       var _this$state = _this.state,
-          small = _this$state.small,
+          lg = _this$state.lg,
           sidebarOpened = _this$state.sidebarOpened,
           sidebarCollapse = _this$state.sidebarCollapse;
 
-      if (small) {
+      if (lg) {
         _this.setState({
           sidebarOpened: !sidebarOpened
         });
@@ -132,7 +133,8 @@ function (_Component) {
           _this$props$linkCompo = _this$props.linkComponent,
           linkComponent = _this$props$linkCompo === void 0 ? "a" : _this$props$linkCompo;
       var _this$state2 = this.state,
-          small = _this$state2.small,
+          lg = _this$state2.lg,
+          md = _this$state2.md,
           sidebarOpened = _this$state2.sidebarOpened,
           sidebarCollapse = _this$state2.sidebarCollapse,
           rightSidebarCollapse = _this$state2.rightSidebarCollapse,
@@ -141,13 +143,20 @@ function (_Component) {
         query: "screen and (max-width: 991.98px)",
         onMatch: function onMatch(matches) {
           return _this2.setState({
-            small: matches,
+            lg: matches
+          });
+        }
+      }), _react.default.createElement(_Matchmedia.default, {
+        query: "screen and (max-width: 767.98px)",
+        onMatch: function onMatch(matches) {
+          return _this2.setState({
+            md: matches,
             sidebarOpened: false
           });
         }
       }), _react.default.createElement(_Header.default, {
         logo: logo,
-        small: small,
+        lg: lg,
         topMenu: topMenu,
         selected: selected,
         onNavbarToggle: this.onNavbarToggle,
@@ -161,8 +170,8 @@ function (_Component) {
         sideMenu: sideMenu,
         sideBarHeader: sideBarHeader,
         selected: selected,
-        sidebarCollapse: !sidebarOpened && (small || sidebarCollapse),
-        sidebarMini: sidebarMini,
+        sidebarCollapse: !sidebarOpened && (md || sidebarCollapse),
+        sidebarMini: !sidebarOpened && (lg || sidebarMini),
         onSidebarMiniChange: function onSidebarMiniChange(sidebarMini) {
           return _this2.setState({
             sidebarMini: sidebarMini
@@ -177,11 +186,11 @@ function (_Component) {
         },
         Link: linkComponent
       }), _react.default.createElement(_Body.Main, {
-        sidebarCollapse: small || sidebarCollapse,
-        sidebarMini: sidebarMini,
-        rightSidebarCollapse: small || rightSidebarCollapse
+        sidebarCollapse: md || sidebarCollapse,
+        sidebarMini: lg || sidebarMini,
+        rightSidebarCollapse: lg || rightSidebarCollapse
       }, _react.default.createElement(_Toolbar.default, null), _react.default.createElement(_Body.Content, null, children)), _react.default.createElement(_RightSidebar.default, {
-        rightSidebarCollapse: small || rightSidebarCollapse,
+        rightSidebarCollapse: lg || rightSidebarCollapse,
         sideBarTabs: sideBarTabs
       })));
     }
