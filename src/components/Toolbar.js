@@ -26,6 +26,9 @@ const Toolbar = styled.div`
 const Left = styled.div`
   display: flex;
   border-right: @border-width solid @border-color;
+  :empty {
+    display: none;
+  }
 `;
 
 export default class extends Component {

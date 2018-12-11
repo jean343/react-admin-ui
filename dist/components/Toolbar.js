@@ -63,7 +63,7 @@ var Toolbar = _styledComponents.default.div.withConfig({
 var Left = _styledComponents.default.div.withConfig({
   displayName: "Toolbar__Left",
   componentId: "sc-12ykycd-1"
-})(["display:flex;border-right:", " solid ", ";"], function (props) {
+})(["display:flex;border-right:", " solid ", ";:empty{display:none;}"], function (props) {
   return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
     return v !== void 0;
   })[0];

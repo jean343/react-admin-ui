@@ -7,7 +7,7 @@ const Toolbar = styled.div.withConfig({
 const Left = styled.div.withConfig({
   displayName: "Toolbar__Left",
   componentId: "sc-12ykycd-1"
-})(["display:flex;border-right:", " solid ", ";"], props => [props["border-width"], (props.theme || {})["border-width"], `1px`].filter(v => v !== void 0)[0], props => [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], `#dadee4`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0]);
+})(["display:flex;border-right:", " solid ", ";:empty{display:none;}"], props => [props["border-width"], (props.theme || {})["border-width"], `1px`].filter(v => v !== void 0)[0], props => [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], `#dadee4`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0]);
 export default class extends Component {
   render() {
     let {
