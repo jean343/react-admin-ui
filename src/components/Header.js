@@ -60,6 +60,7 @@ const NavbarNav = styled.ul`
 	margin-bottom: 0;
 	list-style: none;
 	margin-top: 0;
+	flex: 1 0 0%
 `;
 const NavItem = styled.li`
 	cursor: pointer;
@@ -110,7 +111,8 @@ export default class extends Component {
         <Bars width={14}/>
       </NavbarToggler>
       <NavbarNav>
-        {topMenu.filter(m => !!m).map(({title, href, to, icon}, i) => {
+        {topMenu.filter(m => !!m).map(({title, href, to, icon, component}, i) => {
+          if (component) return component;
           return <NavItem key={i} active={isSelected(selected, href, to)}>
             <Link href={href} to={to}>
               <i className={icon}></i>
@@ -119,7 +121,6 @@ export default class extends Component {
           </NavItem>
         })}
       </NavbarNav>
-      <div style={{flex: 1}}/>
       {!lg && <NavbarToggler onClick={onRightNavbarToggle}>
         <Bars width={14}/>
       </NavbarToggler>}

@@ -105,7 +105,7 @@ var NavbarBrand = _styledComponents.default.div.withConfig({
 var NavbarNav = _styledComponents.default.ul.withConfig({
   displayName: "Header__NavbarNav",
   componentId: "sc-1ahrfh-3"
-})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;"]);
+})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;flex:1 0 0%"]);
 
 var NavItem = _styledComponents.default.li.withConfig({
   displayName: "Header__NavItem",
@@ -185,7 +185,9 @@ function (_Component) {
         var title = _ref.title,
             href = _ref.href,
             to = _ref.to,
-            icon = _ref.icon;
+            icon = _ref.icon,
+            component = _ref.component;
+        if (component) return component;
         return _react.default.createElement(NavItem, {
           key: i,
           active: (0, _utils.isSelected)(selected, href, to)
@@ -195,11 +197,7 @@ function (_Component) {
         }, _react.default.createElement("i", {
           className: icon
         }), _react.default.createElement("span", null, title)));
-      })), _react.default.createElement("div", {
-        style: {
-          flex: 1
-        }
-      }), !lg && _react.default.createElement(NavbarToggler, {
+      })), !lg && _react.default.createElement(NavbarToggler, {
         onClick: onRightNavbarToggle
       }, _react.default.createElement(_Bars.default, {
         width: 14

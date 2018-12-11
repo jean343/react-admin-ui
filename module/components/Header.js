@@ -17,7 +17,7 @@ const NavbarBrand = styled.div.withConfig({
 const NavbarNav = styled.ul.withConfig({
   displayName: "Header__NavbarNav",
   componentId: "sc-1ahrfh-3"
-})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;"]);
+})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;flex:1 0 0%"]);
 const NavItem = styled.li.withConfig({
   displayName: "Header__NavItem",
   componentId: "sc-1ahrfh-4"
@@ -44,8 +44,10 @@ export default class extends Component {
       title,
       href,
       to,
-      icon
+      icon,
+      component
     }, i) => {
+      if (component) return component;
       return React.createElement(NavItem, {
         key: i,
         active: isSelected(selected, href, to)
@@ -55,11 +57,7 @@ export default class extends Component {
       }, React.createElement("i", {
         className: icon
       }), React.createElement("span", null, title)));
-    })), React.createElement("div", {
-      style: {
-        flex: 1
-      }
-    }), !lg && React.createElement(NavbarToggler, {
+    })), !lg && React.createElement(NavbarToggler, {
       onClick: onRightNavbarToggle
     }, React.createElement(Bars, {
       width: 14
