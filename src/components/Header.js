@@ -16,7 +16,6 @@ const Header = styled.header`
 	position: fixed;
 	z-index: 1020;
 	width: 100%;
-	text-align: center;
 	border-bottom: @border-width solid @border-color;
 	
 	display: flex;
@@ -60,7 +59,7 @@ const NavbarNav = styled.ul`
 	margin-bottom: 0;
 	list-style: none;
 	margin-top: 0;
-	flex: 1 0 0%
+	flex: 1 0 0%;
 `;
 const NavItem = styled.li`
 	cursor: pointer;

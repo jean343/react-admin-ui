@@ -38,7 +38,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Header = _styledComponents.default.header.withConfig({
   displayName: "Header",
   componentId: "sc-1ahrfh-0"
-})(["@media print{display:none;}flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:1020;width:100%;text-align:center;border-bottom:", " solid ", ";display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;"], function (props) {
+})(["@media print{display:none;}flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:1020;width:100%;border-bottom:", " solid ", ";display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;"], function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -105,7 +105,7 @@ var NavbarBrand = _styledComponents.default.div.withConfig({
 var NavbarNav = _styledComponents.default.ul.withConfig({
   displayName: "Header__NavbarNav",
   componentId: "sc-1ahrfh-3"
-})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;flex:1 0 0%"]);
+})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;flex:1 0 0%;"]);
 
 var NavItem = _styledComponents.default.li.withConfig({
   displayName: "Header__NavItem",

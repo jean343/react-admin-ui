@@ -5,7 +5,7 @@ import { isSelected } from './utils';
 const Header = styled.header.withConfig({
   displayName: "Header",
   componentId: "sc-1ahrfh-0"
-})(["@media print{display:none;}flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:1020;width:100%;text-align:center;border-bottom:", " solid ", ";display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;"], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => [props["navbar-bg"], (props.theme || {})["navbar-bg"], [props["white"], (props.theme || {})["white"], `#fff`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["border-width"], (props.theme || {})["border-width"], `1px`].filter(v => v !== void 0)[0], props => [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], `#dadee4`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0]);
+})(["@media print{display:none;}flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:1020;width:100%;border-bottom:", " solid ", ";display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;"], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => [props["navbar-bg"], (props.theme || {})["navbar-bg"], [props["white"], (props.theme || {})["white"], `#fff`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["border-width"], (props.theme || {})["border-width"], `1px`].filter(v => v !== void 0)[0], props => [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], `#dadee4`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0]);
 const NavbarToggler = styled.button.withConfig({
   displayName: "Header__NavbarToggler",
   componentId: "sc-1ahrfh-1"
@@ -17,7 +17,7 @@ const NavbarBrand = styled.div.withConfig({
 const NavbarNav = styled.ul.withConfig({
   displayName: "Header__NavbarNav",
   componentId: "sc-1ahrfh-3"
-})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;flex:1 0 0%"]);
+})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;flex:1 0 0%;"]);
 const NavItem = styled.li.withConfig({
   displayName: "Header__NavItem",
   componentId: "sc-1ahrfh-4"
