@@ -38,7 +38,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Header = _styledComponents.default.header.withConfig({
   displayName: "Header",
   componentId: "sc-1ahrfh-0"
-})(["@media print{display:none;}flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:", ";width:100%;text-align:center;border-bottom:1px solid ", ";display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;"], function (props) {
+})(["@media print{display:none;}flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:1020;width:100%;text-align:center;border-bottom:", " solid ", ";display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;"], function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -49,11 +49,13 @@ var Header = _styledComponents.default.header.withConfig({
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["zindex-sticky"], (props.theme || {})["zindex-sticky"], "1020"].filter(function (v) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+  return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 });

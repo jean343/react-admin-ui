@@ -14,10 +14,10 @@ const Header = styled.header`
 	background-color: @navbar-bg;
 	
 	position: fixed;
-	z-index: @zindex-sticky;
+	z-index: 1020;
 	width: 100%;
 	text-align: center;
-	border-bottom: 1px solid @gray-300;
+	border-bottom: @border-width solid @border-color;
 	
 	display: flex;
 	flex-wrap: wrap;

@@ -34,7 +34,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var NavTabs = _styledComponents.default.ul.withConfig({
   displayName: "RightSidebarTabs__NavTabs",
   componentId: "lqc9c0-0"
-})(["border-bottom:1px solid ", ";display:flex;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;"], function (props) {
+})(["border-bottom:", " solid ", ";display:flex;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;"], function (props) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
   return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
     return v !== void 0;
   })[0]].filter(function (v) {
@@ -45,7 +49,7 @@ var NavTabs = _styledComponents.default.ul.withConfig({
 var NavItem = _styledComponents.default.li.withConfig({
   displayName: "RightSidebarTabs__NavItem",
   componentId: "lqc9c0-1"
-})(["margin-bottom:-1px;list-style:none;&& a{cursor:pointer;padding:12px 1rem;height:", ";color:", " !important;display:block;background-color:#fff;border-right:1px solid ", ";border-bottom:", ";transition:background-color 0.1s ease-in-out;}&& a:hover{background-color:", ";}"], function (props) {
+})(["margin-bottom:-1px;list-style:none;&& a{cursor:pointer;padding:12px 1rem;height:", ";color:", " !important;display:block;background-color:#fff;border-right:", " solid ", ";border-bottom:", ";transition:background-color 0.1s ease-in-out;}&& a:hover{background-color:", ";}"], function (props) {
   return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -62,13 +66,23 @@ var NavItem = _styledComponents.default.li.withConfig({
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
   return !![props["active"], (props.theme || {})["active"]].filter(function (v) {
     return v !== void 0;
-  })[0] ? "1px solid #fff" : "1px solid ".concat([props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+  })[0] ? "".concat([props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
+    return v !== void 0;
+  })[0], " solid #fff") : "".concat([props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
+    return v !== void 0;
+  })[0], " solid ").concat([props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
     return v !== void 0;
   })[0]].filter(function (v) {
     return v !== void 0;

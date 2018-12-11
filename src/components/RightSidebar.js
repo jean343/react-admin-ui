@@ -12,11 +12,10 @@ const Sidebar = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
-  padding: @sidebar-padding;
   color: @gray-800;
   background: @aside-menu-bg;
   height: calc(100vh - @navbar-height);
-  border-left: 1px solid @border-color;
+  border-left: @border-width solid @border-color;
   
   transition: transform .25s;
   ${props => props.rightSidebarCollapse && css`

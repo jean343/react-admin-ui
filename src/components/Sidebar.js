@@ -14,7 +14,6 @@ const Sidebar = styled.div`
 	position: fixed;
 	display: flex;
 	flex-direction: column;
-	padding: @sidebar-padding;
 	color: @sidebar-color;
 	background: @sidebar-bg;
 	height: calc(100vh - @navbar-height);
@@ -60,7 +59,7 @@ const SubNav = styled(Nav)`
   width: @sidebar-width;
 	min-height: 0;
 	max-height: 0;
-	border-left: 1px solid rgba(255, 255, 255, .2);
+	border-left: @border-width solid rgba(255, 255, 255, .2);
 	a {
 		padding: 0 calc(1rem - 3px);
 	}
@@ -104,7 +103,7 @@ const SidebarMinimizer = styled.button`
 const SideBarHeader = styled.div`
   height: @sub-navbar-height;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  border-bottom: @border-width solid rgba(255, 255, 255, .2);
 `;
 
 class Menu extends Component {

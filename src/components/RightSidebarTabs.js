@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
 
 const NavTabs = styled.ul`
-  border-bottom: 1px solid @border-color;
+  border-bottom: @border-width solid @border-color;
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -20,8 +20,8 @@ const NavItem = styled.li`
     color: if(@active, @primary, @body-color) !important;
     display: block;
     background-color: #fff;
-    border-right: 1px solid @gray-300;
-    border-bottom: if(@active, 1px solid #fff, 1px solid @border-color);
+    border-right: @border-width solid @border-color;
+    border-bottom: if(@active, @border-width solid #fff, @border-width solid @border-color);
     transition: background-color .1s ease-in-out;
     :hover {
       background-color: @gray-100;

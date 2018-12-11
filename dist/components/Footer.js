@@ -36,7 +36,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Footer = _styledComponents.default.footer.withConfig({
   displayName: "Footer",
   componentId: "rum83t-0"
-})(["display:flex;flex-wrap:wrap;align-items:center;padding:0 ", ";color:", ";background:", ";border-top:1px solid ", ";flex:0 0 ", ";span:first-child{flex:1;}"], function (props) {
+})(["display:flex;flex-wrap:wrap;align-items:center;padding:0 ", ";color:", ";background:", ";border-top:", " solid ", ";flex:0 0 ", ";span:first-child{flex:1;}"], function (props) {
   return [props["spacer"], (props.theme || {})["spacer"], "1rem"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -55,7 +55,13 @@ var Footer = _styledComponents.default.footer.withConfig({
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {

@@ -6,7 +6,7 @@ export const NavItemMaximized = styled.li`
 	margin: 0;
 	transition: background .3s ease-in-out, border .1s ease-in-out;
 	cursor: pointer;
-	border: 1px solid transparent;
+	border: @border-width solid transparent;
 	overflow: hidden;
 	flex-shrink: 0;
 	
@@ -47,7 +47,7 @@ export const NavItemMaximized = styled.li`
 	}
 	${props => props.open && css`
 		background: rgba(0, 0, 0, .2);
-		border: 1px solid rgba(255, 255, 255, .2);
+		border: @border-width solid rgba(255, 255, 255, .2);
 		> .sub-nav {
 			max-height: @count * 40px;
 		}

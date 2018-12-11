@@ -38,12 +38,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Sidebar = _styledComponents.default.div.withConfig({
   displayName: "RightSidebar__Sidebar",
   componentId: "sc-2fsqfn-0"
-})(["@media print{display:none;}width:", ";right:0;position:fixed;display:flex;flex-direction:column;padding:", ";color:", ";background:", ";height:calc(100vh - ", ");border-left:1px solid ", ";transition:transform 0.25s;", ""], function (props) {
+})(["@media print{display:none;}width:", ";right:0;position:fixed;display:flex;flex-direction:column;color:", ";background:", ";height:calc(100vh - ", ");border-left:", " solid ", ";transition:transform 0.25s;", ""], function (props) {
   return [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
-    return v !== void 0;
-  })[0];
-}, function (props) {
-  return [props["sidebar-padding"], (props.theme || {})["sidebar-padding"], "0"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
@@ -58,6 +54,10 @@ var Sidebar = _styledComponents.default.div.withConfig({
   })[0];
 }, function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {

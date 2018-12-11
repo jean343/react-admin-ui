@@ -48,11 +48,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var Sidebar = _styledComponents.default.div.withConfig({
   displayName: "Sidebar",
   componentId: "wu4c6y-0"
-})(["@media print{display:none;}position:fixed;display:flex;flex-direction:column;padding:", ";color:", ";background:", ";height:calc(100vh - ", ");z-index:1;transition:transform 0.25s;transform:", ";"], function (props) {
-  return [props["sidebar-padding"], (props.theme || {})["sidebar-padding"], "0"].filter(function (v) {
-    return v !== void 0;
-  })[0];
-}, function (props) {
+})(["@media print{display:none;}position:fixed;display:flex;flex-direction:column;color:", ";background:", ";height:calc(100vh - ", ");z-index:1;transition:transform 0.25s;transform:", ";"], function (props) {
   return [props["sidebar-color"], (props.theme || {})["sidebar-color"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
     return v !== void 0;
   })[0]].filter(function (v) {
@@ -113,8 +109,12 @@ var Nav = _styledComponents.default.ul.withConfig({
 var SubNav = (0, _styledComponents.default)(Nav).withConfig({
   displayName: "Sidebar__SubNav",
   componentId: "wu4c6y-3"
-})(["width:", ";min-height:0;max-height:0;border-left:1px solid ", ";a{padding:0 calc(1rem - 3px);}"], function (props) {
+})(["width:", ";min-height:0;max-height:0;border-left:", " solid ", ";a{padding:0 calc(1rem - 3px);}"], function (props) {
   return [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
@@ -177,8 +177,12 @@ var SidebarMinimizer = _styledComponents.default.button.withConfig({
 var SideBarHeader = _styledComponents.default.div.withConfig({
   displayName: "Sidebar__SideBarHeader",
   componentId: "wu4c6y-6"
-})(["height:", ";padding:0.5rem 1rem;border-bottom:1px solid ", ";"], function (props) {
+})(["height:", ";padding:0.5rem 1rem;border-bottom:", " solid ", ";"], function (props) {
   return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {

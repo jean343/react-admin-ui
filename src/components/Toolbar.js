@@ -6,7 +6,7 @@ const Toolbar = styled.div`
     display: none;
   }
   height: @sub-navbar-height;
-  border-bottom: 1px solid @gray-300;
+  border-bottom: @border-width solid @border-color;
   background-color: white;
   display: flex;
   .toolbar-item {
@@ -25,11 +25,11 @@ const Toolbar = styled.div`
 `;
 const Left = styled.div`
   display: flex;
-  border-right: 1px solid @gray-300;
+  border-right: @border-width solid @border-color;
 `;
 const Right = styled.div`
   display: flex;
-  border-left: 1px solid @gray-300;
+  border-left: @border-width solid @border-color;
 `;
 
 export default class extends Component {

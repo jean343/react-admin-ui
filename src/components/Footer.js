@@ -8,7 +8,7 @@ const Footer = styled.footer`
 	padding: 0 @spacer;
 	color: @footer-color;
 	background: @footer-bg;
-	border-top: 1px solid @gray-300;
+	border-top: @border-width solid @border-color;
 	
 	flex: 0 0 @footer-height;
 	span:first-child {

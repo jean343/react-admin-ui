@@ -34,12 +34,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Toolbar = _styledComponents.default.div.withConfig({
   displayName: "Toolbar",
   componentId: "sc-12ykycd-0"
-})(["@media print{display:none;}height:", ";border-bottom:1px solid ", ";background-color:white;display:flex;.toolbar-item{cursor:pointer;width:", ";display:flex;align-items:center;justify-content:center;transition:background-color 0.1s ease-in-out;}.toolbar-item:hover{background-color:", ";}"], function (props) {
+})(["@media print{display:none;}height:", ";border-bottom:", " solid ", ";background-color:white;display:flex;.toolbar-item{cursor:pointer;width:", ";display:flex;align-items:center;justify-content:center;transition:background-color 0.1s ease-in-out;}.toolbar-item:hover{background-color:", ";}"], function (props) {
   return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
@@ -57,8 +63,14 @@ var Toolbar = _styledComponents.default.div.withConfig({
 var Left = _styledComponents.default.div.withConfig({
   displayName: "Toolbar__Left",
   componentId: "sc-12ykycd-1"
-})(["display:flex;border-right:1px solid ", ";"], function (props) {
-  return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+})(["display:flex;border-right:", " solid ", ";"], function (props) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 });
@@ -66,8 +78,14 @@ var Left = _styledComponents.default.div.withConfig({
 var Right = _styledComponents.default.div.withConfig({
   displayName: "Toolbar__Right",
   componentId: "sc-12ykycd-2"
-})(["display:flex;border-left:1px solid ", ";"], function (props) {
-  return [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+})(["display:flex;border-left:", " solid ", ";"], function (props) {
+  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
+    return v !== void 0;
+  })[0]].filter(function (v) {
     return v !== void 0;
   })[0];
 });

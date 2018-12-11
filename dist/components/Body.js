@@ -19,9 +19,7 @@ var Body = _styledComponents.default.div.withConfig({
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["body-bg"], (props.theme || {})["body-bg"], [props["gray-100"], (props.theme || {})["gray-100"], "#f8f8fa"].filter(function (v) {
-    return v !== void 0;
-  })[0]].filter(function (v) {
+  return [props["body-bg"], (props.theme || {})["body-bg"], "#f5f6f7"].filter(function (v) {
     return v !== void 0;
   })[0];
 });

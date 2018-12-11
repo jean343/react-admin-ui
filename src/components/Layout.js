@@ -18,11 +18,11 @@ const App = styled.div`
   
   a {
     color: @link-color;
-    text-decoration: @link-decoration;
+    text-decoration: none;
     
     :hover {
       color: darken(@link-color, 15%);
-      text-decoration: @link-hover-decoration;
+      text-decoration: underline;
     }
   }
 `;

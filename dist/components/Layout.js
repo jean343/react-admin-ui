@@ -48,7 +48,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var App = _styledComponents.default.div.withConfig({
   displayName: "Layout__App",
   componentId: "sc-107aecb-0"
-})(["display:flex;flex-direction:column;min-height:100vh;@media screen{color:", ";}a{color:", ";text-decoration:", ";}a:hover{color:", ";text-decoration:", ";}"], function (props) {
+})(["display:flex;flex-direction:column;min-height:100vh;@media screen{color:", ";}a{color:", ";text-decoration:none;}a:hover{color:", ";text-decoration:underline;}"], function (props) {
   return [props["body-color"], (props.theme || {})["body-color"], [props["gray-900"], (props.theme || {})["gray-900"], "#313742"].filter(function (v) {
     return v !== void 0;
   })[0]].filter(function (v) {
@@ -61,19 +61,11 @@ var App = _styledComponents.default.div.withConfig({
     return v !== void 0;
   })[0];
 }, function (props) {
-  return [props["link-decoration"], (props.theme || {})["link-decoration"], "none"].filter(function (v) {
-    return v !== void 0;
-  })[0];
-}, function (props) {
   return require('tinycolor2')([props["link-color"], (props.theme || {})["link-color"], [props["blue"], (props.theme || {})["blue"], "#20a8d8"].filter(function (v) {
     return v !== void 0;
   })[0]].filter(function (v) {
     return v !== void 0;
   })[0]).darken(parseFloat("15%")).toHex8String();
-}, function (props) {
-  return [props["link-hover-decoration"], (props.theme || {})["link-hover-decoration"], "underline"].filter(function (v) {
-    return v !== void 0;
-  })[0];
 });
 
 var Layout =
