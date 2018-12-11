@@ -129,7 +129,6 @@ function (_Component) {
           logo = _this$props.logo,
           sideBarHeader = _this$props.sideBarHeader,
           toolbar = _this$props.toolbar,
-          rightToolbar = _this$props.rightToolbar,
           _this$props$linkCompo = _this$props.linkComponent,
           linkComponent = _this$props$linkCompo === void 0 ? "a" : _this$props$linkCompo;
       var _this$state2 = this.state,
@@ -191,8 +190,7 @@ function (_Component) {
         sidebarMini: lg || sidebarMini,
         rightSidebarCollapse: lg || rightSidebarCollapse
       }, _react.default.createElement(_Toolbar.default, {
-        toolbar: toolbar,
-        rightToolbar: rightToolbar
+        toolbar: toolbar
       }), _react.default.createElement(_Body.Content, null, children)), _react.default.createElement(_RightSidebar.default, {
         rightSidebarCollapse: lg || rightSidebarCollapse,
         sideBarTabs: sideBarTabs

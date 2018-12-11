@@ -75,21 +75,6 @@ var Left = _styledComponents.default.div.withConfig({
   })[0];
 });
 
-var Right = _styledComponents.default.div.withConfig({
-  displayName: "Toolbar__Right",
-  componentId: "sc-12ykycd-2"
-})(["display:flex;border-left:", " solid ", ";"], function (props) {
-  return [props["border-width"], (props.theme || {})["border-width"], "1px"].filter(function (v) {
-    return v !== void 0;
-  })[0];
-}, function (props) {
-  return [props["border-color"], (props.theme || {})["border-color"], [props["gray-300"], (props.theme || {})["gray-300"], "#dadee4"].filter(function (v) {
-    return v !== void 0;
-  })[0]].filter(function (v) {
-    return v !== void 0;
-  })[0];
-});
-
 var _default =
 /*#__PURE__*/
 function (_Component) {
@@ -104,14 +89,15 @@ function (_Component) {
   _createClass(_default, [{
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          toolbar = _this$props.toolbar,
-          rightToolbar = _this$props.rightToolbar;
-      return _react.default.createElement(Toolbar, null, toolbar && _react.default.createElement(Left, null, toolbar), _react.default.createElement("div", {
-        style: {
-          flex: 1
-        }
-      }), rightToolbar && _react.default.createElement(Right, null, rightToolbar));
+      var toolbar = this.props.toolbar;
+
+      if (!Array.isArray(toolbar)) {
+        toolbar = [toolbar];
+      }
+
+      return _react.default.createElement(Toolbar, null, toolbar.map(function (t) {
+        return _react.default.createElement(Left, null, t);
+      }));
     }
   }]);
 

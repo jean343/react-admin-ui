@@ -27,18 +27,15 @@ const Left = styled.div`
   display: flex;
   border-right: @border-width solid @border-color;
 `;
-const Right = styled.div`
-  display: flex;
-  border-left: @border-width solid @border-color;
-`;
 
 export default class extends Component {
   render() {
-    const {toolbar, rightToolbar} = this.props;
+    let {toolbar} = this.props;
+    if (!Array.isArray(toolbar)) {
+      toolbar = [toolbar];
+    }
     return <Toolbar>
-      {toolbar && <Left>{toolbar}</Left>}
-      <div style={{flex: 1}}/>
-      {rightToolbar && <Right>{rightToolbar}</Right>}
+      {toolbar.map(t => <Left>{t}</Left>)}
     </Toolbar>
   }
 }
