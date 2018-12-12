@@ -52,12 +52,12 @@ export default class Layout extends Component {
   };
 
   render() {
-    const {sideMenu, topMenu, selected, sideBarTabs, children, logo, sideBarHeader, toolbar, linkComponent = "a"} = this.props;
+    const {sideMenu, topMenu, selected, sideBarTabs, children, logo, icon, sideBarHeader, toolbar, linkComponent = "a"} = this.props;
     const {lg, md, sidebarOpened, sidebarCollapse, rightSidebarCollapse, sidebarMini} = this.state;
     return <App>
       <Matchmedia query="screen and (max-width: 991.98px)" onMatch={matches => this.setState({lg: matches})}/>
       <Matchmedia query="screen and (max-width: 767.98px)" onMatch={matches => this.setState({md: matches, sidebarOpened: false})}/>
-      <Header logo={logo} lg={lg}
+      <Header logo={logo} icon={icon} lg={lg}
               topMenu={topMenu} selected={selected}
               onNavbarToggle={this.onNavbarToggle}
               onRightNavbarToggle={() => this.setState({rightSidebarCollapse: !rightSidebarCollapse})}

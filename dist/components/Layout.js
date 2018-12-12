@@ -127,6 +127,7 @@ function (_Component) {
           sideBarTabs = _this$props.sideBarTabs,
           children = _this$props.children,
           logo = _this$props.logo,
+          icon = _this$props.icon,
           sideBarHeader = _this$props.sideBarHeader,
           toolbar = _this$props.toolbar,
           _this$props$linkCompo = _this$props.linkComponent,
@@ -155,6 +156,7 @@ function (_Component) {
         }
       }), _react.default.createElement(_Header.default, {
         logo: logo,
+        icon: icon,
         lg: lg,
         topMenu: topMenu,
         selected: selected,

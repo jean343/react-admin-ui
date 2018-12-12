@@ -19,9 +19,14 @@ const Header = styled.header`
 	border-bottom: @border-width solid @border-color;
 	
 	display: flex;
-	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
+	
+	.home-link {
+	  height: 100%;
+    display: flex;
+    align-items: start;
+	}
 `;
 
 const NavbarToggler = styled.button`
@@ -38,16 +43,28 @@ const NavbarToggler = styled.button`
 		color: @gray-900;
 	}
 `;
-const NavbarBrand = styled.div`
+const NavbarIcons = styled.div`
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: @sidebar-width - 50px;
 	height: @navbar-height;
-	padding: 0;
+  padding: 4px;
 	margin-right: 0;
 	background-color: @navbar-brand-bg;
+	img {
+	  max-width: 100%;
+	  max-height: 100%;
+	}
+`;
+const NavbarBrand = styled(NavbarIcons)`
+	width: @sidebar-width - 50px;
 	@media (max-width: @sm) {
+		display: none;
+	}
+`;
+const NavbarIcon = styled(NavbarIcons)`
+	width: @navbar-height;
+	@media (min-width: @sm) {
 		display: none;
 	}
 `;
@@ -59,13 +76,15 @@ const NavbarNav = styled.ul`
 	margin-bottom: 0;
 	list-style: none;
 	margin-top: 0;
-	flex: 1 0 0%;
+	flex: 1 1 0%;
 `;
 const NavItem = styled.li`
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	cursor: pointer;
 	position: relative;
 	margin: 0;
-	text-align: center;
 	padding-left: 1rem;
 	padding-right: 1rem;
 	height: @navbar-height;
@@ -92,6 +111,7 @@ const NavItem = styled.li`
 		i {
 			font-size: 1.1em;
 		}
+		width: 50px;
 	}
 	
 	transition: border .1s ease-in-out;
@@ -101,10 +121,11 @@ const NavItem = styled.li`
 
 export default class extends Component {
   render() {
-    const {lg, topMenu, onNavbarToggle, onRightNavbarToggle, selected, logo, Link} = this.props;
+    const {lg, topMenu, onNavbarToggle, onRightNavbarToggle, selected, logo, icon, Link} = this.props;
     return <Header>
-      <Link href="/" to="/">
+      <Link className="home-link" href="/" to="/">
         <NavbarBrand>{logo}</NavbarBrand>
+        <NavbarIcon>{icon}</NavbarIcon>
       </Link>
       <NavbarToggler onClick={onNavbarToggle}>
         <Bars width={14}/>

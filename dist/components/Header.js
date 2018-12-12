@@ -38,7 +38,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Header = _styledComponents.default.header.withConfig({
   displayName: "Header",
   componentId: "sc-1ahrfh-0"
-})(["@media print{display:none;}flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:1020;width:100%;border-bottom:", " solid ", ";display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;"], function (props) {
+})(["@media print{display:none;}flex-direction:row;height:", ";padding:0;margin:0;background-color:", ";position:fixed;z-index:1020;width:100%;border-bottom:", " solid ", ";display:flex;align-items:center;justify-content:space-between;.home-link{height:100%;display:flex;align-items:start;}"], function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -81,19 +81,36 @@ var NavbarToggler = _styledComponents.default.button.withConfig({
   })[0];
 });
 
-var NavbarBrand = _styledComponents.default.div.withConfig({
-  displayName: "Header__NavbarBrand",
+var NavbarIcons = _styledComponents.default.div.withConfig({
+  displayName: "Header__NavbarIcons",
   componentId: "sc-1ahrfh-2"
-})(["display:inline-flex;align-items:center;justify-content:center;width:", ";height:", ";padding:0;margin-right:0;background-color:", ";@media (max-width:", "){display:none;}"], function (props) {
-  return parseFloat([props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
-    return v !== void 0;
-  })[0]) - parseFloat(50) + "px";
-}, function (props) {
+})(["display:inline-flex;align-items:center;justify-content:center;height:", ";padding:4px;margin-right:0;background-color:", ";img{max-width:100%;max-height:100%;}"], function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
   return [props["navbar-brand-bg"], (props.theme || {})["navbar-brand-bg"], "transparent"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+});
+
+var NavbarBrand = (0, _styledComponents.default)(NavbarIcons).withConfig({
+  displayName: "Header__NavbarBrand",
+  componentId: "sc-1ahrfh-3"
+})(["width:", ";@media (max-width:", "){display:none;}"], function (props) {
+  return parseFloat([props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) - parseFloat(50) + "px";
+}, function (props) {
+  return [props["sm"], (props.theme || {})["sm"], "576px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+});
+var NavbarIcon = (0, _styledComponents.default)(NavbarIcons).withConfig({
+  displayName: "Header__NavbarIcon",
+  componentId: "sc-1ahrfh-4"
+})(["width:", ";@media (min-width:", "){display:none;}"], function (props) {
+  return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
 }, function (props) {
@@ -104,13 +121,13 @@ var NavbarBrand = _styledComponents.default.div.withConfig({
 
 var NavbarNav = _styledComponents.default.ul.withConfig({
   displayName: "Header__NavbarNav",
-  componentId: "sc-1ahrfh-3"
-})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;flex:1 0 0%;"]);
+  componentId: "sc-1ahrfh-5"
+})(["flex-direction:row;align-items:center;display:flex;padding-left:0;margin-bottom:0;list-style:none;margin-top:0;flex:1 1 0%;"]);
 
 var NavItem = _styledComponents.default.li.withConfig({
   displayName: "Header__NavItem",
-  componentId: "sc-1ahrfh-4"
-})(["cursor:pointer;position:relative;margin:0;text-align:center;padding-left:1rem;padding-right:1rem;height:", ";:hover{background-color:", ";}&& a{display:flex;height:", ";transition:color 0.1s ease-in-out;color:", " !important;align-items:center;}&& a:hover{text-decoration:none;}span{margin-left:0.5rem;}@media (max-width:", "){span{display:none;}i{font-size:1.1em;}}transition:border 0.1s ease-in-out;border-bottom:3px solid transparent;border-bottom-color:", ";"], function (props) {
+  componentId: "sc-1ahrfh-6"
+})(["display:inline-flex;align-items:center;justify-content:center;cursor:pointer;position:relative;margin:0;padding-left:1rem;padding-right:1rem;height:", ";:hover{background-color:", ";}&& a{display:flex;height:", ";transition:color 0.1s ease-in-out;color:", " !important;align-items:center;}&& a:hover{text-decoration:none;}span{margin-left:0.5rem;}@media (max-width:", "){span{display:none;}i{font-size:1.1em;}width:50px;}transition:border 0.1s ease-in-out;border-bottom:3px solid transparent;border-bottom-color:", ";"], function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -171,11 +188,13 @@ function (_Component) {
           onRightNavbarToggle = _this$props.onRightNavbarToggle,
           selected = _this$props.selected,
           logo = _this$props.logo,
+          icon = _this$props.icon,
           Link = _this$props.Link;
       return _react.default.createElement(Header, null, _react.default.createElement(Link, {
+        className: "home-link",
         href: "/",
         to: "/"
-      }, _react.default.createElement(NavbarBrand, null, logo)), _react.default.createElement(NavbarToggler, {
+      }, _react.default.createElement(NavbarBrand, null, logo), _react.default.createElement(NavbarIcon, null, icon)), _react.default.createElement(NavbarToggler, {
         onClick: onNavbarToggle
       }, _react.default.createElement(_Bars.default, {
         width: 14
