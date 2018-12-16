@@ -4,11 +4,11 @@ export default class Matchmedia extends Component {
   componentDidMount() {
     this.mediaQueryList = window.matchMedia(this.props.query);
     this.props.onMatch(this.mediaQueryList.matches);
-    this.mediaQueryList.addEventListener('change', this.onChange);
+    this.mediaQueryList.addListener(this.onChange);
   }
 
   componentWillUnmount() {
-    this.mediaQueryList.removeEventListener('change', this.onChange);
+    this.mediaQueryList.removeListener(this.onChange);
   }
 
   onChange = evt => {
