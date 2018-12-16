@@ -9,7 +9,7 @@ export const Body = styled.div`
   
   @media screen {
     transform: translateY(@navbar-height);
-    background-color: @body-bg;
+    background-color: @body-background-color;
   }
 `;
 
