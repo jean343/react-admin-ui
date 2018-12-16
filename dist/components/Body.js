@@ -29,7 +29,7 @@ exports.Body = Body;
 var Main = _styledComponents.default.main.withConfig({
   displayName: "Body__Main",
   componentId: "sc-1kjiic4-1"
-})(["flex:1 1;min-width:0;transition:margin-left 0.25s,margin-right 0.25s;@media screen{margin-left:", ";margin-left:", ";margin-left:", ";margin-right:", ";}"], function (props) {
+})(["flex:1 1;min-width:0;transition:margin-left 0.25s,margin-right 0.25s;@media screen{margin-left:", ";margin-left:", ";margin-left:", ";margin-right:", ";}@media (min-width:", "){.container{width:", ";}}@media (min-width:", "){.container{width:", ";}}@media (min-width:", "){.container{width:", ";}}@media (min-width:", "){.container{width:1170px;}}"], function (props) {
   return [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
     return v !== void 0;
   })[0];
@@ -47,6 +47,100 @@ var Main = _styledComponents.default.main.withConfig({
   return !![props["rightSidebarCollapse"], (props.theme || {})["rightSidebarCollapse"]].filter(function (v) {
     return v !== void 0;
   })[0] ? "0" : [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["md"], (props.theme || {})["md"], "768px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return parseFloat(parseFloat(750) - parseFloat(!![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
+    return v !== void 0;
+  })[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + "px") - parseFloat(!![props["rightSidebarCollapse"], (props.theme || {})["rightSidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + (('' + parseFloat(750) - parseFloat(!![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
+    return v !== void 0;
+  })[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + "px").replace(/[\d.-]*/, "") || ('' + !![props["rightSidebarCollapse"], (props.theme || {})["rightSidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
+    return v !== void 0;
+  })[0]).replace(/[\d.-]*/, ""));
+}, function (props) {
+  return [props["lg"], (props.theme || {})["lg"], "992px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return parseFloat(parseFloat(970) - parseFloat(!![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
+    return v !== void 0;
+  })[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + "px") - parseFloat(!![props["rightSidebarCollapse"], (props.theme || {})["rightSidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + (('' + parseFloat(970) - parseFloat(!![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
+    return v !== void 0;
+  })[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + "px").replace(/[\d.-]*/, "") || ('' + !![props["rightSidebarCollapse"], (props.theme || {})["rightSidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
+    return v !== void 0;
+  })[0]).replace(/[\d.-]*/, ""));
+}, function (props) {
+  return [props["xl"], (props.theme || {})["xl"], "1200px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return parseFloat(parseFloat(1170) - parseFloat(!![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
+    return v !== void 0;
+  })[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + "px") - parseFloat(!![props["rightSidebarCollapse"], (props.theme || {})["rightSidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + (('' + parseFloat(1170) - parseFloat(!![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : !![props["sidebarMini"], (props.theme || {})["sidebarMini"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? [props["sidebar-minimized-width"], (props.theme || {})["sidebar-minimized-width"], "50px"].filter(function (v) {
+    return v !== void 0;
+  })[0] : [props["sidebar-width"], (props.theme || {})["sidebar-width"], "200px"].filter(function (v) {
+    return v !== void 0;
+  })[0]) + "px").replace(/[\d.-]*/, "") || ('' + !![props["rightSidebarCollapse"], (props.theme || {})["rightSidebarCollapse"]].filter(function (v) {
+    return v !== void 0;
+  })[0] ? "0" : [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
+    return v !== void 0;
+  })[0]).replace(/[\d.-]*/, ""));
+}, function (props) {
+  return [props["xxl"], (props.theme || {})["xxl"], "1650px"].filter(function (v) {
     return v !== void 0;
   })[0];
 });
