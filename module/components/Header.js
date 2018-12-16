@@ -67,7 +67,7 @@ export default class extends Component {
       }, React.createElement("i", {
         className: icon
       }), React.createElement("span", null, title)));
-    })), !lg && React.createElement(NavbarToggler, {
+    })), !lg && onRightNavbarToggle && React.createElement(NavbarToggler, {
       onClick: onRightNavbarToggle
     }, React.createElement(Bars, {
       width: 14

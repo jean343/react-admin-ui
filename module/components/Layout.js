@@ -83,9 +83,9 @@ export default class Layout extends Component {
       topMenu: topMenu,
       selected: selected,
       onNavbarToggle: this.onNavbarToggle,
-      onRightNavbarToggle: () => this.setState({
+      onRightNavbarToggle: sideBarTabs && (() => this.setState({
         rightSidebarCollapse: !rightSidebarCollapse
-      }),
+      })),
       Link: linkComponent
     }), React.createElement(Body, null, React.createElement(Sidebar, {
       lg: lg,

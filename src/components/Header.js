@@ -141,7 +141,7 @@ export default class extends Component {
           </NavItem>
         })}
       </NavbarNav>
-      {!lg && <NavbarToggler onClick={onRightNavbarToggle}>
+      {!lg && onRightNavbarToggle && <NavbarToggler onClick={onRightNavbarToggle}>
         <Bars width={14}/>
       </NavbarToggler>}
     </Header>

@@ -161,7 +161,7 @@ function (_Component) {
         topMenu: topMenu,
         selected: selected,
         onNavbarToggle: this.onNavbarToggle,
-        onRightNavbarToggle: function onRightNavbarToggle() {
+        onRightNavbarToggle: sideBarTabs && function () {
           return _this2.setState({
             rightSidebarCollapse: !rightSidebarCollapse
           });

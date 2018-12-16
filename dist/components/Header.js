@@ -216,7 +216,7 @@ function (_Component) {
         }, _react.default.createElement("i", {
           className: icon
         }), _react.default.createElement("span", null, title)));
-      })), !lg && _react.default.createElement(NavbarToggler, {
+      })), !lg && onRightNavbarToggle && _react.default.createElement(NavbarToggler, {
         onClick: onRightNavbarToggle
       }, _react.default.createElement(_Bars.default, {
         width: 14

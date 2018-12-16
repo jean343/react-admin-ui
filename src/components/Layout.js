@@ -60,7 +60,7 @@ export default class Layout extends Component {
       <Header logo={logo} icon={icon} lg={lg}
               topMenu={topMenu} selected={selected}
               onNavbarToggle={this.onNavbarToggle}
-              onRightNavbarToggle={() => this.setState({rightSidebarCollapse: !rightSidebarCollapse})}
+              onRightNavbarToggle={sideBarTabs && (() => this.setState({rightSidebarCollapse: !rightSidebarCollapse}))}
               Link={linkComponent}
       />
       <Body>
