@@ -8,7 +8,7 @@ export const Body = styled.div`
   overflow-x: hidden;
   
   @media screen {
-    margin-top: @navbar-height;
+    transform: translateY(@navbar-height);
     background-color: @body-bg;
   }
 `;

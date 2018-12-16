@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Body = _styledComponents.default.div.withConfig({
   displayName: "Body",
   componentId: "sc-1kjiic4-0"
-})(["display:flex;flex-direction:row;flex-grow:1;overflow-x:hidden;@media screen{margin-top:", ";background-color:", ";}"], function (props) {
+})(["display:flex;flex-direction:row;flex-grow:1;overflow-x:hidden;@media screen{transform:translateY(", ");background-color:", ";}"], function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
     return v !== void 0;
   })[0];
