@@ -150,6 +150,6 @@ exports.Main = Main;
 var Content = _styledComponents.default.div.withConfig({
   displayName: "Body__Content",
   componentId: "sc-1kjiic4-2"
-})(["flex:1 1 0%;position:relative;@media screen{padding:20 4px;}"]);
+})(["flex:1 1 0%;position:relative;@media screen{padding:20px 4px;}"]);
 
 exports.Content = Content;
