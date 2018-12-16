@@ -11,4 +11,4 @@ export const Main = styled.main.withConfig({
 export const Content = styled.div.withConfig({
   displayName: "Body__Content",
   componentId: "sc-1kjiic4-2"
-})(["flex:1 1 0%;position:relative;@media screen{padding:4px;}"]);
+})(["flex:1 1 0%;position:relative;@media screen{padding:20 4px;}"]);

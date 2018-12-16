@@ -57,6 +57,6 @@ export const Content = styled.div`
   flex: 1 1 0%;
   position: relative;
   @media screen {
-    padding: 4px;
+    padding: 20 4px;
   }
 `;
