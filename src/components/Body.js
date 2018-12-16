@@ -26,6 +26,8 @@ export const Main = styled.main`
 `;
 
 export const Content = styled.div`
-    padding: 4px;
+    @media screen {
+      padding: 4px;
+    }
     position: relative;
 `;

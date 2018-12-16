@@ -124,8 +124,8 @@ export default class extends Component {
     const {lg, topMenu, onNavbarToggle, onRightNavbarToggle, selected, logo, icon, Link} = this.props;
     return <Header>
       <Link className="home-link" href="/" to="/">
-        <NavbarBrand>{logo}</NavbarBrand>
-        <NavbarIcon>{icon}</NavbarIcon>
+        {logo && <NavbarBrand>{logo}</NavbarBrand>}
+        {icon && <NavbarIcon>{icon}</NavbarIcon>}
       </Link>
       <NavbarToggler onClick={onNavbarToggle}>
         <Bars width={14}/>

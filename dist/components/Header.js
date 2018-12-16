@@ -194,7 +194,7 @@ function (_Component) {
         className: "home-link",
         href: "/",
         to: "/"
-      }, _react.default.createElement(NavbarBrand, null, logo), _react.default.createElement(NavbarIcon, null, icon)), _react.default.createElement(NavbarToggler, {
+      }, logo && _react.default.createElement(NavbarBrand, null, logo), icon && _react.default.createElement(NavbarIcon, null, icon)), _react.default.createElement(NavbarToggler, {
         onClick: onNavbarToggle
       }, _react.default.createElement(_Bars.default, {
         width: 14

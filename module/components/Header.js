@@ -46,7 +46,7 @@ export default class extends Component {
       className: "home-link",
       href: "/",
       to: "/"
-    }, React.createElement(NavbarBrand, null, logo), React.createElement(NavbarIcon, null, icon)), React.createElement(NavbarToggler, {
+    }, logo && React.createElement(NavbarBrand, null, logo), icon && React.createElement(NavbarIcon, null, icon)), React.createElement(NavbarToggler, {
       onClick: onNavbarToggle
     }, React.createElement(Bars, {
       width: 14
