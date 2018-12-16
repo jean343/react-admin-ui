@@ -107,7 +107,7 @@ export default class Layout extends Component {
       rightSidebarCollapse: lg || rightSidebarCollapse
     }, React.createElement(Toolbar, {
       toolbar: toolbar
-    }), React.createElement(Content, null, children)), React.createElement(RightSidebar, {
+    }), React.createElement(Content, null, children)), sideBarTabs && React.createElement(RightSidebar, {
       rightSidebarCollapse: lg || rightSidebarCollapse,
       sideBarTabs: sideBarTabs
     })));

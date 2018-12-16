@@ -193,7 +193,7 @@ function (_Component) {
         rightSidebarCollapse: lg || rightSidebarCollapse
       }, _react.default.createElement(_Toolbar.default, {
         toolbar: toolbar
-      }), _react.default.createElement(_Body.Content, null, children)), _react.default.createElement(_RightSidebar.default, {
+      }), _react.default.createElement(_Body.Content, null, children)), sideBarTabs && _react.default.createElement(_RightSidebar.default, {
         rightSidebarCollapse: lg || rightSidebarCollapse,
         sideBarTabs: sideBarTabs
       })));

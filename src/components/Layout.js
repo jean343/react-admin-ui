@@ -79,7 +79,7 @@ export default class Layout extends Component {
         <Toolbar toolbar={toolbar}/>
         <Content>{children}</Content>
       </Main>
-      <RightSidebar rightSidebarCollapse={lg || rightSidebarCollapse} sideBarTabs={sideBarTabs}/>
+      {sideBarTabs && <RightSidebar rightSidebarCollapse={lg || rightSidebarCollapse} sideBarTabs={sideBarTabs}/>}
       </Body>
       {/*<Footer/>*/}
     </App>
