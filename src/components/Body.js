@@ -6,15 +6,18 @@ export const Body = styled.div`
   flex-direction: row;
   flex-grow: 1;
   overflow-x: hidden;
+  position: relative;
   
   @media screen {
-    transform: translateY(@navbar-height);
+    top: @navbar-height;
     background-color: @body-background-color;
   }
 `;
 
 export const Main = styled.main`
-  flex: 1 1;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   transition: margin-left .25s, margin-right .25s;
   @media screen {
@@ -51,8 +54,9 @@ export const Main = styled.main`
 `;
 
 export const Content = styled.div`
+  flex: 1 1 0%;
+  position: relative;
   @media screen {
     padding: 4px;
   }
-  position: relative;
 `;
