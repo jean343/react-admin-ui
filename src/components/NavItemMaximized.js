@@ -30,6 +30,9 @@ export const NavItemMaximized = styled.li`
 		span {
 			flex: 1;
 			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
 		}
 		:hover{
 			background: @primary;
