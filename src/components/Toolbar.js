@@ -4,13 +4,14 @@ import styled from 'styled-components';
 const Toolbar = styled.div`
   @media print {
     display: none;
-    height: 0;
-    overflow: hidden;
   }
   height: @sub-navbar-height;
   border-bottom: @border-width solid @border-color;
   background-color: white;
   display: flex;
+  position: fixed;
+  z-index: 1020;
+  width: 100%;
   .toolbar-item {
     cursor: pointer;
     width: @sub-navbar-height * 1.1;

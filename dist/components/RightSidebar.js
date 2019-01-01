@@ -38,7 +38,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Sidebar = _styledComponents.default.div.withConfig({
   displayName: "RightSidebar__Sidebar",
   componentId: "sc-2fsqfn-0"
-})(["@media print{display:none;}width:", ";right:0;position:fixed;display:flex;flex-direction:column;color:", ";background:", ";height:calc(100vh - ", ");border-left:", " solid ", ";transition:transform 0.25s;", ""], function (props) {
+})(["@media print{display:none;}width:", ";right:0;position:fixed;display:flex;flex-direction:column;color:", ";background:", ";height:calc(100vh - ", ");border-left:", " solid ", ";z-index:1030;transition:transform 0.25s;", ""], function (props) {
   return [props["aside-menu-width"], (props.theme || {})["aside-menu-width"], "250px"].filter(function (v) {
     return v !== void 0;
   })[0];

@@ -11,4 +11,4 @@ export const Main = styled.main.withConfig({
 export const Content = styled.div.withConfig({
   displayName: "Body__Content",
   componentId: "sc-1kjiic4-2"
-})(["flex:1 1 0%;position:relative;@media screen{padding:20px 4px;}"]);
+})(["flex:1 1 0%;position:relative;@media screen{padding:20px 4px;margin-top:", ";}"], props => [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], `40px`].filter(v => v !== void 0)[0]);

@@ -16,6 +16,7 @@ const Sidebar = styled.div`
   background: @aside-menu-bg;
   height: calc(100vh - @navbar-height);
   border-left: @border-width solid @border-color;
+  z-index: 1030;
   
   transition: transform .25s;
   ${props => props.rightSidebarCollapse && css`

@@ -57,5 +57,6 @@ export const Content = styled.div`
   position: relative;
   @media screen {
     padding: 20px 4px;
+    margin-top: @sub-navbar-height;
   }
 `;
