@@ -5,7 +5,6 @@ export const Body = styled.div`
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  overflow-x: hidden;
   position: relative;
   
   @media screen {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Body = styled.div.withConfig({
   displayName: "Body",
   componentId: "sc-1kjiic4-0"
-})(["display:flex;flex-direction:row;flex-grow:1;overflow-x:hidden;position:relative;@media screen{top:", ";background-color:", ";}"], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => [props["body-background-color"], (props.theme || {})["body-background-color"], `#f5f6f7`].filter(v => v !== void 0)[0]);
+})(["display:flex;flex-direction:row;flex-grow:1;position:relative;@media screen{top:", ";background-color:", ";}"], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => [props["body-background-color"], (props.theme || {})["body-background-color"], `#f5f6f7`].filter(v => v !== void 0)[0]);
 export const Main = styled.main.withConfig({
   displayName: "Body__Main",
   componentId: "sc-1kjiic4-1"
