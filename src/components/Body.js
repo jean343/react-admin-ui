@@ -9,7 +9,6 @@ export const Body = styled.div`
   
   @media screen {
     top: @navbar-height;
-    background-color: @body-background-color;
   }
 `;
 
@@ -57,6 +56,7 @@ export const Content = styled.div`
   position: relative;
   @media screen {
     padding: 20px 4px;
-    margin-top: @sub-navbar-height;
+    top: @sub-navbar-height;
+    background-color: @body-background-color;
   }
 `;

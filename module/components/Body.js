@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Body = styled.div.withConfig({
   displayName: "Body",
   componentId: "sc-1kjiic4-0"
-})(["display:flex;flex-direction:row;flex-grow:1;position:relative;@media screen{top:", ";background-color:", ";}"], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => [props["body-background-color"], (props.theme || {})["body-background-color"], `#f5f6f7`].filter(v => v !== void 0)[0]);
+})(["display:flex;flex-direction:row;flex-grow:1;position:relative;@media screen{top:", ";}"], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0]);
 export const Main = styled.main.withConfig({
   displayName: "Body__Main",
   componentId: "sc-1kjiic4-1"
@@ -11,4 +11,4 @@ export const Main = styled.main.withConfig({
 export const Content = styled.div.withConfig({
   displayName: "Body__Content",
   componentId: "sc-1kjiic4-2"
-})(["flex:1 1 0%;position:relative;@media screen{padding:20px 4px;margin-top:", ";}"], props => [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], `40px`].filter(v => v !== void 0)[0]);
+})(["flex:1 1 0%;position:relative;@media screen{padding:20px 4px;top:", ";background-color:", ";}"], props => [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], `40px`].filter(v => v !== void 0)[0], props => [props["body-background-color"], (props.theme || {})["body-background-color"], `#f5f6f7`].filter(v => v !== void 0)[0]);

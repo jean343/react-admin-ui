@@ -14,12 +14,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Body = _styledComponents.default.div.withConfig({
   displayName: "Body",
   componentId: "sc-1kjiic4-0"
-})(["display:flex;flex-direction:row;flex-grow:1;position:relative;@media screen{top:", ";background-color:", ";}"], function (props) {
+})(["display:flex;flex-direction:row;flex-grow:1;position:relative;@media screen{top:", ";}"], function (props) {
   return [props["navbar-height"], (props.theme || {})["navbar-height"], "55px"].filter(function (v) {
-    return v !== void 0;
-  })[0];
-}, function (props) {
-  return [props["body-background-color"], (props.theme || {})["body-background-color"], "#f5f6f7"].filter(function (v) {
     return v !== void 0;
   })[0];
 });
@@ -150,8 +146,12 @@ exports.Main = Main;
 var Content = _styledComponents.default.div.withConfig({
   displayName: "Body__Content",
   componentId: "sc-1kjiic4-2"
-})(["flex:1 1 0%;position:relative;@media screen{padding:20px 4px;margin-top:", ";}"], function (props) {
+})(["flex:1 1 0%;position:relative;@media screen{padding:20px 4px;top:", ";background-color:", ";}"], function (props) {
   return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
+    return v !== void 0;
+  })[0];
+}, function (props) {
+  return [props["body-background-color"], (props.theme || {})["body-background-color"], "#f5f6f7"].filter(function (v) {
     return v !== void 0;
   })[0];
 });
