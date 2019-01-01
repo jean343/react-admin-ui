@@ -4,6 +4,8 @@ import styled from 'styled-components';
 const Toolbar = styled.div`
   @media print {
     display: none;
+    height: 0;
+    overflow: hidden;
   }
   height: @sub-navbar-height;
   border-bottom: @border-width solid @border-color;

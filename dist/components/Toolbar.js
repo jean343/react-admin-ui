@@ -34,7 +34,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var Toolbar = _styledComponents.default.div.withConfig({
   displayName: "Toolbar",
   componentId: "sc-12ykycd-0"
-})(["@media print{display:none;}height:", ";border-bottom:", " solid ", ";background-color:white;display:flex;.toolbar-item{cursor:pointer;width:", ";display:flex;align-items:center;justify-content:center;transition:background-color 0.1s ease-in-out;}.toolbar-item:hover{background-color:", ";}"], function (props) {
+})(["@media print{display:none;height:0;overflow:hidden;}height:", ";border-bottom:", " solid ", ";background-color:white;display:flex;.toolbar-item{cursor:pointer;width:", ";display:flex;align-items:center;justify-content:center;transition:background-color 0.1s ease-in-out;}.toolbar-item:hover{background-color:", ";}"], function (props) {
   return [props["sub-navbar-height"], (props.theme || {})["sub-navbar-height"], "40px"].filter(function (v) {
     return v !== void 0;
   })[0];
