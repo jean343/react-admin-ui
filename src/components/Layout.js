@@ -10,7 +10,7 @@ import Matchmedia from './Matchmedia';
 const App = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - @navbar-height);
+  min-height: calc(100vh - @navbar-height - @sub-navbar-height);
   
   @media screen {
     color: @body-color;
