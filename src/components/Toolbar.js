@@ -10,7 +10,7 @@ const Toolbar = styled.div`
   background-color: white;
   display: flex;
   position: fixed;
-  z-index: 1020;
+  z-index: 1019;
   width: 100%;
   .toolbar-item {
     cursor: pointer;
