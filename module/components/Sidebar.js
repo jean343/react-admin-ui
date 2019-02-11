@@ -8,10 +8,11 @@ import ClickOutside from "react-click-outside";
 import CaretLeft from "./icons/CaretLeft";
 import CaretSquareLeft from "./icons/CaretSquareLeft";
 import { isSelected, triggerResize } from './utils';
+import Icon from './Icon';
 const Sidebar = styled.div.withConfig({
   displayName: "Sidebar",
   componentId: "wu4c6y-0"
-})(["@media print{display:none;}position:fixed;display:flex;flex-direction:column;color:", ";background:", ";height:calc(100vh - ", ");z-index:1;transition:transform 0.25s;transform:", ";"], props => [props["sidebar-color"], (props.theme || {})["sidebar-color"], [props["white"], (props.theme || {})["white"], `#fff`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-900"], (props.theme || {})["gray-900"], `#313742`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => !![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(v => v !== void 0)[0] ? `translateX(${parseFloat(-1) * parseFloat([props["sidebar-width"], (props.theme || {})["sidebar-width"], `200px`].filter(v => v !== void 0)[0]) + (('' + -1).replace(/[\d.-]*/, "") || ('' + [props["sidebar-width"], (props.theme || {})["sidebar-width"], `200px`].filter(v => v !== void 0)[0]).replace(/[\d.-]*/, ""))})` : undefined);
+})(["@media print{display:none;}position:fixed;display:flex;flex-direction:column;color:", ";background:", ";height:calc(100vh - ", ");z-index:1020;transition:transform 0.25s;transform:", ";"], props => [props["sidebar-color"], (props.theme || {})["sidebar-color"], [props["white"], (props.theme || {})["white"], `#fff`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["sidebar-bg"], (props.theme || {})["sidebar-bg"], [props["gray-900"], (props.theme || {})["gray-900"], `#313742`].filter(v => v !== void 0)[0]].filter(v => v !== void 0)[0], props => [props["navbar-height"], (props.theme || {})["navbar-height"], `55px`].filter(v => v !== void 0)[0], props => !![props["sidebarCollapse"], (props.theme || {})["sidebarCollapse"]].filter(v => v !== void 0)[0] ? `translateX(${parseFloat(-1) * parseFloat([props["sidebar-width"], (props.theme || {})["sidebar-width"], `200px`].filter(v => v !== void 0)[0]) + (('' + -1).replace(/[\d.-]*/, "") || ('' + [props["sidebar-width"], (props.theme || {})["sidebar-width"], `200px`].filter(v => v !== void 0)[0]).replace(/[\d.-]*/, ""))})` : undefined);
 const SidebarContainer = styled.div.withConfig({
   displayName: "Sidebar__SidebarContainer",
   componentId: "wu4c6y-1"
@@ -103,8 +104,8 @@ class Menu extends Component {
           onClick: () => this.setState({
             indexOpened: open ? undefined : i
           })
-        }, React.createElement("i", {
-          className: icon
+        }, React.createElement(Icon, {
+          icon: icon
         }), React.createElement("span", null, title), !sidebarMini && children && React.createElement(CaretLeft, {
           className: "caret-left-icon",
           width: 6
@@ -118,8 +119,8 @@ class Menu extends Component {
         if (sidebarMini) return null;
         return React.createElement(NavTitle, {
           key: i
-        }, React.createElement("i", {
-          className: icon
+        }, React.createElement(Icon, {
+          icon: icon
         }), title);
       }
     });

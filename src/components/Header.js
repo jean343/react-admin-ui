@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import Bars from './icons/Bars';
 import {isSelected} from './utils';
+import Icon from './Icon';
 
 const Header = styled.header`
   @media print {
@@ -135,7 +136,7 @@ export default class extends Component {
           if (component) return component;
           return <NavItem key={i} active={isSelected(selected, href, to)}>
             <Link href={href} to={to}>
-              <i className={icon}></i>
+              <Icon icon={icon}/>
               <span>{title}</span>
             </Link>
           </NavItem>

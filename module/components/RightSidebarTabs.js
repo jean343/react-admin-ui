@@ -2,6 +2,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
+import Icon from './Icon';
 const NavTabs = styled.ul.withConfig({
   displayName: "RightSidebarTabs__NavTabs",
   componentId: "lqc9c0-0"
@@ -42,8 +43,8 @@ export default class extends Component {
         onClick: () => this.setState({
           selectedTab: i
         })
-      }, React.createElement("i", {
-        className: icon
+      }, React.createElement(Icon, {
+        icon: icon
       })));
     })), React.createElement(TabContent, null, sideBarTabs[selectedTab].component));
   }

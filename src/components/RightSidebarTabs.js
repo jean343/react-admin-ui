@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
+import Icon from './Icon';
 
 const NavTabs = styled.ul`
   border-bottom: @border-width solid @border-color;
@@ -62,7 +63,7 @@ export default class extends Component {
       <NavTabs>
         {sideBarTabs.filter(m => !!m).map(({title, icon}, i) => {
           return <NavItem key={i} active={selectedTab === i}>
-            <a title={title} onClick={() => this.setState({selectedTab: i})}><i className={icon}/></a>
+            <a title={title} onClick={() => this.setState({selectedTab: i})}><Icon icon={icon}/></a>
           </NavItem>
         })}
       </NavTabs>

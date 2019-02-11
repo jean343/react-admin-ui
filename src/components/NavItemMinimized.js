@@ -29,7 +29,7 @@ export const NavItemMinimized = styled.li`
 		}
 		> a {
 			background: @primary;
-			i {
+			i, svg {
 				color: @white;
 			}
 		}
@@ -45,13 +45,13 @@ export const NavItemMinimized = styled.li`
 		height: 48px;
 		text-decoration: none !important;
 		color: @white !important;
-		> i {
+		> i, > svg {
 			transition: color .1s ease-in-out;
 			margin-right: 1rem;
 			font-size: 1.3em;
 			color: if(@active, @primary, @gray-500);
 			
-			width: @sidebar-minimized-width;
+			width: @sidebar-minimized-width !important;
 			flex-shrink: 0;
 			text-align: center;
 		}

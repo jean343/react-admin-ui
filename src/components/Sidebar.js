@@ -6,6 +6,7 @@ import ClickOutside from "react-click-outside";
 import CaretLeft from "./icons/CaretLeft";
 import CaretSquareLeft from "./icons/CaretSquareLeft";
 import {isSelected, triggerResize} from './utils';
+import Icon from './Icon';
 
 const Sidebar = styled.div`
   @media print {
@@ -17,7 +18,7 @@ const Sidebar = styled.div`
 	color: @sidebar-color;
 	background: @sidebar-bg;
 	height: calc(100vh - @navbar-height);
-	z-index: 1;
+	z-index: 1020;
 	
 	transition: transform .25s;
 	transform: if(@sidebarCollapse, translateX(-1 * @sidebar-width));
@@ -131,7 +132,7 @@ class Menu extends Component {
           hasChild={!!children}>
 
           <Link href={href} to={to} onClick={() => this.setState({indexOpened: open ? undefined : i})}>
-            <i className={icon}></i>
+            <Icon icon={icon}/>
             <span>{title}</span>
             {!sidebarMini && children && <CaretLeft className="caret-left-icon" width={6}/>}
           </Link>
@@ -142,7 +143,7 @@ class Menu extends Component {
       } else {
         if (sidebarMini) return null;
         return <NavTitle key={i}>
-          <i className={icon}></i>{title}
+          <Icon icon={icon}/>{title}
         </NavTitle>
       }
     });

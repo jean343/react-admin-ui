@@ -21,6 +21,8 @@ var _CaretSquareLeft = _interopRequireDefault(require("./icons/CaretSquareLeft")
 
 var _utils = require("./utils");
 
+var _Icon = _interopRequireDefault(require("./Icon"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -48,7 +50,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var Sidebar = _styledComponents.default.div.withConfig({
   displayName: "Sidebar",
   componentId: "wu4c6y-0"
-})(["@media print{display:none;}position:fixed;display:flex;flex-direction:column;color:", ";background:", ";height:calc(100vh - ", ");z-index:1;transition:transform 0.25s;transform:", ";"], function (props) {
+})(["@media print{display:none;}position:fixed;display:flex;flex-direction:column;color:", ";background:", ";height:calc(100vh - ", ");z-index:1020;transition:transform 0.25s;transform:", ";"], function (props) {
   return [props["sidebar-color"], (props.theme || {})["sidebar-color"], [props["white"], (props.theme || {})["white"], "#fff"].filter(function (v) {
     return v !== void 0;
   })[0]].filter(function (v) {
@@ -265,8 +267,8 @@ function (_Component) {
                 indexOpened: open ? undefined : i
               });
             }
-          }, _react.default.createElement("i", {
-            className: icon
+          }, _react.default.createElement(_Icon.default, {
+            icon: icon
           }), _react.default.createElement("span", null, title), !sidebarMini && children && _react.default.createElement(_CaretLeft.default, {
             className: "caret-left-icon",
             width: 6
@@ -280,8 +282,8 @@ function (_Component) {
           if (sidebarMini) return null;
           return _react.default.createElement(NavTitle, {
             key: i
-          }, _react.default.createElement("i", {
-            className: icon
+          }, _react.default.createElement(_Icon.default, {
+            icon: icon
           }), title);
         }
       });

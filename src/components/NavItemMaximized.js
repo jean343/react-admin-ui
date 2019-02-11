@@ -14,7 +14,7 @@ export const NavItemMaximized = styled.li`
 		color: @sidebar-nav-link-active-color;
 		background: lighten(@sidebar-bg, 15%);
 	`}
-	i:not(.caret-left-icon) {
+	i:not(.caret-left-icon), svg:not(.caret-left-icon) {
 		transition: color .1s ease-in-out;
 		margin-right: 0.5rem;
 		color: if(@active, @primary, @gray-500);
@@ -36,7 +36,7 @@ export const NavItemMaximized = styled.li`
 		}
 		:hover{
 			background: @primary;
-			i {
+			i, svg {
 				color: @white;
 			}
 		}

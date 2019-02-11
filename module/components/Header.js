@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Bars from './icons/Bars';
 import { isSelected } from './utils';
+import Icon from './Icon';
 const Header = styled.header.withConfig({
   displayName: "Header",
   componentId: "sc-1ahrfh-0"
@@ -64,8 +65,8 @@ export default class extends Component {
       }, React.createElement(Link, {
         href: href,
         to: to
-      }, React.createElement("i", {
-        className: icon
+      }, React.createElement(Icon, {
+        icon: icon
       }), React.createElement("span", null, title)));
     })), !lg && onRightNavbarToggle && React.createElement(NavbarToggler, {
       onClick: onRightNavbarToggle

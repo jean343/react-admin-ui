@@ -13,6 +13,8 @@ var _Bars = _interopRequireDefault(require("./icons/Bars"));
 
 var _utils = require("./utils");
 
+var _Icon = _interopRequireDefault(require("./Icon"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -213,8 +215,8 @@ function (_Component) {
         }, _react.default.createElement(Link, {
           href: href,
           to: to
-        }, _react.default.createElement("i", {
-          className: icon
+        }, _react.default.createElement(_Icon.default, {
+          icon: icon
         }), _react.default.createElement("span", null, title)));
       })), !lg && onRightNavbarToggle && _react.default.createElement(NavbarToggler, {
         onClick: onRightNavbarToggle
