@@ -18,7 +18,9 @@ export default class extends Component {
       toolbar = [toolbar];
     }
 
-    return React.createElement(Toolbar, null, toolbar.map(t => React.createElement(Left, null, t)));
+    return React.createElement(Toolbar, null, toolbar.map((t, i) => React.createElement(Left, {
+      key: i
+    }, t)));
   }
 
 }

@@ -95,8 +95,10 @@ function (_Component) {
         toolbar = [toolbar];
       }
 
-      return _react.default.createElement(Toolbar, null, toolbar.map(function (t) {
-        return _react.default.createElement(Left, null, t);
+      return _react.default.createElement(Toolbar, null, toolbar.map(function (t, i) {
+        return _react.default.createElement(Left, {
+          key: i
+        }, t);
       }));
     }
   }]);

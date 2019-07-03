@@ -41,7 +41,7 @@ export default class extends Component {
       toolbar = [toolbar];
     }
     return <Toolbar>
-      {toolbar.map(t => <Left>{t}</Left>)}
+      {toolbar.map((t, i) => <Left key={i}>{t}</Left>)}
     </Toolbar>
   }
 }

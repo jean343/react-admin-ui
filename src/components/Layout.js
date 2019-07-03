@@ -76,7 +76,7 @@ export default class Layout extends Component {
         Link={linkComponent}/>
 
       <Main sidebarCollapse={md || sidebarCollapse} sidebarMini={lg || sidebarMini} rightSidebarCollapse={lg || rightSidebarCollapse}>
-        <Toolbar toolbar={toolbar}/>
+        {toolbar && <Toolbar toolbar={toolbar}/>}
         <Content>{children}</Content>
       </Main>
       {sideBarTabs && <RightSidebar rightSidebarCollapse={lg || rightSidebarCollapse} sideBarTabs={sideBarTabs}/>}

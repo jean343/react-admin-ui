@@ -199,7 +199,7 @@ function (_Component) {
         sidebarCollapse: md || sidebarCollapse,
         sidebarMini: lg || sidebarMini,
         rightSidebarCollapse: lg || rightSidebarCollapse
-      }, _react.default.createElement(_Toolbar.default, {
+      }, toolbar && _react.default.createElement(_Toolbar.default, {
         toolbar: toolbar
       }), _react.default.createElement(_Body.Content, null, children)), sideBarTabs && _react.default.createElement(_RightSidebar.default, {
         rightSidebarCollapse: lg || rightSidebarCollapse,
